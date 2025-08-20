@@ -50,3 +50,57 @@ ol, li, ul {
     width: 1260px;
     margin: 0 auto;
 }
+.nature {
+    margin: 293px 0 0 0;
+}
+.villa {
+    margin: 100px 0 0 0;
+    text-align: center;
+}
+.cycle {
+    margin: 110px 0 200px 0;
+    text-align: right;
+}
+.nature h1,
+.villa h1,
+.cycle h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.nature h1 {
+    margin: 0 0 22px 0;
+}
+.nature strong {
+    font-weight: 700;
+    color: #01377d;
+}
+.villa h1 {
+    margin: 0 0 26px 0;
+}
+.villa strong {
+    color: #26b170;
+}
+.cycle h1 {
+    margin: 0 0 23px 0;
+}
+.cycle h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.cycle h2 {
+    margin: 25px 0 25px 0;
+}
+.cycle strong {
+    color: #689eda;
+}
+.cycle h2 strong {
+    color: #1fb84e;
+}
+/* cycle이라는 클래스명을 갖은 요소 안에 p태그 안에 있는 strong태그 */
+.cycle p strong {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #151fa3;
+}
