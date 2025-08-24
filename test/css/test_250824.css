@@ -16,7 +16,7 @@
     background-color: #00cdf5; /* 뒷배경 */
     padding: 17px 60px 17px 60px; 
     border-radius: 50px; /* 뒷배경 라운드 */
-    display: inline-block;
+    display: inline-block; /* 뒷배경 조절하게 만들어주기 */
 }
 
 .team {
@@ -42,6 +42,7 @@
     border-radius: 40px;
     display: inline-block;
     padding: 10px 25px 10px 25px;
+    font-weight: 700;
 }
 .team .list ul li {
     display: flex;
@@ -73,6 +74,7 @@
     border-radius: 40px;
     display: inline-block;
     padding: 10px 25px 10px 25px;
+    font-weight: 700;
 }
 .pep .list ul {
     display: flex;
