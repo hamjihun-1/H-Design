@@ -1,0 +1,28 @@
+/* 태그 */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+    /* inherit = 브라우저가 주는 스타일 무시 */
+}
+strong {
+    font-weight: inherit;
+}
+em, address {
+    font-style: normal; /* 기울임 취소 */
+}
+ul, ol, li {
+    list-style: none; /* 앞에 도형 및 숫자 제거 */
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+* {
+    /* *(와일드카드)는 모든 태그를 말함 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* padding과 width/height를 같이주면 사이즈가 늘어나는 현상 막기 */
+
+}
