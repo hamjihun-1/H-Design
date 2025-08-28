@@ -110,8 +110,6 @@ header .gnb ul li a {
     padding: 14px 45px 13px 45px;
 }
 
-
-
 footer {
     background-color: #111;
     padding: 70px 0;
@@ -120,6 +118,9 @@ footer {
 footer .f_nav ul {
     display: flex;
     gap: 0 42px; /* 위아래-좌우 여백 값 */
+}
+footer .f_nav ul li.privacy a {
+    font-weight: 700;
 }
 footer .f_info {
     margin: 22px 0 23px 0;
