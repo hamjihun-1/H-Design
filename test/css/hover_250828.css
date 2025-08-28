@@ -97,4 +97,5 @@
 }
 .bbs ul li a:hover .photo {
     transform: translateY(-20px); /* 위 아래 움직임*/
+    box-shadow: 0 8px 28px -6px
 }
