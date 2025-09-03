@@ -102,11 +102,21 @@ header .gnb ul li a {
 }
 
 .community {
-    background: url(../images/community_bg.jpg) no-repeat center top / auto 850px;
     margin: 184px 0 0 0;
     /* height: 850px; - 콘텐츠가 배경보다 더 길어서 배경의 높이만큼 주면 x 
         background를 높이니까 background*/
     color: #fff;
+    position: relative; /* befroe 정렬의 기준 */
+}
+.community::before {
+    content: ""; /* 필수값 */
+    position: absolute; /* community를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 850px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover
 }
 .community .news {
     padding: 80px 0 0 0;
@@ -114,6 +124,7 @@ header .gnb ul li a {
 .community .news .wrapper {
     display: flex;
     justify-content: space-between;
+    position: relative; /* more 정렬의 기준 */
 }
 .community .news .tit h2 {
     font-size: 40px;
@@ -122,17 +133,6 @@ header .gnb ul li a {
     line-height: 1.4;
     letter-spacing: 0.02em;
     padding: 27px 0 17px 0;
-}
-.community .news .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 9px 31px 9px 31px;
-    border-radius: 30px;
-    margin: 51px 0 0 0;
-}
-.community .news .tit a:hover {
-    background: #fff;
-    color: #9E0203;
 }
 .community .news .list {
     width: 832px;
@@ -163,6 +163,19 @@ header .gnb ul li a {
 .community .news .list ul li a span {
     color: rgba(255, 255, 255, 0.8);
 }
+.community .news a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 9px 31px 9px 31px;
+    border-radius: 30px;
+    position: absolute;
+    left: 0;
+    top: 190px;
+}
+.community .news a.more:hover {
+    background: #fff;
+    color: #9E0203;
+}
 .community .media {
     padding: 150px 0 0 0;
 }
@@ -179,18 +192,11 @@ header .gnb ul li a {
     letter-spacing: 0.02em;
     padding: 0 0 11px 0;
 }
-.community .media .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 9px 31px 9px 31px;
-    border-radius: 30px;
+.community .media .wrapper {
+    position: relative; /* more 정렬의 기준 */
 }
-.community .media .tit a:hover {
-    background: #fff;
-    color: #9E0203;
-}
-.community .media .list {
-    margin: 56px 0 0 0;
+.community .media .list  {
+    margin: 35px 0 0 0;
 }
 .community .media .list ul {
     display: flex;
@@ -230,7 +236,19 @@ header .gnb ul li a {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
-
+.community .media a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 9px 31px 9px 31px;
+    border-radius: 30px;
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    right: 0;
+    top: 68px;
+}
+.community .media a.more:hover {
+    background: #fff;
+    color: #9E0203;
+}
 
 footer {
     margin: 109px 0 0 0; 
@@ -252,18 +270,45 @@ footer .inner .f_nav ul {
     display: flex; /* li를 좌우로 배치 */
     gap: 0 35px;
 }
+footer .inner .f_nav ul li {
+    position: relative; /* after 정열의 기준*/
+}
+footer .inner .f_nav ul li::after {
+    content: ""; /* 필수 */
+    position: absolute;
+    right: -18px;
+    top: 5px;
+    width: 1px;
+    height: 13px;
+    background-color: rgba(204, 204, 204, 0.7);
+}
+/* 마지막 li의 after 숨김처리 */
+footer .inner .f_nav ul li:last-child::after {
+    display: none;
+}
 footer .inner .f_nav ul li a {
     display: block;
+    position: relative;
 }
-footer .inner .f_nav ul li a:hover {
-    text-decoration: underline;
+footer .inner .f_nav ul li a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: 0.3s;
+}
+footer .inner .f_nav ul li a:hover::after {
+    width: 100%; /* 기준이 되는 a의 100% */
 }
 footer .inner .f_info {
     margin: 22px 0 22px 0;
 }
 footer .inner .f_info .group {
     display: flex; 
-    gap: 0 35px; /*위아래 좌우*/
+    gap: 0 35px; /* 위아래 좌우 */
 }
 footer .inner .copyright {
     color: rgba(255, 255, 255, 0.6);
@@ -277,4 +322,18 @@ footer .fmaily_stie button {
     display: block;
     text-align: left;
     padding: 0 0 0 20px;
+    position: relative; /* after 정렬의 기준 */
+}
+footer .fmaily_stie button::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border: 1px solid #fff;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 0 2px 2px;
+    position: absolute; /* button을 기준으로 정렬 */
+    right: 20px;
+    top: 15px;
+    transform: rotate(-45deg);
 }
