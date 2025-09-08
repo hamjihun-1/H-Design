@@ -112,18 +112,36 @@ header .gnb ul a {
 .tour .list {
     color: #fff;
 }
-
-.tour .list ul a .bg1 {
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.tour .list ul a {
+    display: block;
+    height: 548px;
+}
+.tour .list ul li a.bg1 {
     background: url(../images/tour_list01.jpg) no-repeat center center / cover;
+    width: 684px;
 }
-.tour .list ul a .bg2 {
+.tour .list ul li a.bg2 {
     background: url(../images/tour_list02.jpg) no-repeat center center / cover;
+    width: 180px;
 }
-.tour .list ul a .bg3 {
+.tour .list ul li a.bg3 {
     background: url(../images/tour_list03.jpg) no-repeat center center / cover;
+    width: 180px;
 }
-.tour .list ul a .bg4 {
+.tour .list ul li a.bg4 {
     background: url(../images/tour_list04.jpg) no-repeat center center / cover;
+    width: 180px;
+}
+.tour .list ul li a h4 {
+    font-size: 22px;
+    font-weight: 700;
+}
+.tour .list ul li a.bg1 h4 {
+    font-size: 40px;
 }
 footer {
     margin: 1000px 0 0 0;
