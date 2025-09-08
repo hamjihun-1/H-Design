@@ -80,6 +80,9 @@ header .gnb ul a {
     background: #F7F7F7;
     height: 750px;
 }
+.culture .wrapper {
+    position: relative;
+}
 .culture .tit h2 {
     font-size: 40px;
     font-weight: 700;
@@ -100,7 +103,11 @@ header .gnb ul a {
     font-weight: 700;
     padding: 15px 0;
 }
-
+.culture a.more {
+    position: absolute;
+    right: 40px;
+    top: 150px;
+}
 .tour .tit h3 {
     margin: 170px 0 0 0;
     font-size: 40px;
