@@ -2,6 +2,135 @@
 @import url(fonts.css);
 @import url(common.css);
 
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    color: #fff;
+    z-index: 999;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 90px;
+    padding: 0 21px;
+}
+header .util {
+    display: flex;
+    gap: 0 25px;
+}
+header .util a {
+    margin: 10px 0 0 0;
+}
+header .util a.weather {
+    padding: 28px 0 0 0;
+    text-align: center;
+    position: relative;
+    line-height: 1.1;
+}
+header .util a.weather::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 22px;
+    background: url(../images/util_weather.svg) no-repeat center top;
+}
+header .util a.sea {
+    padding: 28px 0 0 0;
+    text-align: center;
+    position: relative;
+    line-height: 1.1;
+}
+header .util a.sea::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 22px;
+    background: url(../images/util_sea.svg) no-repeat center top;
+}
+header .util a.flow {
+    padding: 28px 0 0 0;
+    text-align: center;
+    position: relative;
+    line-height: 1.1;
+}
+header .util a.flow::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 22px;
+    background: url(../images/util_flow.svg) no-repeat center top;
+}
+header .util a.weather strong {
+    display: block;
+    font-weight: 700;
+}
+header .util a.weather span {
+    color: rgba(255, 255, 255, 0.7);
+}
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    border-radius:  0 0 200px 0;
+}
+.visual .wrapper {
+    height: 100vh;
+    min-height: 550px;
+    position: relative;
+}
+.visual h2 {
+    padding: 30vh 0 0 240px;
+}
+.visual .life {
+    display: block;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background-color: #303E9F;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    line-height: 1.2;
+    padding: 92px 0 0 0;
+    position: absolute;
+    right: -95px;
+    bottom: -95px;
+}
+.visual .life:hover {
+    color: #4EDFFF;
+    background-color: #1D1D1D;
+    box-shadow: 0 10px 5px 0 rgba(0, 0, 0, 0.15);
+}
+.visual .life::before {
+    content: "";
+    position: absolute;
+    background: url(../images/life_ico.svg) no-repeat center top;
+    width: 100%;
+    height: 33px;
+    left: 0;
+    top: 42px;
+}
+.visual .life:hover::before {
+    background: url(../images/life_ico_over.svg) no-repeat center top;
+}
+.visual .life strong {
+    font-weight: 700;
+}
 
 footer {
     margin: 1000px 0 0 0;
