@@ -247,11 +247,15 @@ header .util .flow::before {
 .tour .list ul {
     display: flex;
     justify-content: space-between;
+    gap: 0 12px;
 }
 .tour .list ul li {
-    width: 14.28%;
+    /* width: 14.28%; */
     /* li 한개의 넓이 190px, ul의 넓이가 1260px
        그럼 li는 ul의 몇 %인가?  */
+    transition: 0.8s;
+    overflow: hidden;
+    flex: 1 1 0%;
 }
 
 .tour .list ul li a {
@@ -267,7 +271,6 @@ header .util .flow::before {
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
-    
 }
 .tour .list ul li.bg1 a {
     background-image: url(../images/tour01.jpg);
@@ -284,13 +287,16 @@ header .util .flow::before {
 .tour .list ul li a h3 {
     font-size: 22px;
     font-weight: 700;
+    white-space: nowrap;
 }
 .tour .list ul li a p {
     display: none; /* 숨김 */
+    white-space: nowrap;
 }
 /* li에 on클래스가 들어갔을 때 */
 .tour .list ul li.on {
-    width: 54.28%;
+    /* width: 54.28%; */
+    flex: 3 1 0%;
 }
 .tour .list ul li.on a {
     align-items: flex-start;
