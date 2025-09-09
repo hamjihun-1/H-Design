@@ -24,6 +24,21 @@ header .gnb ul li a {
     font-weight: 700;
     line-height: 90px;
     padding: 0 21px;
+    position: relative; /* after 정렬의 기준 */
+}
+header .gnb ul li a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 50%;
+    transform: translateX(-50%); /*가운데에서 퍼지는 밑줄 모션*/
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.5s;
+}
+header .gnb ul li a:hover::after {
+    width: 100%;
 }
 header .util {
     display: flex;
@@ -130,6 +145,89 @@ header .util a.weather span {
 }
 .visual .life strong {
     font-weight: 700;
+}
+.culture {
+    padding: 168px 0 150px 0;
+    position: relative; /* before 정렬의 기준*/
+}
+.culture::before {
+    content: "";
+    position: absolute; /* culture를 기준으로 정렬 */
+    left: 0;
+    top: -200px;
+    width: 100%;
+    height: calc(100% + 200px);
+    background-color: #f3f3f3;
+    z-index: -1;
+}
+.culture .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
+.culture .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+}
+.culture .list {
+    margin: 58px 0 0 0;
+}
+.culture .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.culture .list ul li {
+    width: calc(33.33% - 16px);
+}
+.culture .list ul li a {
+    display: block;
+}
+.culture .list ul li a .photo {
+    overflow: hidden;
+}
+.culture .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.culture .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.culture .list ul li h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 14px 0 5px 0;
+}
+.culture .more {
+    position: absolute; /* wrapperf를 기준으로 정렬 */
+    right: 0px;
+    top: 64px;
+}
+.culture .more a {
+    font-size: 19px;
+    font-weight: 700;
+    display: inline-block;
+    padding:  0 40px 0 0;
+    position: relative;
+}
+.culture .more a::after {
+    content: "";
+    position: absolute;
+    left: 75px;
+    top: 50%;
+    width: 25px;
+    height: 1px;
+    background-color: #1D1D1D;
+}
+.culture .more a:hover::after {
+    animation-name: more;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes more {
+    0% { width: 0px; }
+    100% { width: 25px; }
 }
 
 footer {

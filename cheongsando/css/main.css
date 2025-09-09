@@ -135,20 +135,20 @@ header .util .flow::before {
 }
 
 .culture {
-    position: relative;
+    position: relative; /* before 정렬의 기준 */
     padding: 168px 0 100px 0;
     }
 .culture .wrapper {
-    position: relative;
+    position: relative; /* more 정렬의 기준 */
 }
 .culture::before {
     content: "";
-    position: absolute;
+    position: absolute; /* culture를 기준으로 정렬 */
     left: 0;
     top: -200px;
     z-index: -1;
     width: 100%;
-    height: calc(100% + 250px);
+    height: calc(100% + 200px);
     background-color: #F7F7F7;
 }
 .culture .tit h2 {
