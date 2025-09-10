@@ -16,7 +16,22 @@ $(document).ready(function(){
    })
 
    $('footer .right_area .family_site button.open').on('click', function(){
-        //console.log('클릭했다')
-        $('footer .right_area .family_site').addClass('open')
+        //console.log('여는 버튼 클릭')
+        $('footer .right_area .family_site').addClass('open') // 열기
    })
-})
+   $('footer .right_area .family_site button.close').on('click', function(){
+        //console.log('닫는 버튼 클릭')
+        $('footer .right_area .family_site').removeClass('open') // 닫기
+   })
+   // footer .right_area .top를 클릭하면 브라우저가 상단으로 스크롤이 됨
+   $('footer .right_area .top').on('click', function(){
+     //console.log('누름')
+     let scrolling = $(window).scrollTop()
+     console.log(scrolling)
+     // $(window).scrollTop(0) // 맨 위로 이동
+     $('html, body').animate({
+          scrollTop : 0
+     }, 500)
+   })
+
+})//$(document).ready

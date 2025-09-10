@@ -637,7 +637,8 @@ footer .right_area .top::before {
     background: url(../images/top.svg) no-repeat center center;
 }
 footer .right_area .top:hover {
-    color: #4EDFFF
+    color: #4EDFFF;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 footer .right_area .top:hover::before {
     background-image: url(../images/top_over.svg);
