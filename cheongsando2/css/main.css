@@ -219,7 +219,8 @@ header .util a.weather span {
     height: 1px;
     background-color: #1D1D1D;
 }
-.culture .more a:hover::after {
+.culture .more a:hover::after,
+.community .inner .notice .more a:hover::before {
     animation-name: more;
     animation-duration: 0.7s;
     animation-iteration-count: infinite;
@@ -229,7 +230,184 @@ header .util a.weather span {
     0% { width: 0px; }
     100% { width: 25px; }
 }
+.tour {
+    margin: 157px 0 0 0;
+}
+.tour .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
+.tour .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 0 0 7px 0;
+}
+.tour .list {
+    margin: 60px 0 0 0;
+}
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 12px;
+}
+.tour .list ul li {
+    /* width: 14.28%; */
+    /* li 한개의 넓이 190px, ul의 넓이가 1260px
+       그럼 li는 ul의 몇 %인가?  */
+    transition: 0.8s;
+    overflow: hidden;
+    flex: 1 1 0%;
+}
+
+.tour .list ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 0 50px 0;
+    height: 548px; 
+    /* li의 사이즈와 a의 사이즈를 같게 
+       li가 넓이를 갖음. a가 높이를 가져야함. */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.tour .list ul li.bg1 a {
+    background-image: url(../images/tour01.jpg);
+}
+.tour .list ul li.bg2 a {
+    background-image: url(../images/tour02.jpg);
+}
+.tour .list ul li.bg3 a {
+    background-image: url(../images/tour03.jpg);
+}
+.tour .list ul li.bg4 a {
+    background-image: url(../images/tour04.jpg);
+}
+.tour .list ul li a h3 {
+    font-size: 22px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.tour .list ul li a p {
+    display: none; /* 숨김 */
+    white-space: nowrap;
+}
+/* li에 on클래스가 들어갔을 때 */
+.tour .list ul li.on {
+    /* width: 54.28%; */
+    flex: 3 1 0%;
+}
+.tour .list ul li.on a {
+    align-items: flex-start;
+    padding: 0 0 51px 50px;
+}
+.tour .list ul li.on a h3 {
+    font-size: 40px;
+    padding: 0 0 6px 0;
+}
+.tour .list ul li.on a p {
+    display: block;
+    /* none으로 숨김요소는 none빼고 뭐든 줘도 나타남
+       다만 block이 만만해서 대부분 block을 줌 */
+}
+
+.community {
+    margin: 228px 0 0 0;
+    color: #fff;
+    height: 800px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
+    padding: 178px 0 0 0;
+}
+.community .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.community .tit h2 {
+    margin: 0 0 16px 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.community .inner {
+    display: flex;
+    gap: 0 10px;
+    align-items: flex-end;
+}
+.community .inner .notice {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 655px;
+    height: 380px;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    padding: 30px 40px 0 40px;
+}
+.community .inner .notice h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.community .inner .notice ul {
+    margin-top: 20px;
+}
+.community .inner .notice ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.community .inner .notice ul li:last-child {
+    border-bottom: none;
+}
+.community .inner .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0 12px 0;
+    
+}
+.community .inner .notice ul li a span {
+    color: rgba(255, 255, 255, 0.7);
+}
+.community .inner .notice .more {
+    position: absolute;
+    right: 80px;
+    top: 45px;
+    font-weight: 700;
+    font-size: 19px;
+}
+.community .inner .notice .more a::before {
+    content: "";
+    position: absolute;
+    left: 75px;
+    top: 50%;
+    width: 25px;
+    height: 1px;
+    background-color: #fff;
+}
+.community .inner .notice:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #1d1d1d;
+}
+.community .inner .notice:hover ul li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.community .inner .notice:hover ul li:last-child {
+    border-bottom: none;
+}
+.community .inner .notice:hover ul li a span {
+    color: #666;
+}
+
+.community .inner .notice ul li a:hover h4 {
+    font-weight: 700;
+    color: #303E9F;
+}
+.community .inner .notice ul li a:hover span {
+    color: #303E9F;
+}
+.community .inner .notice:hover .more a::before {
+    background-color: #1D1D1D;
+}
+
 
 footer {
-    margin: 1000px 0 0 0;
+    margin: 100px 0 0 0;
 }
