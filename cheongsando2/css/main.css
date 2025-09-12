@@ -406,8 +406,40 @@ header .util a.weather span {
 .community .inner .notice:hover .more a::before {
     background-color: #1D1D1D;
 }
-
-
+.community .inner .service {
+    width: 274px;
+}
+.community .inner .service ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 10px;
+}
+.community .inner .service ul li {
+    width: calc(50% - 5px);
+}
+.community .inner .service ul li a {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    height: 132px;
+    display: block;
+    padding: 20px 69px 0 20px;
+    font-size: 24px;
+    font-weight: 700;
+    position: relative;
+}
+.community .inner .service ul li a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.community .inner .service ul li.icon1 a::after {
+    background-image: url(../images/community_service01.svg);
+}
 footer {
     margin: 100px 0 0 0;
 }
