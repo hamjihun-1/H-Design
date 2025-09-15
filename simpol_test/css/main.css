@@ -89,7 +89,6 @@ header .inner .shop::before {
     border-radius: 20px;
     height: 297px;
     transition: 0.5s;
-
 }
 .introduction .list ul li .photo img {
     width: 100%;
@@ -102,7 +101,7 @@ header .inner .shop::before {
     box-shadow: 0 8px 28px -6px;
 }
 .introduction .list ul li .txt {
-    margin: 16px;
+    padding-top: 16px;
     border-radius: 20px;
     text-align: center;
 }
