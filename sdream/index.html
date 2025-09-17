@@ -3,31 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 외부라이브러리 파일 상단 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!-- 내가 직접 코딩하는 하단 -->
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>삼성꿈장학재단</title>
 </head>
 <body>
-        <h1>삼성꿈장학재단은 더불어 성장하는<br> 배움공동체를 지향합니다.<br>
-            gmarket sans Bold 40px 140% #1d1d1d</h1>
-        <p>삼성꿈장학재단은 교육 소외계층의 실질적인 교육기회 확대를 위한 장학사업과 복지친화적인 교육 여건 조성<br> 사업을 실시함으로써 개인, 지역, 계층 간 교육격차를 해소하고 사회통합 및 국가발전에 기여하기 위해 설립되<br> 었습니다.
-        noto sans reguler 17px 150% #555555</p>
-        
-        <h2>jpg이미지 넓이 300짜리</h2>
-        <img src="images/text1.jpg" alt="">
+    <div class="wh"></div>
+    <div id="wrap">
+        <header></header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide bg1">
+                            <div class="wrapper">
+                                <h2>사랑으로 키우는 꿈,<br> 함께 만드는 미래</h2>
+                                <p>교육을 통해 더 많은 아이들이 꿈을 포기하지 않도록 지원합니다.</p>
+                            </div> <!--wrapper-->
+                        </li>
+                        <li class="swiper-slide bg2">
+                            <div class="wrapper">
+                                <h2>함께 성장하는 배움의 시작,<br> 삼성꿈장학재단</h2>
+                                <p>배움이 절실한 아이들에게 꿈과 희망을 키울 수 있는 교육 기회를 제공합니다.</p>
+                            </div> <!--wrapper-->
+                        </li>
+                        <li class="swiper-slide bg3">
+                            <div class="wrapper">
+                                <h2>희망을 품은 오늘,<br> 내일의 리더를 위한 장학지원</h2>
+                                <p>삼성꿈장학재단은 아이들이 꿈을 잃지 않도록 맞춤형 장학과 따뜻한 멘토링을 제공합니다.</p>
+                            </div> <!--wrapper-->
+                        </li>
+                    </ul>
 
-        <h2>jpg이미지 넓이 900짜리 - 축소 넓이 300으로</h2>
-        <img src="images/text3.jpg" alt="" class="text">
-
-        <h2>글자를 svg 넓이 300으로 저장</h2>
-        <img src="images/text.svg" alt="">
-
-        <h2>로고를 jpg 넓이 300으로 저장</h2>
-        <img src="images/logo.jpg" alt="">
-
-        <h2>로고를 svg 넓이 300으로 저장</h2>
-        <img src="images/logo.svg" alt="">
-
-        <h1>가나다라마바사아자차카파타하가나다라마바사아자차카파타하가나다라마바사아자차카파타하가나다라마바사아자차카파타하가나다라마바사아자차카파타하</h1>
+                </div> <!--swiper-->
+            </section> <!--visual-->
+            <section class="biz">
+                
+            </section> <!--biz-->
+            <section class="notice">
+                
+            </section> <!--notice-->
+            <section class="webzine">
+                
+            </section> <!--webzine-->
+            <section class="service">
+                
+            </section> <!--service-->
+        </main>
+        <footer></footer>
+    </div>
 </body>
 </html>

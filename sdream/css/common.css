@@ -15,6 +15,17 @@ body {
     margin: 0 auto; /* 가운데 정렬 */
 }
 #wrap {
-    min-width: 1450px; /* 1260 + 95 + 95 = 1450 */
+    min-width: 1320px; /* 1260 + 30 + 30 = 1320 */
     position: relative; /* header 정렬의 기준 */
+}
+
+/* html문서 구조상 글자를 써줘야 하는데
+    글자를 안 보이게 하고 싶을 때 blind 클래스를 주면 사라짐 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0); /* 사각형 생성 */
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
 }
