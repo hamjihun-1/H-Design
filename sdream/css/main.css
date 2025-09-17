@@ -2,3 +2,113 @@
 @import url(fonts.css);
 @import url(common.css);
 
+.visual {
+    position: relative; /* btn_wrap 정렬의 기준 */
+}
+.visual .swiper-slide {
+    height: 100vh; /* 브라우저 높이와 동일하게 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/visual_bg01.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/visual_bg02.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/visual_bg03.jpg);
+}
+
+.visual .swiper-slide h3 {
+    font-size: 60px;
+    margin: 150px 0 0 0;
+}
+.visual .btn_wrap {
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: calc(50% - 630px);
+    /* 1260px의 절반 */
+    top: calc(70% + 40px);
+    z-index: 1;
+    display: flex;
+    gap: 0 14px;
+}
+.visual .btn_wrap button {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .btn_wrap button.btn_prev {
+    background-image: url(../images/visual_arrow.svg);
+}
+.visual .btn_wrap button.btn_play {
+    background-image: url(../images/visual_play.svg);
+}
+.visual .btn_wrap button.btn_stop {
+    background-image: url(../images/visual_stop.svg);
+}
+.visual .btn_wrap button.btn_next {
+    background-image: url(../images/visual_arrow.svg);
+    transform: rotate(180deg);
+}
+@media screen and (max-width:768px){
+                        .visual .swiper-slide {
+                            align-items: flex-end;
+                        }
+                        .visual .swiper-slide h3 {
+                            font-size: 32px;
+                            margin: 0;
+                        }
+                        .visual .swiper-slide h3 br {
+                            display: none;
+                        }
+                        .visual .swiper-slide p {
+                            margin-bottom: 100px;
+                        }
+                        .visual .btn_wrap {
+                            left: 50%;
+                            transform: translateX(-50%);
+                            top: auto;
+                            bottom: 16px;
+                            z-index: 1;
+                            display: flex;
+                            gap: 0 14px;
+                        }
+                        .visual .btn_wrap button {
+                            width: 27px;
+                            height: 27px;
+                        }
+                        .visual .btn_wrap button.btn_prev {
+                            background-image: url(../images/visual_arrow_mo.svg);
+                        }
+                        .visual .btn_wrap button.btn_play {
+                            background-image: url(../images/visual_play_mo.svg);
+                        }
+                        .visual .btn_wrap button.btn_stop {
+                            background-image: url(../images/visual_stop_mo.svg);
+                        }
+                        .visual .btn_wrap button.btn_next {
+                            background-image: url(../images/visual_arrow_mo.svg);
+                        }
+}/* @media */
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    margin: 400px 0 0 0; 
+ }
