@@ -60,6 +60,9 @@
 }
 @media screen and (max-width:768px){
                         .visual .swiper-slide {
+                            height: 100dvh;
+                        }    
+                        .visual .swiper-slide {
                             align-items: flex-end;
                         }
                         .visual .swiper-slide h3 {
