@@ -10,3 +10,14 @@ h1 {
     color: #1d1d1d;
 }
 
+
+h2 {
+    margin: 50px 0 0 0;
+    font-size: 40px;
+    font-family: 'GM';
+    font-weight: 700;
+}
+
+.text {
+    width: 300px;
+}
