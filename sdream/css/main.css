@@ -50,6 +50,7 @@
 }
 .visual .btn_wrap button.btn_play {
     background-image: url(../images/visual_play.svg);
+    display: none; /* stop 버튼이 눌려야만 보임 */
 }
 .visual .btn_wrap button.btn_stop {
     background-image: url(../images/visual_stop.svg);
@@ -99,16 +100,66 @@
                         }
 }/* @media */
 
-
-
-
-
-
-
-
-
-
-
+.biz {
+    margin: 170px 0 10px 0;
+}
+.biz .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.biz .tit {
+    position: sticky;
+    top: 200px;
+}
+.biz .tit h2 {
+    color: #1d1d1d;
+}
+.biz .list {
+    width: 780px;
+    padding-bottom: 195px;
+}
+.biz .list ul {
+    display: flex;
+    flex-wrap: wrap; /* 여러줄 허용 */
+    gap: 60px 60px;
+}
+.biz .list ul li {
+    width: calc(50% - 30px);
+    /* 100 / 한줄에 나오는 li 갯수 = 100/2 = 50% 
+        한줄의 여백의 합 / 한줄에 나오는 li의 갯수 = 60/2 = 30px*/
+}
+.biz .list ul li:nth-child(even) { /*odd - 홀수(왼쪽) even - 짝수(오른쪽) */
+    transform: translateY(205px);
+}
+.biz .list ul li a {
+    display: block;
+    position: relative; /* txt 정렬의 기준 */
+}
+.biz .list ul li a .photo {
+    overflow: hidden;
+    height: 500px;
+    border-radius: 20px;
+}
+.biz .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.biz .list ul li a .txt {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 38px;
+    width: calc(100% - 76px);
+    bottom: 53px;
+    color: #fff;
+    text-align: center;
+}
+.biz .list ul li a .txt h3 {
+    font-size: 32px;
+}
+.biz .list ul li a .txt p {
+    display: none;
+}
 footer {
-    margin: 400px 0 0 0; 
+    margin: 1500px 0 0 0; 
  }
