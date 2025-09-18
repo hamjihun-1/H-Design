@@ -243,9 +243,6 @@
                         .biz .list ul li a .txt p {
                             display: none;
                         }
-                        .biz .list ul li a:hover .txt {
-                            bottom: auto;
-                        }
 }/* @media */
 
 
