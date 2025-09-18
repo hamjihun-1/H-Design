@@ -220,7 +220,7 @@
                             transform: translateY(0);
                         }
                         .biz .list ul li a .photo {
-                            height: 150px;
+                            height: 200px;
                             border-radius: 10px;
                         }
                         .biz .list ul li a .photo::before {
