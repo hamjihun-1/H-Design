@@ -9,6 +9,8 @@ body {
     word-break: keep-all; /* 단어별로 줄 바꿈 */
     word-wrap: break-word;
     /* 단어가 너무 길었을 때 강제 줄 바꿈 */
+    min-width: 320px;
+    overflow-x: hidden;
 }
 .wrapper {
     width: 1260px;
