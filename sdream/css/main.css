@@ -380,21 +380,6 @@ header .util .lang .lang_open {
     text-overflow: ellipsis;
 }
 /* 오버 스타일 */
-.notice .list ul li a:hover {
-    background-color: #316CF5;
-}
-.notice .list ul li a:hover .inner strong {
-    background-color: #fff;
-    color: #316CF5;
-}
-.notice .list ul li a:hover .inner h3 {
-    font-weight: 700;
-    color: #fff;
-}
-.notice .list ul li a:hover span {
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.8);
-}
 .notice .more {
     position: absolute; /* wrapper를 기준으로 정렬 */
     right: 0;
@@ -414,12 +399,26 @@ header .util .lang .lang_open {
     height: 24px;
     background: url(../images/notice_more.svg) no-repeat center center;
 }
-
 .notice .more a:hover {
     font-weight: 700;
 }
 
 @media screen and (min-width:769px){
+    .notice .list ul li a:hover {
+        background-color: #316CF5;
+    }
+    .notice .list ul li a:hover .inner strong {
+        background-color: #fff;
+        color: #316CF5;
+    }
+    .notice .list ul li a:hover .inner h3 {
+        font-weight: 700;
+        color: #fff;
+    }
+    .notice .list ul li a:hover span {
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.8);
+    }
     .notice .more a:hover::after {
         animation: more 1s linear infinite;
     }
