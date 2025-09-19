@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    //visual 팝업
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
         autoplay: {  /* 팝업 자동 실행 */
@@ -15,17 +16,31 @@ $(document).ready(function(){
 
     });
     
-    
     $('.visual .btn_wrap .btn_play').on('click', function(){
-        console.log('배고파')
-        visual_swiper.autoplay.start();  /* 재생 기능 */
-        $(this).hide()
-        $('.visual .btn_wrap .btn_stop').show()
-    })
-    $('.visual .btn_wrap .btn_stop').on('click', function(){
-        console.log('배불러')
-        visual_swiper.autoplay.stop();  /* 일시정지 기능 */
-        $(this).hide()
-        $('.visual .btn_wrap .btn_play').show()
-    })
+            console.log('배고파')
+            visual_swiper.autoplay.start();  /* 재생 기능 */
+            $(this).hide()
+            $('.visual .btn_wrap .btn_stop').show()
+        })
+        $('.visual .btn_wrap .btn_stop').on('click', function(){
+            console.log('배불러')
+            visual_swiper.autoplay.stop();  /* 일시정지 기능 */
+            $(this).hide()
+            $('.visual .btn_wrap .btn_play').show()
+        })
+    //webzine 팝업
+    const webzine_swiper = new Swiper('.webzine .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            470: {    /* 640px 이상일때 적용 */
+                slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+            768: {    /* 640px 이상일때 적용 */
+                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+    });
 })//맨 끝

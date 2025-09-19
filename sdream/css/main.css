@@ -185,6 +185,7 @@ header .util .lang .lang_open {
 }
 .biz .tit {
     position: sticky;
+    /* 감싸는 요소중에서 단한개라도 overflow:hidden; 속성을 주면 작동을 안 함. */
     top: 200px;
 }
 .biz .tit h2 {
@@ -350,7 +351,7 @@ header .util .lang .lang_open {
     background-color: #fff;
     border-radius: 20px;
     padding: 25px 30px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); 
+    box-shadow: 0 10px 10px 0 rgba(80, 80, 80, 0.2);
     transition: 0.3s;
 }
 .notice .list ul li a .inner {
@@ -406,6 +407,7 @@ header .util .lang .lang_open {
 @media screen and (min-width:769px){
     .notice .list ul li a:hover {
         background-color: #316CF5;
+        box-shadow: 0 10px 10px 0 rgba(80, 80, 80, 0.4);
     }
     .notice .list ul li a:hover .inner strong {
         background-color: #fff;
@@ -419,7 +421,8 @@ header .util .lang .lang_open {
         font-weight: 700;
         color: rgba(255, 255, 255, 0.8);
     }
-    .notice .more a:hover::after {
+    .notice .more a:hover::after,
+    .webzine .more a:hover::after {
         animation: more 1s linear infinite;
     }
     @keyframes more {
@@ -427,7 +430,7 @@ header .util .lang .lang_open {
         50% { transform: translateX(10px)}
         100% { transform: translateX(0)}
     }
-}
+} /*@media*/
 @media screen and (max-width:768px){
             .notice {
                 margin: 90px 0 0 0;
@@ -478,20 +481,192 @@ header .util .lang .lang_open {
                 padding: 0;
                 width: 28px;
                 height: 28px;
-                background-color: #1d1d1d;
                 border-radius: 50%;
+                background: #1d1d1d url(../images/notice_more2.svg) no-repeat center center;
             }
             .notice .more a::after {
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background: url(../images/notice_more2.svg) no-repeat center center;
+                display: none;
             }
             .notice .more a span {
                 display: none;
             }
+}/*@media*/
+
+.webzine {
+    margin: 170px 0 0 0;
+    padding-bottom: 50px;
+    overflow: hidden;
+    position: relative; /* more 정렬의 기준 */
 }
+
+.webzine .tit h2 {
+    padding: 4px 0 0 0;
+    color: #1d1d1d;
+}
+.webzine .list {
+    width: calc(50% + 630px);
+    position: relative;
+    left: calc(50% - 630px);
+    margin: 35px 0 0 0;
+}
+.webzine .list .swiper {
+    overflow: visible;
+    /* overflow: hidden; */
+}
+.webzine .list .swiper-slide {
+    width: 404px;
+}
+.webzine .list .swiper-slide a {
+    display: block;
+    background-color: #FCFCFC;
+    box-shadow: 0 10px 10px 0 rgba(80, 80, 80, 0.2);
+    border-radius: 20px;
+    height: 699px;
+    transition: 0.5s;
+}
+.webzine .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 284px;
+    border-radius: 20px 20px 0 0;
+}
+.webzine .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.webzine .list .swiper-slide a .txt {
+    margin: 20px 30px 0 30px;
+}
+.webzine .list .swiper-slide a .txt strong {
+    background-color: #316CF5;
+    border-radius: 20px;
+    font-weight: 700;
+    color: #fff;
+    padding: 5px 16px 6px 16px;
+}
+.webzine .list .swiper-slide a .txt strong.cate_learning {
+    background-color: #4F44EB;
+}
+.webzine .list .swiper-slide a .txt strong.cate_global {
+    background-color: #2DA222;
+}
+.webzine .list .swiper-slide a .txt strong.cate_mentor {
+    background-color: #DA4126;
+}
+.webzine .list .swiper-slide a .txt h3 {
+    margin: 26px 0 23px 0;
+    font-size: 28px;
+    color: #1d1d1d;
+    word-break: normal; 
+    /* 2줄 제한 */
+    line-height: 1.4;
+    height: 2.8em; /* 행간 * 줄수 = 1.4*2*/
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.webzine .list .swiper-slide a .txt p {
+    word-break: normal;
+    margin: 0 0 22px 0;
+    line-height: 1.5;
+    /* 6줄 제한 */
+    height: 9em; /* 행간 * 줄수 = 1.5* 6 */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+.webzine .list .swiper-slide a .txt span {
+    color: #777;
+}
+.webzine .more {
+    position: absolute; /* webzine을 기준으로 정렬*/
+    right: calc(50% - 630px);
+    top: 40px;
+}
+.webzine .more a {
+    display: block;
+    padding: 0 37px 0 0;
+    color: #1d1d1d;
+}
+.webzine .more a::after {
+    content: "";
+    position: absolute; /* more를 기준으로 정렬 */
+    left: 55px;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/notice_more.svg) no-repeat center center;
+}
+@media screen and (min-width:769px){
+        /* 오버스타일 */
+        .webzine .list .swiper-slide:hover a {
+            box-shadow: 0 10px 10px 0 rgba(80, 80, 80, 0.4);
+            transform: translateY(-20px);
+        }
+        .webzine .more a:hover {
+            font-weight: 700;
+        }
+} /* media */
+@media screen and (max-width:768px){
+        .webzine {
+            margin: 85px 0 0 0;
+        }
+        .webzine .list {
+            width: auto;
+            position: relative;
+            left: auto;
+            margin: 20px 16px 0 16px;
+        }
+        .webzine .list .swiper-slide {
+            width: 300px;
+        }
+        .webzine .list .swiper-slide a {
+            border-radius: 10px;
+            height: 560px;
+        }
+        .webzine .list .swiper-slide a .photo {
+            height: 250px;
+            border-radius: 10px 10px 0 0;
+        }
+        .webzine .list .swiper-slide a .txt {
+            margin: 25px 16px 0 25px;
+        }
+        .webzine .list .swiper-slide a .txt strong {
+            font-size: 16px;
+        }
+        .webzine .list .swiper-slide a .txt h3 {
+            margin: 20px 0 20px 0;
+            font-size: 22px;
+        }
+        .webzine .list .swiper-slide a .txt p {
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+            /* 3줄 제한 */
+            height: 4.5em; /* 행간 * 줄수 = 1.5* 3 */
+            -webkit-line-clamp: 3;
+        }
+        .webzine .list .swiper-slide a .txt span {
+            font-size: 15px;
+        }
+        .webzine .more {
+            right: 17px;
+        }
+        .webzine .more a {
+            padding: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #1d1d1d url(../images/notice_more2.svg) no-repeat center center;
+        }
+        .webzine .more a::after {
+            display: none;
+        }
+        .webzine .more a  span{
+            display: none;
+        }
+} /* media */
 
 
 
