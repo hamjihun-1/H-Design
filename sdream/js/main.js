@@ -43,4 +43,12 @@ $(document).ready(function(){
             },
         },
     });
+
+    $('footer .top').on('click', function(){
+        // console.log('클릭')
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500)
+
+    })
 })//맨 끝
