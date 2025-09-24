@@ -33,4 +33,31 @@ $(document).ready(function(){
         $(this).hide()
         $('.visual .ctrl_btn .btn_stop').show()
     })
+
+    /* 브라우저가 스크롤 되면 header에 fixed 클래스 추가
+    1. 조금이라도 스크롤 되면 header fixed 클래스 추가
+    2. 다시 맨위로 올라가면 header에 fixed 클래스를 삭제
+    3. 스크롤이 내려간 상태에서 새로고침 했을 때 header에 fixed 클래스를 추가 
+    
+    ----> 브라우저를 스크롤 할 떄도 체크
+          처음에 로딩했을때도 체크해야함.
+    ----> 동일한 체크를 두번 실행 --> 함수로 처리 */
+    
+    let scrolling
+    function scroll_chk(){ // 함수를 정의한다
+        scrolling = $(window).scrollTop()
+        console.log(scrolling)
+        if(scrolling > 0){
+            $('header').addClass('fixed')
+        }else{
+            $('header').removeClass('fixed')
+        }
+    }
+    //문서가 로딩 됐을때 단 1번 실행
+    scroll_chk()
+    //브라우저가 스크롤 될때마다 1번씩 함수 실행
+    $(window).scroll(function(){
+        scroll_chk()
+    })
+
 })//맨끝

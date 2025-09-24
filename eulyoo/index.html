@@ -15,7 +15,28 @@
 </head>
 <body>
     <div id="wrap">
-        <header></header>
+        <!-- 브라우저 스크롤을 내리면 header에 fixed 클래스 추가 -->
+        <header>
+            <h1 class="logo"><a href="index.html"><span class="blind">을유문화사</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <ul>
+                        <li><a href="#n"><span>을유문화사</span></a></li>
+                        <li><a href="#n"><span>콘텐츠</span></a></li>
+                        <li><a href="#n"><span>을유소식</span></a></li>
+                        <li><a href="#n"><span>독자참여</span></a></li>
+                    </ul>
+                </div>
+                <button class="gnb_close"><span>메뉴닫기</span></button>
+            </nav>
+            <div class="util">
+                <a href="#n" class="mypage"><span class="blind">마이페이지</span></a>
+                <div class="search">
+                    <button class="search_open"><span class="blind">검색열기</span></button>
+                </div>
+            </div>
+        </header>
         <main class="container">
             <section class="visual">
                 <h2 class="blind">팝업</h2>
@@ -55,6 +76,7 @@
                         <h2>을유가 전하는 <br>오늘의 책</h2>
                         <p>당신의 하루에 깊이를 더해줄 책들을 만나보세요.</p>
                     </div>
+                    <div class="list"></div>
                 </div>
             </section> <!--book-->
             <section class="interview">
