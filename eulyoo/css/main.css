@@ -1,0 +1,169 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+section h2, section h3 {
+    font-family: 'Eulyoo1945';
+    font-weight: 700;
+    line-height: 1.3;
+}
+section .tit h2 {
+    font-size: 40px;
+    margin: 0 0 15px 0;
+}
+
+
+@media screen and (max-width:768px){
+        section .tit h2 {
+            font-size: 28px;
+            margin: 0 0 11px 0;
+        }
+}/*@media*/
+
+
+.visual {
+    position: relative; /*ctrl_btn 정렬의 기준*/
+}
+.visual .swiper-slide {
+    height: 100dvh; /* 브라우저 높이에 딱 맞춤 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/visual_bg01.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/visual_bg02.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/visual_bg03.jpg);
+}
+
+.visual .swiper-slide h3 {
+    font-size: 60px;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+    transition: 1s;
+    transition-delay: 0.5s;
+    transform: translateY(30px);
+    opacity: 0;
+}
+.visual .swiper-slide p {
+    margin: 0 0 25dvh 0;
+    transition: 1s;
+    transition-delay: 1s;
+    transform: translateY(30px);
+    opacity: 0;
+}
+.visual .swiper-slide.swiper-slide-active h3 {
+    transform: translateY(0);
+    opacity: 1;
+}
+.visual .swiper-slide.swiper-slide-active p {
+    transform: translateY(0);
+    opacity: 1;
+}
+.visual .ctrl_btn {
+    position: absolute; /* visual을 기준으로 정렬 */
+    bottom: 17dvh;
+    left: calc(50% - 630px);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+.visual .ctrl_btn .paging {
+    bottom: auto;
+    left: auto;
+    width: auto;
+    display: flex;
+    gap: 0 20px;
+}
+.visual .ctrl_btn .paging .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    background: var(--swiper-pagination-bullet-inactive-color, #fff);
+    opacity: 1;
+    margin: 0;
+    position: relative;
+}
+.visual .ctrl_btn .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+.visual .ctrl_btn .btn_stop {
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='12' viewBox='0 0 11 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.90828 11.6667C8.44995 11.6667 8.05759 11.5035 7.7312 11.1771C7.40481 10.8507 7.24162 10.4583 7.24162 10V1.66667C7.24162 1.20833 7.40481 0.815972 7.7312 0.489583C8.05759 0.163194 8.44995 0 8.90828 0C9.36662 0 9.75898 0.163194 10.0854 0.489583C10.4118 0.815972 10.575 1.20833 10.575 1.66667V10C10.575 10.4583 10.4118 10.8507 10.0854 11.1771C9.75898 11.5035 9.36662 11.6667 8.90828 11.6667ZM2.24162 11.6667C1.78328 11.6667 1.39092 11.5035 1.06453 11.1771C0.738146 10.8507 0.574951 10.4583 0.574951 10V1.66667C0.574951 1.20833 0.738146 0.815972 1.06453 0.489583C1.39092 0.163194 1.78328 0 2.24162 0C2.69995 0 3.09231 0.163194 3.4187 0.489583C3.74509 0.815972 3.90828 1.20833 3.90828 1.66667V10C3.90828 10.4583 3.74509 10.8507 3.4187 11.1771C3.09231 11.5035 2.69995 11.6667 2.24162 11.6667Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .ctrl_btn .btn_play {
+    display: none;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.07495 9.3002C0.941618 9.3002 0.824951 9.25436 0.724951 9.1627C0.624951 9.07103 0.574951 8.9502 0.574951 8.8002V1.2002C0.574951 1.0502 0.624951 0.929362 0.724951 0.837695C0.824951 0.746029 0.941618 0.700195 1.07495 0.700195C1.10828 0.700195 1.22495 0.750195 1.42495 0.850195L5.04995 4.4752C5.13329 4.55853 5.19162 4.64186 5.22495 4.7252C5.25829 4.80853 5.27495 4.9002 5.27495 5.0002C5.27495 5.1002 5.25829 5.19186 5.22495 5.2752C5.19162 5.35853 5.13329 5.44186 5.04995 5.5252L1.42495 9.1502C1.37495 9.2002 1.32078 9.2377 1.26245 9.2627C1.20412 9.28769 1.14162 9.3002 1.07495 9.3002Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .ctrl_btn .btn_prev {
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.39995 8.588H14.575C14.8583 8.588 15.0958 8.49217 15.2875 8.3005C15.4791 8.10883 15.575 7.87133 15.575 7.588C15.575 7.30467 15.4791 7.06717 15.2875 6.8755C15.0958 6.68383 14.8583 6.588 14.575 6.588H3.39995L8.29995 1.688C8.49995 1.488 8.59578 1.25467 8.58745 0.988C8.57912 0.721333 8.47495 0.488 8.27495 0.288C8.07495 0.104667 7.84162 0.00883333 7.57495 0.0005C7.30828 -0.00783333 7.07495 0.088 6.87495 0.288L0.274951 6.888C0.174951 6.988 0.104118 7.09633 0.0624514 7.213C0.0207844 7.32967 -4.86374e-05 7.45467 -4.86374e-05 7.588C-4.86374e-05 7.72133 0.0207844 7.84633 0.0624514 7.963C0.104118 8.07967 0.174951 8.188 0.274951 8.288L6.87495 14.888C7.05828 15.0713 7.28745 15.163 7.56245 15.163C7.83745 15.163 8.07495 15.0713 8.27495 14.888C8.47495 14.688 8.57495 14.4505 8.57495 14.1755C8.57495 13.9005 8.47495 13.663 8.27495 13.463L3.39995 8.588Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .ctrl_btn .btn_next {
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.39995 8.588H14.575C14.8583 8.588 15.0958 8.49217 15.2875 8.3005C15.4791 8.10883 15.575 7.87133 15.575 7.588C15.575 7.30467 15.4791 7.06717 15.2875 6.8755C15.0958 6.68383 14.8583 6.588 14.575 6.588H3.39995L8.29995 1.688C8.49995 1.488 8.59578 1.25467 8.58745 0.988C8.57912 0.721333 8.47495 0.488 8.27495 0.288C8.07495 0.104667 7.84162 0.00883333 7.57495 0.0005C7.30828 -0.00783333 7.07495 0.088 6.87495 0.288L0.274951 6.888C0.174951 6.988 0.104118 7.09633 0.0624514 7.213C0.0207844 7.32967 -4.86374e-05 7.45467 -4.86374e-05 7.588C-4.86374e-05 7.72133 0.0207844 7.84633 0.0624514 7.963C0.104118 8.07967 0.174951 8.188 0.274951 8.288L6.87495 14.888C7.05828 15.0713 7.28745 15.163 7.56245 15.163C7.83745 15.163 8.07495 15.0713 8.27495 14.888C8.47495 14.688 8.57495 14.4505 8.57495 14.1755C8.57495 13.9005 8.47495 13.663 8.27495 13.463L3.39995 8.588Z' fill='white'/%3E%3C/svg%3E%0A");
+    transform: rotate(-180deg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width:768px){
+        .visual .swiper-slide {
+            height: 550px; /* 브라우저 높이에 딱 맞춤 */
+        }
+        .visual .swiper-slide h3 {
+            font-size: 32px;
+            margin: 0 0 103px 0;
+            transform: translateY(20px);
+        }
+        .visual .swiper-slide p {
+            display: none;
+        }
+        
+        .visual .ctrl_btn { 
+            position: absolute; /* visual을 기준으로 정렬 */
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .visual .ctrl_btn .btn_prev {
+            display: none;
+        }
+        .visual .ctrl_btn .btn_next {
+            display: none;
+        }
+}/*@media*/
+
+
+
+footer {
+    margin: 1000px 0 0 0;
+}
