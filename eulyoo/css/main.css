@@ -140,7 +140,7 @@ section .tit h2 {
             height: 550px; /* 브라우저 높이에 딱 맞춤 */
         }
         .visual .swiper-slide h3 {
-            font-size: 32px;
+            font-size: 40px;
             margin: 0 0 103px 0;
             transform: translateY(20px);
         }
@@ -149,7 +149,6 @@ section .tit h2 {
         }
         
         .visual .ctrl_btn { 
-            position: absolute; /* visual을 기준으로 정렬 */
             bottom: 35px;
             left: 50%;
             transform: translateX(-50%);
