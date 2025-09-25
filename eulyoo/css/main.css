@@ -389,7 +389,7 @@ header.fixed .gnb .gnb_wrap ul li a {
     background-color: #4F3421;
     color: #fff;
 }
-.book .book_wrap .btn .more a:hover span::after {
+.book .book_wrap .btn .more a:hover::after {
     background-image: url("data:image/svg+xml,%3Csvg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.99981 12.9684C6.84031 12.9684 6.70675 12.9159 6.59912 12.8109C6.49137 12.706 6.4375 12.5759 6.4375 12.4208V7.30965H1.1875C1.02812 7.30965 0.894563 7.25714 0.786813 7.15212C0.678938 7.0471 0.625 6.91701 0.625 6.76185C0.625 6.60657 0.678938 6.47654 0.786813 6.37176C0.894563 6.26686 1.02812 6.21441 1.1875 6.21441H6.4375V1.10328C6.4375 0.948125 6.49144 0.818096 6.59931 0.713196C6.70719 0.608175 6.84081 0.555664 7.00019 0.555664C7.15969 0.555664 7.29325 0.608175 7.40088 0.713196C7.50863 0.818096 7.5625 0.948125 7.5625 1.10328V6.21441H12.8125C12.9719 6.21441 13.1054 6.26692 13.2132 6.37194C13.3211 6.47696 13.375 6.60705 13.375 6.76221C13.375 6.91749 13.3211 7.04752 13.2132 7.1523C13.1054 7.2572 12.9719 7.30965 12.8125 7.30965H7.5625V12.4208C7.5625 12.5759 7.50856 12.706 7.40069 12.8109C7.29281 12.9159 7.15919 12.9684 6.99981 12.9684Z' fill='white'/%3E%3C/svg%3E%0A");
 }    
 /* button 오버 스타일 */
@@ -512,18 +512,18 @@ header.fixed .gnb .gnb_wrap ul li a {
     overflow: hidden;
     height: 404px;
     border-radius: 50px 0 50px 0;
-    transition: 0.5s;
+    position: relative; /* before 정렬의 기준*/
 }
 .interview .list ul li a .photo::before {
     content: "";
-    position: absolute;
+    position: absolute; /* .photo를 기준으로 정렬 */
     left: 0;
     bottom: 0;
     z-index: 10;
     width: 100%;
-    height: 50%;
-    background: linear-gradient(0deg, #000, rgba(0,0,0, 0));
-    opacity: 1;
+    height: 40%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    transition: 0.5s;
 }
 .interview .list ul li a:hover .photo::before {
     opacity: 0;
@@ -536,6 +536,7 @@ header.fixed .gnb .gnb_wrap ul li a {
     height: 100%;
     object-fit: cover;
     filter: grayscale(1);
+    transition: 0.5s;
 }
 .interview .list ul li a:hover .photo img {
     filter: grayscale(0);
@@ -549,7 +550,7 @@ header.fixed .gnb .gnb_wrap ul li a {
     color: #fff;
     padding: 30px 40px 35px 40px;
     border-radius: 50px 0 50px 0;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 .interview .list ul li a:hover .txt {
     background-color: #4F3421;
@@ -592,8 +593,6 @@ header.fixed .gnb .gnb_wrap ul li a {
     left: 50%;
     transform: translateX(-50%);
     top: 150px;
-}
-.interview .more {
     font-family: 'Eulyoo1945';
     font-weight: 700;
     color: #4F3421;
@@ -624,7 +623,7 @@ header.fixed .gnb .gnb_wrap ul li a {
         background-color: #4F3421;
         color: #fff;
     }
-    .interview .more a:hover span::after {
+    .interview .more a:hover::after {
         background-image: url("data:image/svg+xml,%3Csvg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.99981 12.9684C6.84031 12.9684 6.70675 12.9159 6.59912 12.8109C6.49137 12.706 6.4375 12.5759 6.4375 12.4208V7.30965H1.1875C1.02812 7.30965 0.894563 7.25714 0.786813 7.15212C0.678938 7.0471 0.625 6.91701 0.625 6.76185C0.625 6.60657 0.678938 6.47654 0.786813 6.37176C0.894563 6.26686 1.02812 6.21441 1.1875 6.21441H6.4375V1.10328C6.4375 0.948125 6.49144 0.818096 6.59931 0.713196C6.70719 0.608175 6.84081 0.555664 7.00019 0.555664C7.15969 0.555664 7.29325 0.608175 7.40088 0.713196C7.50863 0.818096 7.5625 0.948125 7.5625 1.10328V6.21441H12.8125C12.9719 6.21441 13.1054 6.26692 13.2132 6.37194C13.3211 6.47696 13.375 6.60705 13.375 6.76221C13.375 6.91749 13.3211 7.04752 13.2132 7.1523C13.1054 7.2572 12.9719 7.30965 12.8125 7.30965H7.5625V12.4208C7.5625 12.5759 7.50856 12.706 7.40069 12.8109C7.29281 12.9159 7.15919 12.9684 6.99981 12.9684Z' fill='white'/%3E%3C/svg%3E%0A");
     }    
 }
