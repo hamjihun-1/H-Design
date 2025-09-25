@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+//visual swiper
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
         autoplay: {  /* 팝업 자동 실행 */
@@ -58,6 +59,23 @@ $(document).ready(function(){
     //브라우저가 스크롤 될때마다 1번씩 함수 실행
     $(window).scroll(function(){
         scroll_chk()
-    })
+    })//visual
+
+//book swiper
+    const book_swiper = new Swiper('.book .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            769: {    /* 640px 이상일때 적용 */
+                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+        navigation: {
+            nextEl: '.book .book_wrap .btn .ctrl_btn .btn_next',
+            prevEl: '.book .book_wrap .btn .ctrl_btn .btn_prev',
+        },
+    });//book 
+
 
 })//맨끝
