@@ -129,13 +129,14 @@
             display: none; /*삭제*/
         }
         .container .notice_news .more {
+            position: inherit;
             left: 50%;
             transform: translateX(-50%);
             top: auto;
             bottom: -47px;
+            display: inline-block;
         }
         .container .notice_news .more a {
-            display: inline-block;
             border: 1px solid #004EA2;
             border-radius: 40px;
             padding: 4px 38px 5px 22px;
@@ -144,8 +145,8 @@
             display: none; 
         }
         .container .notice_news .more a::after {
-            right: 71px;
-            top: 8px;
+            right: 15px;
+            top: 9px;
             width: 15px;
             height: 15px;
             background-position: center center;
