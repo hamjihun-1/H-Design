@@ -255,6 +255,114 @@
     }
 }
 
+.sdi {
+    margin: 100px 0 0 0;
+}
+.sdi .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 15px 0;
+}
+.sdi .inner {
+    margin: 94px 0 0 0;
+    display: flex;
+    gap: 0 24px;
+}
+
+.sdi .inner .item {
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    height: 300px;
+    width: calc(25% - 18px);
+    /* 나와 같은 사이즈가 있을때의 사이즈 */
+    padding: 29px 30px 0 30px;
+}
+.sdi .inner .item.career {
+    width: calc(50% - 12px);
+    padding: 0;
+    /* 나와 같은 사이즈가 있을때의 사이즈 */
+}
+.sdi .inner .item h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 10px 0;
+}
+.sdi .inner .career .career_tit {
+    background-color: #1549A4;
+    color: #fff;
+    border-radius: 20px 20px 0 0;
+    padding: 29px 30px 29px 30px;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+.sdi .inner .career .career_tit h3 {
+    color: #fff;
+    margin: 0;
+}
+.sdi .inner .career .career_list ul {
+    display: flex;
+    margin: 120px 0 0 0;
+}
+.sdi .inner .career .career_list ul li {
+    width: 33.33%;
+    text-align: center;
+}
+.sdi .inner .career .career_list ul li a {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.sdi .inner .career .career_list ul li a br {
+    display: none;
+}
+@media screen and (max-width:1024px){
+        .sdi .inner .career .career_list ul li a br {
+            display: block;
+        }
+}/*@media*/
+@media screen and (max-width:768px){
+        .sdi .tit h2 {
+            font-size: 32px;
+            margin: 0 0 12px 0;
+        }
+        .sdi .inner .item h3 {
+            font-size: 20px;
+            margin: 0 0 5px 0;
+        }
+        .sdi .inner .career .career_tit {
+            gap: 0 16px;
+        }
+        .sdi .inner .career .career_list ul li {
+            width: 33.33%;
+            text-align: center;
+        }
+        .sdi .inner .career .career_list ul li a {
+            font-size: 18px;
+        }
+        .sdi .inner .career .career_list ul li a br {
+            display: none;
+        }
+        .sdi .inner {
+            flex-wrap: wrap; /*2줄 허용*/
+            gap: 16px 16px;
+        }
+        .sdi .inner .item {
+            width: calc(50% - 8px);
+        }
+        .sdi .inner .item.career {
+            width: 100%;
+        }
+
+
+}/*@media*/
+
 body {
     margin: 0 0 200px 0;
 }
