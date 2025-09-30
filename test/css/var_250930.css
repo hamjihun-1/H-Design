@@ -1,0 +1,292 @@
+@import url(common.css);
+
+.test {
+    margin: 100px 0 0 0;
+}
+.test h2 {
+    font-size: 40px;
+}
+.test h2 strong {
+    font-size: 20px;
+}
+.test h3 {
+    font-size: 2.5em;
+}
+.test h3 strong {
+    font-size: 2em;
+}
+.test h4 {
+    font-size: 2.5rem;
+}
+.test h4 strong {
+    font-size: 2rem;
+}
+.test h5 {
+    font-size: 2vw;
+}
+.test h5 strong {
+    font-size: 1vw;
+}
+.test h6 {
+    font-size: clamp(28px, 3vw, 40px);
+}
+
+.news {
+    margin: 144px 0 0 0;
+}
+.news .wrapper {
+    display: flex;
+    position: relative; /*more 정렬의 기준*/
+}
+.news .tit {
+    width: 34%;
+    /* 1260px 중 428px */
+}
+.news .list {
+    width: 66%;
+    /* 1260px 중 832px */
+}
+.news .list ul li {
+    border-bottom: 1px solid #ccc;
+}
+.news .list ul li:first-child {
+    border-top: 1px solid #ccc;
+}
+.news .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 0 37px 0;
+}
+.news .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    color: #1d1d1d;
+    
+    /* 1줄 제한 */
+    width: calc(100% - 145px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news .tit h2 {
+    font-size: var(--tit-font-size);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 10px 0;
+}
+.news .tit h2 span {
+    display: block; 
+    /*span 태그와 다른글자가 줄바꿈이 발생
+      span 태그는 block요소가 되면 다른 태그나 글자가 옆에 존재 할 수 없음
+      자동으로 다음 글자는 줄이 바꾸게 됨*/
+}
+.news .more {
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    left: 0;
+    bottom: 50%;
+}
+.news .more a {
+    display: flex; /*span - i 좌우배치*/
+    align-items: center;
+    gap: 0 5px;
+}
+.news .more a i {
+    width: 12px;
+}
+.news .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:768px){
+        .news {
+            margin: 108px 0 0 0;
+        }
+        .news .wrapper {
+            display: block;
+        }
+        .news .tit {
+            width: auto;
+        }
+        .news .tit h2 {
+            margin: 0;
+        }
+        .news .tit h2 span {
+            display: none; 
+        }
+        .news .tit p {
+            display: none;
+        }
+        .news .list {
+            width: auto;
+            margin: 34px 0 0 0;
+        }
+        .news .list ul li a {
+            display: block;
+            padding: 15px 0 15px 0;
+        }
+        .news .list ul li a h3 {
+            margin: 0 0 5px 0;
+            /* 1줄 제한 -> 무제한*/
+            width: auto;
+            white-space: wrap;
+            overflow: visible;
+        }
+        .news .more {
+            position: absolute; /*wrapper를 기준으로 정렬*/
+            left: auto;
+            bottom: auto;
+            right: 0;
+            top: 0;
+        }
+        .news .more a {
+            justify-content: center;
+            /* i를 가운데 배치해야 하는데 flex를 유지하고 flex로 정렬 */
+            gap: 0;
+            border: 1px solid #555;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+        }
+        .news .more a span {
+            display: none; /*글자 숨김*/
+        }
+        .news .more a i {
+            width: 15px;
+            height: 50%;
+        }
+}
+
+
+
+.notice {
+    margin: 104px 0 0 0;
+    padding: 144px 0 104px 0;
+    background-color: #111;
+    color: rgba(255, 255, 255, 0.8);
+}
+.notice .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /*more 정렬의 기준*/
+}
+.notice .tit h2 {
+    font-size: var(--tit-font-size);
+    color: #fff;
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 10px 0;
+}
+.notice .tit h2 span {
+    display: block;
+}
+.notice .list {
+    max-width: 832px; /*최대넓이*/
+    width: calc(100% - 235px);
+}
+.notice .list ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.notice .list ul li:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.notice .list ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px 0 36px 0;
+}
+.notice .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    color: #fff;
+
+    /* 1줄 제한 */
+    width: calc(100% - 145px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice .more {
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    left: 0;
+    bottom: 50%;
+}
+.notice .more a {
+    display: flex; /*span - i 좌우배치*/
+    align-items: center;
+    gap: 0 5px;
+}
+.notice .more a i {
+    width: 12px;
+}
+.notice .more a i svg  {
+    width: 100%;
+    height: 100%;
+}
+.notice .more a i svg path {
+    fill: rgba(255, 255, 255, 0.8);
+}
+
+
+@media screen and (max-width:768px){
+        .notice {
+            margin: 100px 0 0 0;
+            padding: 84px 0 84px 0;
+        }
+        .notice .wrapper {
+            flex-direction: column; /* flex를 유지하고 방향을 세로로 바꿈 */
+            gap: 34px 0;
+        }
+        .notice .tit h2 {
+            margin: 0;
+        }
+        .notice .tit h2 span {
+            display: none;
+        }
+        .notice .tit p {
+            display: none;
+        }
+        .notice .list {
+            max-width: 100%; /*최대넓이*/
+            width: auto;
+        }
+        .notice .list ul li a {
+            flex-direction: column; /* flex를 유지하면서 세로방향으로 전환 */
+            align-items: flex-start; /* center -> flex-start */
+            padding: 15px 0 15px 0;
+        }
+        .notice .list ul li a h3 {
+            margin: 0 0 15px 0;
+            /* 1줄 제한 -> 무제한 */
+            width: auto;
+            white-space: wrap;
+            overflow: visible;
+        }
+        .notice .more {
+            position: relative; /* absolute -> relative */
+            left: auto;
+            bottom: auto;
+            /* li하고 more의 여백은 wrapper가 준 gap으로 처리 */
+            display: flex;
+            justify-content: center
+        }
+        .notice .more a {
+            display: flex; /*span - i 좌우배치*/
+            align-items: center;
+            gap: 0 5px;
+            padding: 5px 14px 5px 18px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .notice .more a i {
+            width: 12px;
+        }
+        .notice .more a i svg  {
+            width: 100%;
+            height: 100%;
+        }
+        .notice .more a i svg path {
+            fill: rgba(255, 255, 255, 0.8);
+        }
+}
