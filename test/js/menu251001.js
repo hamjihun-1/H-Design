@@ -43,16 +43,19 @@ $(document).ready(function(){
         header .gnb .gnb_wrap ul.depth1 > li에 open 클래스 추가
     */
     $('header .gnb .gnb_wrap ul.depth1 > li').on('click', function(){
-        let open_ture = $('this').hasClass('open')
-        console.log('open_ture')
+        let open_ture = $(this).hasClass('open')
+        console.log(open_ture)
         if(open_ture == true){ //열려있다면
             $(this).removeClass('open')
         }else{ //닫혀있다면
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
             $(this).addClass('open')
+
         }
         
     })
+
+
     /*
         header .gnb .gnb_open를 클릭하면 메뉴가 열림
                     header에 menu_open 클래스 추가
@@ -62,8 +65,10 @@ $(document).ready(function(){
     $('header .gnb .gnb_open').on('click', function(){
         $('header').addClass('menu_open')
     })
-    $('header .gnb .gnb_open').on('click', function(){
+    $('header .gnb .gnb_close').on('click', function(){
         $('header').removeClass('menu_open')
     })
+
+
 
 })//맨아래
