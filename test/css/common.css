@@ -94,10 +94,10 @@ button {
     좌우 여백 3% 1260 * 0.06(3%+3%=6%) = 75.6 + 1260 = 1360.8
     좌우 여백 30px 1260 + 30 + 30 = 1260 + 60 = 1320
 */
-@media screen and (max-width:1360.8px){
+@media screen and (max-width:1320px){
         .wrapper {
             width: auto;
-            margin: 0 4%;
+            margin: 0 30px;
         }
 }
 @media screen and (max-width:768px){
