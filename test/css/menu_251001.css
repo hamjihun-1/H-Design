@@ -64,13 +64,6 @@ header .util .search .search_open i {
     height: 25px;
 }
 
-
-
-
-
-
-
-
 @media screen and (min-width:1025px){ /* pc버전일때만 적용 */
     header .gnb .gnb_open,
     header .gnb .gnb_close {
@@ -104,7 +97,6 @@ header .util .search .search_open i {
         text-align: center;
         color: #555;
     }
-
     
     /* 메뉴가 열렸을 때 header에 menu_over가 들어갔을 때 */
     header.menu_over {
@@ -164,6 +156,7 @@ header .util .search .search_open i {
         fill: #1d1d1d;
     }
 }/*@media*/
+
 @media screen and (max-width:1024px){
     /* 1024이하일 때 - 즉 메뉴가 모바일 버전으로 변경 */
     header {
@@ -276,8 +269,6 @@ header .util .search .search_open i {
     }
 
 }
-
-
 
 .visual {
     height: 100dvh;
