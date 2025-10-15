@@ -1,0 +1,132 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.visual {
+    position: relative; /* ctrl_btn 정렬의 기준 */
+}
+.visual .swiper-slide {
+    height: 100dvh; /* 브라우저 높이 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+
+    display: flex; /* wrapper를 하단으로 배치하기 위해 */
+    align-items: flex-end;
+}
+.visual .swiper-slide.pop1 {
+    background-image: url(../images/visual_bg01.jpg);
+}
+.visual .swiper-slide.pop2 {
+    background-image: url(../images/visual_bg02.jpg);
+}
+.visual .swiper-slide.pop3 {
+    background-image: url(../images/visual_bg03.jpg);
+}
+.visual .swiper-slide p {
+    font-size: 60px;
+    font-weight: var(--font-weight-tit);
+    margin: 0 0 calc(20dvh + 100px) 0;
+    /* 글자 나타나는 효과 */
+    transition: 1s;
+    transition-delay: 0.3s;
+    transform: translate(0, 100px);
+    opacity: 0;
+}
+.visual .swiper-slide p br.mo_only {
+    display: none;
+}
+.visual .swiper-slide.swiper-slide-active p {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.visual .ctrl_btn {
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: calc(50% - 630px);
+    bottom: 20%;
+    z-index: 1;
+    display: flex;
+    gap: 0 13px;
+}
+.visual .ctrl_btn .paging {
+    display: flex;
+    align-items: center;
+    font-weight: var(--font-weight-tit);
+    color: var(--color-white);
+}
+.visual .ctrl_btn .paging .bar {
+    width: 136px;
+    height: 2px;
+    background-color: var(--color-white50);
+    margin: 0 10px;
+    position: relative; /* before 정렬의 기준 */
+}
+.visual .ctrl_btn .paging .bar span {
+    position: absolute; /* bar를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-white);
+}
+.visual .ctrl_btn .stop,
+.visual .ctrl_btn .play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+}
+.visual .ctrl_btn .play {
+    display: none; /* 숨김처리 */
+}
+.visual .ctrl_btn .stop i {
+    display: block;
+    width: 10px;
+    /* 이미지나 svg 아이콘은 넓이만 넣어줘도 높이는 비율에 맞게 들어감 */
+}
+.visual .ctrl_btn .play i {
+    display: block;
+    width: 11px;
+}
+
+
+@media screen and (max-width:1360px){
+    .visual .ctrl_btn {
+        left: 50px;
+    }
+}/*media*/
+
+@media screen and (max-width:768px){
+    .visual .swiper-slide {
+        height: 500px; /* 브라우저 높이 */
+    }
+    .visual .swiper-slide p {
+        font-size: 32px;
+        margin: 0 0 85px 0;
+        /* 글자 나타나는 효과 */
+        transform: translate(0, 20px);
+    }
+    .visual .swiper-slide p br.mo_only {
+        display: block;
+    }
+    .visual .swiper-slide p br.pc_only {
+        display: none;
+    }
+    .visual .ctrl_btn {
+        left: 16px;
+        bottom: 35px;
+        gap: 0 10px;
+    }
+    .visual .ctrl_btn .paging .bar {
+        width: 80px;
+    }
+}/*media*/
+
+
+
+
+footer {
+    margin: 500px;
+}

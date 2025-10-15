@@ -1,0 +1,21 @@
+/* 서체 */
+@font-face {
+    font-family: 'Netmarble';
+    src: url('../fonts/netmarbleL.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Netmarble';
+    src: url('../fonts/netmarbleM.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Netmarble';
+    src: url('../fonts/netmarbleB.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
