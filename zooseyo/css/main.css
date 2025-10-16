@@ -2,6 +2,236 @@
 @import url(fonts.css);
 @import url(common.css);
 
+/* :root {
+    --font-size-basic : 17px;
+    --font-size-tit : 50px;
+    --font-size-tit2 : 24px;
+    --font-weight-basic : 400;
+    --font-weight-bold : 700;
+    --line-height-basic : 1.5;
+    --line-height-tit : 1.3;
+    --color-main : #E27A3F;
+    --color-main2 : #E05C5C;
+    --color-sub : #0E76DE;
+    --color-white : #fff;
+    --color-white60 : rgba(255, 255, 255, 0.6);
+    --color-white50 : rgba(255, 255, 255, 0.5);
+    --color-white20 : rgba(255, 255, 255, 0.2);
+    --color-line : #444;
+    --color-line2 : rgba(204, 204, 204, 0.7);
+    --background-color : #091626;
+    --footer-bg-color : #161616;
+    --header-h : 90px;
+    --wrapper-m : 50px;
+} */
+
+
+header {
+    position: fixed; /* body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: var(--header-h);
+    color: var(--color-white);
+    fill: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--wrapper-m);
+}
+header .logo a {
+    display: block;
+    width: 243px;
+    height: 45px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+header .util {
+    display: flex;
+    gap: 0 11px;
+}
+header .util .search .sch_open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+}
+header .util .search .sch_open i {
+    display: block;
+    width: 26.25px;
+    padding: 7px 0 0 0;
+}
+header .util .mypage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+}
+header .util .mypage i {
+    display: block;
+    width: 29.17px;
+    padding: 7px 0 0 0;
+}
+/**********************시작 : pc버전 메뉴*************************/
+/* 1024 이하는 메뉴가 접힘 1025 이상일 때 스타일 */
+@media screen and (min-width:1025px){
+    header .gnb .gnb_open,
+    header .gnb .gnb_wrap .gnb_logo,
+    header .gnb .gnb_wrap .gnb_close {
+        display: none; /* 모바일에서만 보임 */
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: flex; /* li를 좌우로 배치 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li {
+        position: relative; /* depth2 정렬의 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        font-size: 20px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--header-h);
+        padding: 0 1.6em;
+        white-space: nowrap; /* 행간이 높아서 2줄이 되면 이상함. 무조건 1줄로 나오게 함 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        position: absolute; /* ul.depth1 li를 기준으로 정렬 */
+        left: 50%;
+        transform: translateX(-50%);
+        top: var(--header-h) ;
+        background-color: var(--color-white);
+        border-radius: 0  0 10px 10px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        color: #767676;
+        min-width: 100%; /* li 넓이의 100% */
+        padding: 25px 30px;
+        display: none; /* 오버 시 나타남 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        padding: 8px 0;
+        white-space: nowrap;
+        text-align: center;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a > span {
+        position: relative; /* before 정렬의 기준 */
+    }
+
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+        font-weight: var(--font-weight-bold);
+        color: #FF4E00;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover > span::before {
+        content: "";
+        position: absolute; /* span을 기준으로 정렬 */
+        left: -16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='11' viewBox='0 0 10 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.25 5.0625C0.9 5.0625 0.604167 4.94167 0.3625 4.7C0.120833 4.45833 0 4.1625 0 3.8125C0 3.4625 0.120833 3.16667 0.3625 2.925C0.604167 2.68333 0.9 2.5625 1.25 2.5625C1.6 2.5625 1.89583 2.68333 2.1375 2.925C2.37917 3.16667 2.5 3.4625 2.5 3.8125C2.5 4.1625 2.37917 4.45833 2.1375 4.7C1.89583 4.94167 1.6 5.0625 1.25 5.0625ZM3.5 3.0625C3.15 3.0625 2.85417 2.94167 2.6125 2.7C2.37083 2.45833 2.25 2.1625 2.25 1.8125C2.25 1.4625 2.37083 1.16667 2.6125 0.925C2.85417 0.683333 3.15 0.5625 3.5 0.5625C3.85 0.5625 4.14583 0.683333 4.3875 0.925C4.62917 1.16667 4.75 1.4625 4.75 1.8125C4.75 2.1625 4.62917 2.45833 4.3875 2.7C4.14583 2.94167 3.85 3.0625 3.5 3.0625ZM6.5 3.0625C6.15 3.0625 5.85417 2.94167 5.6125 2.7C5.37083 2.45833 5.25 2.1625 5.25 1.8125C5.25 1.4625 5.37083 1.16667 5.6125 0.925C5.85417 0.683333 6.15 0.5625 6.5 0.5625C6.85 0.5625 7.14583 0.683333 7.3875 0.925C7.62917 1.16667 7.75 1.4625 7.75 1.8125C7.75 2.1625 7.62917 2.45833 7.3875 2.7C7.14583 2.94167 6.85 3.0625 6.5 3.0625ZM8.75 5.0625C8.4 5.0625 8.10417 4.94167 7.8625 4.7C7.62083 4.45833 7.5 4.1625 7.5 3.8125C7.5 3.4625 7.62083 3.16667 7.8625 2.925C8.10417 2.68333 8.4 2.5625 8.75 2.5625C9.1 2.5625 9.39583 2.68333 9.6375 2.925C9.87917 3.16667 10 3.4625 10 3.8125C10 4.1625 9.87917 4.45833 9.6375 4.7C9.39583 4.94167 9.1 5.0625 8.75 5.0625ZM2.325 10.0625C1.95 10.0625 1.63542 9.91875 1.38125 9.63125C1.12708 9.34375 1 9.00417 1 8.6125C1 8.17917 1.14792 7.8 1.44375 7.475C1.73958 7.15 2.03333 6.82917 2.325 6.5125C2.56667 6.25417 2.775 5.97292 2.95 5.66875C3.125 5.36458 3.33333 5.07917 3.575 4.8125C3.75833 4.59583 3.97083 4.41667 4.2125 4.275C4.45417 4.13333 4.71667 4.0625 5 4.0625C5.28333 4.0625 5.54583 4.12917 5.7875 4.2625C6.02917 4.39583 6.24167 4.57083 6.425 4.7875C6.65833 5.05417 6.86458 5.34167 7.04375 5.65C7.22292 5.95833 7.43333 6.24583 7.675 6.5125C7.96667 6.82917 8.26042 7.15 8.55625 7.475C8.85208 7.8 9 8.17917 9 8.6125C9 9.00417 8.87292 9.34375 8.61875 9.63125C8.36458 9.91875 8.05 10.0625 7.675 10.0625C7.225 10.0625 6.77917 10.025 6.3375 9.95C5.89583 9.875 5.45 9.8375 5 9.8375C4.55 9.8375 4.10417 9.875 3.6625 9.95C3.22083 10.025 2.775 10.0625 2.325 10.0625Z' fill='%23FF4E00'/%3E%3C/svg%3E%0A");
+    }
+
+    /* 메뉴에 오버했을 때 */
+
+    header.menu_pc {
+        background-color: var(--color-white);
+        color: #161616;
+        fill : #161616;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    }
+    header.menu_pc .logo a {
+        background: url(../images/logo.svg)
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a {
+        color: #FF4E00;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a > span {
+        position: relative;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a > span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 2px;
+        background-color: #FF4E00;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
+        display: block;
+    }
+}/*@media*/
+/* 1025이상에서 1280이하 그 사이에서만 적용 */
+@media screen and (min-width:1025px) and (max-width:1200px) {
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        font-size: 18px;
+    }
+    header .logo a {
+        width: 190px;
+    }
+    header .util .search .sch_open {
+        width: 22px;
+        height: 22px;
+    }
+    header .util .mypage {
+        width: 23px;
+        height: 23px;
+    }
+}
+/**********************끝 : pc버전 메뉴*************************/
+
+/**********************시작 : 모바일버전 메뉴*************************/
+@media screen and (max-width:1024px){
+    header {
+        padding-right: 0;
+        height: clamp(60px, 9vw, 90px);
+    }
+    header .logo a {
+        /* width: 108.15px;
+        height: 20px; */
+        width: clamp(108.15px, 17vw, 243.33px);
+        /* 최소값, 평소의 값, 최대값 */
+    }
+    header .util {
+        display: none; /* 숨김 */
+    }
+    header .gnb .gnb_open {
+        display: flex; /* i 태그 가운데 정렬 */
+        justify-content: center;
+        align-items: center;
+        width: clamp(60px, 9vw, 90px);
+        height: clamp(60px, 9vw, 90px);
+    }
+    header .gnb .gnb_open i {
+        display: block;
+        width: 36.16%;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+        position: absolute; /* header를 기준으로 정렬 */
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100dvh;
+        background-color: var(--color-white);
+        color: #161616;
+        fill : #161616;
+    }
+
+    /* 메뉴가 열렸을 때 */
+    header.menu_mo .gnb .gnb_wrap {
+        display: block;
+    }
+
+}/*@media*/
+/**********************끝 : 모바일버전 메뉴*************************/
+
 .visual {
     position: relative; /* ctrl_btn 정렬의 기준 */
 }
@@ -25,8 +255,8 @@
     background-image: url(../images/visual_bg03.jpg);
 }
 .visual .swiper-slide p {
-    font-size: 60px;
-    font-weight: var(--font-weight-tit);
+    font-size: clamp(32px, 5vw, 60px);
+    font-weight: var(--font-weight-bold);
     margin: 0 0 calc(20dvh + 100px) 0;
     /* 글자 나타나는 효과 */
     transition: 1s;
@@ -52,7 +282,7 @@
 .visual .ctrl_btn .paging {
     display: flex;
     align-items: center;
-    font-weight: var(--font-weight-tit);
+    font-weight: var(--font-weight-bold);
     color: var(--color-white);
 }
 .visual .ctrl_btn .paging .bar {
@@ -98,12 +328,11 @@
     }
 }/*media*/
 
-@media screen and (max-width:768px){
+@media screen and (max-width:1024px){
     .visual .swiper-slide {
         height: 500px; /* 브라우저 높이 */
     }
     .visual .swiper-slide p {
-        font-size: 32px;
         margin: 0 0 85px 0;
         /* 글자 나타나는 효과 */
         transform: translate(0, 20px);
@@ -113,7 +342,7 @@
     }
     .visual .swiper-slide p br.pc_only {
         display: none;
-    }
+    }   
     .visual .ctrl_btn {
         left: 16px;
         bottom: 35px;
