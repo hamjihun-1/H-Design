@@ -19,7 +19,8 @@
     --background-color : #091626;
     --footer-bg-color : #161616;
     --header-h : 90px;
-    --wrapper-m : 50px;
+    --header-var : clamp(60px, 9vw, 90px);
+    --wrapper-margin : 50px;
 }
 
 
@@ -29,7 +30,7 @@
         --font-size-tit : 28px;
         --font-size-tit2 : 19px;
         --header-h : 60px;
-        --wrapper-m : 16px;
+        --wrapper-margin : 16px;
     }   
 } /*@media*/
 

@@ -85,8 +85,6 @@ $(document).ready(function(){
  * pc버전에서만...
  * 메뉴를 오버해서 바뀐 색상의 영역 내부에서는 오버가 유지되고 그 밖에 나갈 때 아웃
 */
-
-
 $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
     if(device_status == 'pc'){ // PC일 때만 동작
         // console.log('over')
@@ -94,7 +92,6 @@ $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
         $(this).addClass('over')
     }
-        
 })
 $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
     $(this).removeClass('over')
@@ -105,19 +102,31 @@ $('header').on('mouseleave', function(){
 $('header .util .search .sch_open').on('focusin', function(){
     $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
 })
-
-
-
 /************header 메뉴 over::끝************/
 
 
+/************모바일 메뉴 1차 open::시작***********
+ * 닫혀있는 메뉴를 클릭하면 기존에 열려있던 다른 메뉴를 닫고 나만 열기 (li open 클래스 추가)
+ * 열려있는 메뉴를 클릭하면 나 자신을 닫고 끝남
+ * 열린 메뉴, 닫힌메뉴를 구분하는 방법 -- open있으면 열린메뉴, 없으면 닫힌메뉴
+ * 1차메뉴 a의 링크를 삭제 (링크 이동 제한을 건다)
+*/
+$('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+    if(device_status == 'mobile'){
+        e.preventDefault();
+        if($(this).parent().hasClass('open') == true){ //열려있는 메뉴를 다시 클릭 했을 때
+            $(this).parent().removeClass('open') // li에 open 클래스 삭제
+            $(this).next().slideUp() // 2차메뉴를 슬라이드로 닫기
+        }else{ // 열려있지 않은 다른 메뉴를 여는 거
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open') // 모든 li의 open을 삭제
+            $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp() // 모든 2차메뉴 닫기
+            $(this).parent().addClass('open')
+            $(this).next().slideDown() // 2차메뉴를 슬라이드로 열기
+        }
+    }
+})
 
 
-
-
-
-
-
-
+/************모바일 메뉴 1차 open::끝************/
 
 })//맨 끝
