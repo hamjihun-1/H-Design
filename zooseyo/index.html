@@ -17,8 +17,9 @@
 <body>
     <div id="wrap">
         <!-- pc버전에서 메뉴에 오버하면 menu_pc 클래스 추가
-             모바일버전에서 메뉴를 열면 menu_mo 클래스 추가 -->
-        <header class="menu_mo">
+             모바일버전에서 메뉴를 열면 menu_mo 클래스 추가
+             header가 상단에 고정될 때 fiexd 클래스 추가  -->
+        <header>
             <h1 class="logo"><a href="index.html"><span class="blind">유기동물보호센터</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open">
@@ -178,8 +179,430 @@
                 </div> <!--ctrl_btn-->
             </section> <!--visual-->
             <section class="find">
-                
-            </section> <!--find-->
+                <div class="wrapper">
+                    <h2>찾습니다</h2>
+                    <div class="tab_list">
+                        <ul>
+                            <!-- 선택된 탭에는 active 클래스 추가 
+                                 button안에 span태그한테 선택됨이라고 글자를 써줌 -->
+                            <li class="item1">
+                                <button>아이찾기<span class="blind">선택됨</span></button>
+                            </li>
+                            <li class="item2 active">
+                                <button>보호자찾기<span class="blind"></span></button>
+                            </li>
+                        </ul>
+                    </div> <!--tab_list-->
+                    <div class="tab_content">
+                        <!--  선택된 tab_item은 active 클래스가 추가 title에 선택됨이라고 써줌 -->
+                        <div class="tab_item item1 active" title="선택됨">
+                            <h3 class="blind">아이찾기</h3>
+                            <div class="list">
+                                <div class="swiper">
+                                    <ul class="swiper-wrapper"> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_01.jpg" alt="">
+                                                    <div class="date">흑돌</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>충북 진천군</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-18</span>
+                                                        </li>
+                                                            <strong>내용</strong>
+                                                            <span>회사에서 키우는 강아지인데 목줄을 풀고 도망갓어요. 이제 날이 추워지는데 혹시라도 보신 분 있으시면 꼭 좀 연락 부탁 드립니다!</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_02.jpg" alt="">
+                                                    <div class="date">복돌이</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>부산 서구</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-17</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>내용</strong>
+                                                            <span>집에서 잠시 문열린 사이 나감.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_03.jpg" alt="">
+                                                    <div class="date">복슬이</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>포메라니안</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>	경기 송산면</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-16</span>
+                                                        </li>
+                                                            <strong>내용</strong>
+                                                            <span>사람을 잘 따르고 겁이 많아요.낯선 곳에서 떨고 있을 수 있습니다.제발 제보 부탁드립니다!</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_04.jpg" alt="">
+                                                    <div class="date">슈나이더</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>러시안 블루</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>충남 금산군</span>
+                                                        </li>   
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-13</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>내용</strong>
+                                                            <span>고양이가 원래 마당에 나가 놀다가 갑자기 사라짐. 제발 제보 부탁드립니다!</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_05.jpg" alt="">
+                                                    <div class="date">시로</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>시바견</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>경북 영덕군</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>내용</strong>
+                                                            <span>남자 화장실 근처에 잠깐 놓아놨는데 사라짐. 제발 제보 부탁드립니다!</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_06.jpg" alt="">
+                                                    <div class="date">점박이</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>브리시티 숏헤어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>경기 시흥시</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-07</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>내용</strong>
+                                                            <span>토요일 오후 8시 즈음 아파트 부근에서 사라짐. 제발 제보 부탁드립니다!</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ctrl_btn">
+                                <button class="prev">
+                                    <span class="blind">이전팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.8125 8.24867L8.375 11.8112C8.625 12.0612 8.74479 12.3528 8.73438 12.6862C8.72396 13.0195 8.60417 13.3112 8.375 13.5612C8.125 13.8112 7.82812 13.9414 7.48438 13.9518C7.14062 13.9622 6.84375 13.8424 6.59375 13.5924L0.875 7.87367C0.625 7.62367 0.5 7.33201 0.5 6.99867C0.5 6.66534 0.625 6.37367 0.875 6.12367L6.59375 0.404922C6.84375 0.154922 7.14062 0.0351302 7.48438 0.0455469C7.82812 0.0559635 8.125 0.186172 8.375 0.436172C8.60417 0.686172 8.72396 0.977839 8.73438 1.31117C8.74479 1.64451 8.625 1.93617 8.375 2.18617L4.8125 5.74867H18.75C19.1042 5.74867 19.401 5.86846 19.6406 6.10805C19.8802 6.34763 20 6.64451 20 6.99867C20 7.35284 19.8802 7.64971 19.6406 7.8893C19.401 8.12888 19.1042 8.24867 18.75 8.24867H4.8125Z">
+                                        </svg>
+                                    </i>
+                                </button>
+                                <button class="next">
+                                    <span class="blind">다음팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.1875 8.24867L11.625 11.8112C11.375 12.0612 11.2552 12.3528 11.2656 12.6862C11.276 13.0195 11.3958 13.3112 11.625 13.5612C11.875 13.8112 12.1719 13.9414 12.5156 13.9518C12.8594 13.9622 13.1562 13.8424 13.4062 13.5924L19.125 7.87367C19.375 7.62367 19.5 7.33201 19.5 6.99867C19.5 6.66534 19.375 6.37367 19.125 6.12367L13.4062 0.404922C13.1562 0.154922 12.8594 0.0351302 12.5156 0.0455469C12.1719 0.0559635 11.875 0.186172 11.625 0.436172C11.3958 0.686172 11.276 0.977839 11.2656 1.31117C11.2552 1.64451 11.375 1.93617 11.625 2.18617L15.1875 5.74867H1.25C0.895832 5.74867 0.598959 5.86846 0.359375 6.10805C0.119791 6.34763 0 6.64451 0 6.99867C0 7.35284 0.119791 7.64971 0.359375 7.8893C0.598959 8.12888 0.895832 8.24867 1.25 8.24867H15.1875Z">
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                            <a href="#n" class="more">
+                                <span>더보기</span>
+                                <i>
+                                    <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 8H1C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H6V1C6 0.716667 6.09583 0.479167 6.2875 0.2875C6.47917 0.0958333 6.71667 0 7 0C7.28333 0 7.52083 0.0958333 7.7125 0.2875C7.90417 0.479167 8 0.716667 8 1V6H13C13.2833 6 13.5208 6.09583 13.7125 6.2875C13.9042 6.47917 14 6.71667 14 7C14 7.28333 13.9042 7.52083 13.7125 7.7125C13.5208 7.90417 13.2833 8 13 8H8V13C8 13.2833 7.90417 13.5208 7.7125 13.7125C7.52083 13.9042 7.28333 14 7 14C6.71667 14 6.47917 13.9042 6.2875 13.7125C6.09583 13.5208 6 13.2833 6 13V8Z">
+                                    </svg>
+                                </i>
+                            </a>
+                        </div> <!--tab_item-->
+                        <div class="tab_item item2">
+                            <h3 class="blind">보호자찾기</h3>
+                            <div class="list">
+                                <div class="swiper">
+                                    <ul class="swiper-wrapper"> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_01.jpg" alt="">
+                                                    <div class="date">임시 보호 중</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>충남 금산군</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-13</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>내용</strong>
+                                                            <span>고양이가 원래 마당에 나가 놀다가 갑자기 사라짐. 제발 찾아주세요</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_02.jpg" alt="">
+                                                    <div class="date">유기 추정</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>말티푸</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>서울 서대문구</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-08</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>내용</strong>
+                                                            <span>집에서 키우는 애긴데 친동생인 주인이랑 놀다가 갑자기 사라짐. 제발 찾아주세요</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_03.jpg" alt="">
+                                                    <div class="date">보호소 대기</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>푸들</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>경기 시흥시</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-07</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>내용</strong>
+                                                            <span>고양이가 원래 마당에 나가 놀다가 갑자기 사라짐. 제발 찾아주세요</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_04.jpg" alt="">
+                                                    <div class="date">입양 필요</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>미니어처 핀셔</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>충남 금산군</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-13</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>내용</strong>
+                                                            <span>집에서 키우는 애긴데 친동생인 주인이랑 놀다가 갑자기 사라짐. 제발 찾아주세요</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_05.jpg" alt="">
+                                                    <div class="date">입양 필요</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>프렌치 불독</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>울산 중구</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-13</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>내용</strong>
+                                                            <span>만 여덟살이고 사진처럼 한쪽볼에 황색 점마냥 보이며 한살때 중성화로 한쪽귀가 살짝 잘렸습니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_06.jpg" alt="">
+                                                    <div class="date">보호소 대기</div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>장소</strong>
+                                                            <span>경남 거제시</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>날짜</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong>내용</strong>
+                                                            <span>10윌11일 토요일거제도 대포마을 항구쪽주차장 에서 서성이는걸 주민분들 목격하심</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ctrl_btn">
+                                <button class="prev">
+                                    <span class="blind">이전팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.8125 8.24867L8.375 11.8112C8.625 12.0612 8.74479 12.3528 8.73438 12.6862C8.72396 13.0195 8.60417 13.3112 8.375 13.5612C8.125 13.8112 7.82812 13.9414 7.48438 13.9518C7.14062 13.9622 6.84375 13.8424 6.59375 13.5924L0.875 7.87367C0.625 7.62367 0.5 7.33201 0.5 6.99867C0.5 6.66534 0.625 6.37367 0.875 6.12367L6.59375 0.404922C6.84375 0.154922 7.14062 0.0351302 7.48438 0.0455469C7.82812 0.0559635 8.125 0.186172 8.375 0.436172C8.60417 0.686172 8.72396 0.977839 8.73438 1.31117C8.74479 1.64451 8.625 1.93617 8.375 2.18617L4.8125 5.74867H18.75C19.1042 5.74867 19.401 5.86846 19.6406 6.10805C19.8802 6.34763 20 6.64451 20 6.99867C20 7.35284 19.8802 7.64971 19.6406 7.8893C19.401 8.12888 19.1042 8.24867 18.75 8.24867H4.8125Z">
+                                        </svg>
+                                    </i>
+                                </button>
+                                <button class="next">
+                                    <span class="blind">다음팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.1875 8.24867L11.625 11.8112C11.375 12.0612 11.2552 12.3528 11.2656 12.6862C11.276 13.0195 11.3958 13.3112 11.625 13.5612C11.875 13.8112 12.1719 13.9414 12.5156 13.9518C12.8594 13.9622 13.1562 13.8424 13.4062 13.5924L19.125 7.87367C19.375 7.62367 19.5 7.33201 19.5 6.99867C19.5 6.66534 19.375 6.37367 19.125 6.12367L13.4062 0.404922C13.1562 0.154922 12.8594 0.0351302 12.5156 0.0455469C12.1719 0.0559635 11.875 0.186172 11.625 0.436172C11.3958 0.686172 11.276 0.977839 11.2656 1.31117C11.2552 1.64451 11.375 1.93617 11.625 2.18617L15.1875 5.74867H1.25C0.895832 5.74867 0.598959 5.86846 0.359375 6.10805C0.119791 6.34763 0 6.64451 0 6.99867C0 7.35284 0.119791 7.64971 0.359375 7.8893C0.598959 8.12888 0.895832 8.24867 1.25 8.24867H15.1875Z">
+                                        </svg>
+                                    </i>
+                                </button>
+                                
+                            </div> <!--ctrl_btn-->
+                            <a href="#n" class="more">
+                                <span>더보기</span>
+                                <i>
+                                    <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 8H1C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H6V1C6 0.716667 6.09583 0.479167 6.2875 0.2875C6.47917 0.0958333 6.71667 0 7 0C7.28333 0 7.52083 0.0958333 7.7125 0.2875C7.90417 0.479167 8 0.716667 8 1V6H13C13.2833 6 13.5208 6.09583 13.7125 6.2875C13.9042 6.47917 14 6.71667 14 7C14 7.28333 13.9042 7.52083 13.7125 7.7125C13.5208 7.90417 13.2833 8 13 8H8V13C8 13.2833 7.90417 13.5208 7.7125 13.7125C7.52083 13.9042 7.28333 14 7 14C6.71667 14 6.47917 13.9042 6.2875 13.7125C6.09583 13.5208 6 13.2833 6 13V8Z">
+                                    </svg>
+                                </i>
+                            </a>
+                        </div> <!--tab_item-->
+                    </div> <!--tab_content-->
+                </div><!--find-->
+            </section> 
             <section class="slogan">
                 
             </section> <!--slogan-->

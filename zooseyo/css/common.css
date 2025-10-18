@@ -11,6 +11,7 @@
     --color-main2 : #E05C5C;
     --color-sub : #0E76DE;
     --color-white : #fff;
+    --color-white80 : rgba(255, 255, 255, 0.8);
     --color-white60 : rgba(255, 255, 255, 0.6);
     --color-white50 : rgba(255, 255, 255, 0.5);
     --color-white20 : rgba(255, 255, 255, 0.2);
@@ -81,6 +82,6 @@ body {
 @media screen and (max-width:1360px){
     .wrapper {
         width: auto;
-        margin: 0 var(--wrapper-m); 
+        margin: 0 var(--wrapper-margin); 
     }
 }
