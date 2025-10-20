@@ -1,8 +1,12 @@
 /* 모든페이지에서 중복되는 스타일 */
 :root {
     --font-size-basic : 17px;
-    --font-size-tit : 50px;
+    --font-size-tit : clamp(24px, 4vw, 50px);
+    --font-size-tit2 : clamp(19px, 2vw, 24px);
+    /* --font-size-tit : 50px;
     --font-size-tit2 : 24px;
+    --font-size-tit : 28px;
+    --font-size-tit2 : 19px; */
     --font-weight-basic : 400;
     --font-weight-bold : 700;
     --line-height-basic : 1.5;
@@ -14,6 +18,7 @@
     --color-white80 : rgba(255, 255, 255, 0.8);
     --color-white60 : rgba(255, 255, 255, 0.6);
     --color-white50 : rgba(255, 255, 255, 0.5);
+    --color-white30 : rgba(255, 255, 255, 0.3);
     --color-white20 : rgba(255, 255, 255, 0.2);
     --color-line : #444;
     --color-line2 : rgba(204, 204, 204, 0.7);
@@ -28,8 +33,6 @@
 @media screen and (max-width:1024px){
     :root {
         --font-size-basic : 16px;
-        --font-size-tit : 28px;
-        --font-size-tit2 : 19px;
         --header-h : 60px;
         --wrapper-margin : 16px;
     }   
