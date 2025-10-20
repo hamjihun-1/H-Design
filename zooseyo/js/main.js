@@ -263,4 +263,30 @@ const adopt_swiper = new Swiper('.adopt .swiper', { /* 팝업을 감싼는 요�
 
 /************가족이 되어주세요 swiper::끝************/
 
+
+/************review swiper::시작************/
+
+const review_swiper = new Swiper('.review .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		1025: {    /* 1025px 이상일때 적용 */
+			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		},
+	},
+    loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+});
+
+/************review swiper::끝************/
+
+
+
+
+
+
 })//맨 끝

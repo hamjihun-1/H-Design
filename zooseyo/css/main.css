@@ -74,8 +74,6 @@ header .util .mypage i {
     width: 29.17px;
     padding: 7px 0 0 0;
 }
-
-
 header {
     transition: background-color 0.5s, color 0.5s, fill 0.5s;
 }
@@ -811,7 +809,7 @@ header.fixed .logo a {
 .adopt .ctrl_btn {
     position: absolute;
     right: calc(50% - 630px);
-    top: clamp(100px, 12vw, 172px);
+    top: clamp(80px, 12vw, 172px);
     display: flex;
     gap: 0 12px;
 }
@@ -830,17 +828,14 @@ header.fixed .logo a {
 .adopt .ctrl_btn .ctrl_prev i,
 .adopt .ctrl_btn .ctrl_next i {
     display: block;
-    width: clamp(15.5px, 3vw, 19.5px);
+    width: clamp(15.5px, 2.5vw, 19.5px);
     vertical-align: top;
 }
 .adopt .ctrl_btn .more a i {
     display: block;
-    width: clamp(14px, 3vw, 22.5px);
+    width: clamp(14px, 2.5vw, 22.5px);
     vertical-align: top;
     padding: clamp(1px, 0.5vw, 5px) 0 0 0;
-}
-.adopt .ctrl_btn .more_mo {
-    display: none;
 }
 .adopt .rolling {
     position: absolute; /* adopt를 기준으로 정렬 */
@@ -865,29 +860,17 @@ header.fixed .logo a {
 }
 @media screen and (max-width:768px){
     .adopt .ctrl_btn .ctrl_prev,
-    .adopt .ctrl_btn .ctrl_next,
-    .adopt .ctrl_btn .more {
+    .adopt .ctrl_btn .ctrl_next {
         display: none;
     }
-    .adopt .ctrl_btn .more_mo {
-        display: flex;
-        border-radius: 40px;
-        background-color: #555;
-        padding: 3px 15px;
-    }
 }
-
-
-
-
-
-
-
 @media screen and (max-width:1320px){
     .adopt .ctrl_btn {
         right: var(--wrapper-margin);
     }
 } /*@media*/
+
+
 
 footer {
     margin: 500px;
