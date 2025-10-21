@@ -397,6 +397,7 @@ header.fixed .logo a {
     align-items: center;
     width: 24px;
     height: 24px;
+    fill: var(--color-white);
 }
 .visual .ctrl_btn .play {
     display: none; /* 숨김처리 */
@@ -409,6 +410,26 @@ header.fixed .logo a {
 .visual .ctrl_btn .play i {
     display: block;
     width: 11px;
+}
+.visual .spin {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    z-index: 10;
+}
+.visual .spin .spin_txt {
+    animation: spin 10s linear infinite;
+    /* 애니메이션 이름, 애니메이션 지연, 가속도, 무한 반복 */
+}
+.visual .spin .center_txt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 
@@ -440,6 +461,9 @@ header.fixed .logo a {
     }
     .visual .ctrl_btn .paging .bar {
         width: 80px;
+    }
+    .visual .spin {
+        display: none;
     }
 }/*media*/
 
