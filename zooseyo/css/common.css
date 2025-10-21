@@ -1,4 +1,22 @@
 /* 모든페이지에서 중복되는 스타일 */
+    
+/* 1줄 제한 */
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;  */
+/* 2줄제한 */
+    /* overflow: hidden;
+    line-height: 1.5; 행간*줄수 = 단위 em
+    height: 3em; */
+
+    /* 글에 ...추가
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 2번째 줄 넘어갈 시 ...으로 마무리
+    -webkit-box-orient: vertical; */
+    
+
+
+
 :root {
     --font-size-basic : 17px;
     --font-size-tit : clamp(24px, 4vw, 50px);
@@ -55,6 +73,7 @@ body {
 }
 #wrap {
     position: relative; /* header 정렬의 기준 */
+    overflow: hidden;
 }
 
 /* html문서 구조상 글자를 써줘야 하는데

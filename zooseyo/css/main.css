@@ -447,7 +447,7 @@ header.fixed .logo a {
     background-color: #091626;
     color: var(--color-white);
     /* padding: 80px 0 80px 0; */
-    padding: clamp(40px, 10vw, 80px) 0 clamp(40px, 10vw, 80px);
+    padding: clamp(40px, 10vw, 80px) 0 clamp(40px, 10vw, 80px) 0;
 }
 
 .find h2 {
@@ -870,8 +870,296 @@ header.fixed .logo a {
     }
 } /*@media*/
 
+.review {
+    margin: clamp(90px, 11vw, 160px) 0 clamp(80px, 11vw, 150px) 0;
+}
+.review .wrapper {
+    position: relative; /* prev, next, more 정렬의 기준 */
+}
+.review h2 {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    color: #161616;
+    position: relative; /* before 정렬의 기준 */
+    padding: 0 0 clamp(8px, 1vw, 12px) 0;
+}
+.review h2::before {
+    content: "";
+    position: absolute; /* h2을 기준으로 정렬 */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100vw; /* 브라우저의 넓이 */
+    height: 1px;
+    background-color: var(--color-line2);
+}
+.review h2 span {
+    position: relative; /* before 정렬의 기준 */
+}
+.review h2 span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -25%;
+    width: 100%;
+    height: 3px;
+    background-color: #FF4E00;
+}
+.review .list {
+    margin: clamp(40px, 8vw, 120px) 0 0 0;
+}
+.review .list .swiper-slide {
+    width: 269px;
+}
+.review .list .swiper-slide a {
+    display: block;
+}
+.review .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 297px;
+}
+.review .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지가 짤리지 않게 모두 나옴 */
+}
+.review .list .swiper-slide a h3 {
+    margin: clamp(20px, 2vw, 25px) 0 clamp(10px, 1.5vw, 15px) 0;
+    font-size: clamp(19px, 1.5vw, 24px);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    color: #161616;
+    
+    /* 1줄 제한 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.review .list .swiper-slide a p {
+    /* 2줄제한 */
+    overflow: hidden;
+    line-height: 1.5; /* 행간*줄수 = 단위 em */
+    height: 3em;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 2번째 줄 넘어갈 시 ...으로 마무리 */
+    -webkit-box-orient: vertical;
+}
+.review .list .swiper-slide a .date {
+    margin: clamp(2px, 3vw, 18px) 0 0 0;
+    font-size: 15px;
+    display: flex; /* strong-span 좌우 배치 */
+    gap: 0 40px;
+}
+.review .list .swiper-slide a .date strong {
+    color: #00C2A8;
+}
+.review .list .swiper-slide a .date span {
+    color: #ccc;
+    position: relative; /* before 정렬의 기준 */
+}
+.review .list .swiper-slide a .date span::before {
+    content: "";
+    position: absolute; /* span을 기준으로 정렬 */
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 10px;
+    background-color: #ccc;
+}
+.review .prev {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: -75px;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #FF4E00;
+    fill: var(--color-white);
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review .next {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: -75px;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #FF4E00;
+    fill: var(--color-white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review .prev i,
+.review .next i {
+    display: block;
+    width: 19.5px;
+}
+.review .more {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.review .more a {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+}
+.review .more a strong {
+    font-size: 40px;
+    font-weight: var(--font-weight-bold);
+    color: #FF4E00;
+}
+.review .more a span {
+    font-size: 19px;
+}
+.review .more a i {
+    display: block;
+    width: 22.5px;
+    fill: #555;
+    margin-top: 3px;
+}
+
+@media screen and (max-width:1450px){
+    .review .prev {
+        left: -30px;
+        z-index: 5;
+    }
+    .review .next {
+        right: -30px;
+        z-index: 5;
+    }
+}
+@media screen and (max-width:1024px){
+    .review .prev,
+    .review .next {
+        display: none;
+    }
+    .review .more a strong,
+    .review .more a span {
+        display: none;
+    }
+    .review .more a {
+        justify-content: center;
+        background-color: #FF4E00;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+    }
+    .review .more a i {
+        width: 20px;
+        fill: var(--color-white);
+        margin-top: 5px;
+    }
+}
+@media screen and (max-width:768px){
+    .review h2 span::before {
+        bottom: -27%;
+    }
+    .review .list .swiper-slide a p {
+        font-size: 15px;
+    }
+    .review .list .swiper-slide a .date {
+        font-size: 14px;
+        gap: 0 20px;
+    }
+    .review .list .swiper-slide a .date span::before {
+        left: -10px;
+    }
+}
+@media screen and (max-width:640px){
+    
+    .review .more a {
+        width: 25px;
+        height: 25px;
+    }
+    .review .more a i {
+        width: 16px;
+        margin-top: 3px;
+    }
+}
 
 footer {
-    margin: 500px;
+    background-color: var(--footer-bg-color);
+    color: var(--color-white30);
+    padding: 78px 0 72px 0;
+}
+footer .wrapper {
+    position: relative; /* top버튼 정렬의 기준 */
+}
+footer .top {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: -60px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #0E76DE;
+    fill: var(--color-white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .top i {
+    display: block;
+    width: 13.91px;
+    margin-top: 3px;
+}
+footer .f_nav ul {
+    display: flex;
+    flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+    gap: 0 2.3529em;
+}
+footer .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .f_nav ul li a {
+    display: block;
+    padding: 0 0 0.2941em 0;
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute; /* li를 기준으로 정렬 */
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 10px;
+    background-color: var(--color-white20);
+}
+footer .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .f_nav ul li a span {
+    font-weight: var(--font-weight-bold);
+}
+footer .f_info {
+    margin: 30px 0;
+}
+footer .f_info span,
+footer .f_info address {
+    display: inline-block;
+    margin:0 2.2353em 0 0;
+    padding: 0 0 0.2941em 0;
+}
+@media screen and (max-width:768px){
+    footer {
+        padding: 60px 0 60px 0;
+    }
+    footer .top {
+        top: -50px;
+        width: 40px;
+        height: 40px;
+    }
+    footer .top i {
+        width: 12px;
+    }
 }
