@@ -97,7 +97,7 @@
 @keyframes scroll {
     0% {bottom: -45px;}
     50% {bottom: -60px;}
-    1000% {bottom: -45px;}
+    100% {bottom: -45px;}
 }
 @media screen and (max-width:1024px){
     .visual .popup .slide {
