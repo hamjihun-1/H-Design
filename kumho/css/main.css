@@ -28,7 +28,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: -1;
+    z-index: -5;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -58,7 +58,7 @@
         font-size: 4.4rem;
     }
 }
-@media screen and (min-width:769px){
+@media screen and (min-width:1025px){
     .visual .popup .slide .txt .line {
         display: block;
         overflow: hidden;
@@ -99,7 +99,7 @@
     50% {bottom: -60px;}
     1000% {bottom: -45px;}
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:1024px){
     .visual .popup .slide {
         height: 700px;
     }
