@@ -24,6 +24,7 @@ header .logo a {
     width: 109px;
     height: 36px;
     background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+    margin-bottom: 20px;
 }
 header .util .lang {
     display: block;
