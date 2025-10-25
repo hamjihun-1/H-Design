@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 라이브러리 파일 -->
+    <!--  라이브러리 파일 -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/slick.min.js"></script>
     <link rel="stylesheet" href="css/slick.css">
-    
+
     <!-- 개인 파일 -->
+     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="js/common.js"></script>
     <title>금호건설</title>
 </head>
 <body>
     <div id="wrap">
-        <!-- pc버전에서 메뉴에 마우스를 오버하면 header에 menu_pc
-             모바일에서는 메뉴를 클릭하면 header에 menu_mo
-             header 상단에 고정 fixed 클래스
-             스크롤을 아래서 내려서 올라 갈때는 up 클래스 추가 -->
         <header>
             <h1 class="logo"><a href="index.html"><span class="blind">금호건설</span></a></h1>
             <nav class="gnb">
-                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <button class="gnb_open"><span>메뉴 열기</span></button>
                 <div class="gnb_wrap"> <!--모바일에서 gnb_wrap 전체가 움직임-->
-                    <div class="gnb_logo"><span class="blind">금호건설</span></div>
+                    <div class="gnb_logo"><span>금호건설</span></div>
                     <ul class="depth1">
-                        <!-- 모바일일때 메뉴가 열리면 open 클래스 줌 -->
                         <li>
                             <a href="contents/info.html"><span>회사소개</span></a> <!--기업정보로 이동-->
                             <ul class="depth2">
@@ -41,7 +35,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="contents/esg01.html"><span>ESG</span></a> <!--첫번째 하위메뉴로 이동-->
+                            <a href="contents/esg01.html"><span>ESG</span></a> <!--윤리경영로 이동-->
                             <ul class="depth2">
                                 <li><a href="contents/esg01.html"><span>윤리경영</span></a></li>
                                 <li><a href="contents/esg02.html"><span>품질경영</span></a></li>
@@ -51,7 +45,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="contents/biz01.html"><span>사업분야</span></a> <!--첫번째 하위메뉴로 이동-->
+                            <a href="contents/biz01.html"><span>사업분야</span></a> <!--건축사업으로 이동-->
                             <ul class="depth2">
                                 <li><a href="contents/biz01.html"><span>건축사업</span></a></li>
                                 <li><a href="contents/biz02.html"><span>토목사업</span></a></li>
@@ -61,7 +55,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="contents/ir01.html"><span>IR</span></a> <!--첫번째 하위메뉴로 이동-->
+                            <a href="contents/ir01.html"><span>IR</span></a> <!--기업지배구조로 이동-->
                             <ul class="depth2">
                                 <li><a href="contents/ir01.html"><span>기업지배구조</span></a></li>
                                 <li><a href="contents/ir02.html"><span>경영정보</span></a></li>
@@ -71,7 +65,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="contents/pr01.html"><span>홍보센터</span></a> <!--첫번째 하위메뉴로 이동-->
+                            <a href="contents/pr01.html"><span>홍보센터</span></a> <!--금호뉴스로 이동-->
                             <ul class="depth2">
                                 <li><a href="contents/pr01.html"><span>금호뉴스</span></a></li>
                                 <li><a href="contents/pr02.html"><span>분양뉴스</span></a></li>
@@ -81,15 +75,13 @@
                             </ul>
                         </li>
                     </ul>
-                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                    <button class="gnb_close"><span>메뉴 닫기</span></button>
                 </div> <!--gnb_wrap-->
-                <div class="gnb_bg"><!--메뉴 배경-->
-
-                </div> <!--gnb_bg-->
+                <div class="gnb_bg"></div> <!--메뉴배경-->
             </nav> <!--gnb-->
-            <div class="util"> 
+            <div class="util">
                 <a href="#n" class="lang"><span>ENG</span></a>
-            </div> <!--util-->
+            </div><!--util-->
         </header>
         <div class="container">
             <section class="visual">
@@ -99,8 +91,8 @@
                         <div class="photo"><img src="images/main/visual01.jpg" alt=""></div>
                         <div class="txt">
                             <div class="wrapper">
-                                <h2 class="line">
-                                    <span>Infrastructure that Connects</span>
+                                <h2>
+                                    <strong class="line"><span>Infrastructure that Connects</span></strong>
                                 </h2>
                                 <p class="line">
                                     <span>From airports to highways building the backbone of Korea.</span>
@@ -111,9 +103,9 @@
                     <div class="slide">
                         <div class="photo"><img src="images/main/visual02.jpg" alt=""></div>
                         <div class="txt">
-                            <div class="wrapper">    
-                                <h2 class="line">
-                                    <span>Building Korea in the World</span>
+                            <div class="wrapper">
+                                <h2>
+                                    <strong class="line"><span>Building Korea in the World</span></strong>
                                 </h2>
                                 <p class="line">
                                     <span>Creating global connections through innovation and vision.</span>
@@ -124,9 +116,9 @@
                     <div class="slide">
                         <div class="photo"><img src="images/main/visual03.jpg" alt=""></div>
                         <div class="txt">
-                            <div class="wrapper">  
-                                <h2 class="line">
-                                   <span>Global Expansion</span>
+                            <div class="wrapper">
+                                <h2>
+                                    <strong class="line"><span>Global Expansion</span></strong>
                                 </h2>
                                 <p class="line">
                                     <span>Delivering world-class projects beyond Korea’s borders.</span>
@@ -140,7 +132,7 @@
             <section class="biz"></section> <!--biz-->
             <section class="news"></section> <!--news-->
             <section class="service"></section> <!--service-->
-        </div>
+        </div> <!--container-->
         <footer></footer>
     </div>
 </body>
