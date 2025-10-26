@@ -10,13 +10,18 @@
 
     <!-- 개인 파일 -->
      <script src="js/main.js"></script>
+     <script src="js/common.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>금호건설</title>
 </head>
 <body>
     <div id="wrap">
-        <header>
+        <!-- pc버전에서 메뉴에 마우스를 오버하면 header menu_pc
+             모바일에서는 메뉴를 클릭하면 header에 menu_mo 
+             header 상단에 고정 fixed 클래스
+             스크롤을 아래서 내려서 올라갈때는 up 클래스 추가 -->
+        <header class="">
             <h1 class="logo"><a href="index.html"><span class="blind">금호건설</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open"><span>메뉴 열기</span></button>
