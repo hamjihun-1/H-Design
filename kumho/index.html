@@ -21,14 +21,15 @@
              모바일에서는 메뉴를 클릭하면 header에 menu_mo 
              header 상단에 고정 fixed 클래스
              스크롤을 아래서 내려서 올라갈때는 up 클래스 추가 -->
-        <header class="">
+        <header class="menu_mo">
             <h1 class="logo"><a href="index.html"><span class="blind">금호건설</span></a></h1>
             <nav class="gnb">
-                <button class="gnb_open"><span>메뉴 열기</span></button>
+                <button class="gnb_open"><span class="blind">메뉴 열기</span></button>
                 <div class="gnb_wrap"> <!--모바일에서 gnb_wrap 전체가 움직임-->
-                    <div class="gnb_logo"><span>금호건설</span></div>
+                    <div class="gnb_logo"><span class="blind">금호건설</span></div>
                     <ul class="depth1">
-                        <li>
+                        <!-- 모바일일때 메뉴가 열리면 open 클래스 줌 -->
+                        <li class="open">
                             <a href="contents/info.html"><span>회사소개</span></a> <!--기업정보로 이동-->
                             <ul class="depth2">
                                 <li><a href="contents/info.html"><span>기업정보</span></a></li>
