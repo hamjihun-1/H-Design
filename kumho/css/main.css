@@ -123,6 +123,221 @@
     }
 }/* @media */
 
+.biz {
+    background-color: var(--background-color);
+    padding: 130px 0;
+}
+.biz .tit strong {
+    color: var(--color-white80);
+    display: inline-block;
+    margin-bottom:5px;
+}
+.biz .tit h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-white);
+    position: relative; /* before 정렬의 기준 */
+}
+.biz .tit h2::before {
+    content: "";
+    position: absolute; /* h2를 기준으로 정렬 */
+    left: -31%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30%;
+    height: 0.025em;
+    background-color: var(--color-white);
+}
+.biz .list {
+    margin-top: 60px;
+}
+.biz .list ul {
+    display: flex;
+}
+.biz .list ul li {
+    width: 25%;
+    height: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/main/biz01.jpg);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* align-items: flex-start; */
+    align-items: center;
+    text-align: center;
+    padding: 0px 1.5% 2.5% 1.5%;
+    position: relative; /* before 정렬의 기준 */
+    transition: width 0.8s;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+.biz .list ul li:first-child {
+    border-left: 0;
+}
+.biz .list ul li::before {
+    content: "";
+    position: absolute; /* li를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 1));
+}
+.biz .list ul li.biz02 {
+    background-image: url(../images/main/biz02.jpg);
+} 
+.biz .list ul li.biz03 {
+    background-image: url(../images/main/biz03.jpg);
+}
+.biz .list ul li.biz04 {
+    background-image: url(../images/main/biz04.jpg);
+}
+.biz .list ul li strong {
+    color: var(--color-white60);
+}
+.biz .list ul li .txt {
+    position: relative;
+    z-index: 10; /*before보다 위에 배치하기 위해*/
+    white-space: nowrap;
+}
+.biz .list ul li .txt h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 5px 0 10px 0;
+}
+
+@media screen and (min-width:1025px){ /* 1025px 이상 - pc버전일 때 */
+    .biz .list ul li.active {
+        width: 65%;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .biz .list ul li .txt {
+        transform: translateY(93px);
+        transition: transform 0.5s;
+    }
+    .biz .list ul li.active .txt {
+        transform: translateY(0);
+    }
+    .biz .list ul li .txt p {
+        color: var(--color-white80);
+        opacity: 0;
+    }
+    .biz .list ul li.active .txt p {
+        opacity: 1;
+    }
+    .biz .list ul li .txt a {
+        border: 1px solid var(--color-white);
+        border-radius: 30px;
+        padding: 2px 55px 4px 15px;
+        margin-top: 25px;
+        display: inline-block;
+        position: relative; /* after 정렬의 기준 */
+        opacity: 0;
+    }
+    .biz .list ul li .txt a::after {
+        content: "";
+        position: absolute; /* a를 기준으로 정렬 */
+        right: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 13.33px;
+        height: 10px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 10' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.33331 10L13.3333 5L8.33331 0L7.16665 1.20833L10.125 4.16667H-2.09808e-05V5.83333H10.125L7.16665 8.79167L8.33331 10Z' /%3E%3C/svg%3E%0A");
+    }
+    .biz .list ul li.active .txt a {
+        opacity: 1;
+    }
+    .biz .list ul li.active .txt a:hover {
+        background-color: var(--color-white);
+        color: var(--color-tit);
+    }
+    .biz .list ul li.active .txt a:hover::after {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 10' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.33331 10L13.3333 5L8.33331 0L7.16665 1.20833L10.125 4.16667H-2.09808e-05V5.83333H10.125L7.16665 8.79167L8.33331 10Z' /%3E%3C/svg%3E%0A");
+    }
+    .biz .list.over ul li:not(.active) {
+        /* li중에서 actvie가 없는 li 전부 다 */
+        color: var(--color-white80);
+    }
+    .biz .list.over ul li:not(.active)::before {
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8)
+    }
+}/* @media */
+@media screen and (min-width:1025px) and (max-width:1150px) {
+    /* 1150 ~ 1025 사이즈 */
+    .biz .list ul li .txt h3 {
+        font-size: 2.4rem;
+    }
+}/* @media */
+@media screen and (max-width:1024px){
+    .biz .tit h2 {
+        font-size: 3.2rem;
+    }
+    .biz .list {
+        overflow-x: auto; /* 가로 스크롤 허용 */
+        margin-top: 30px;
+    }
+    .biz .list ul {
+        gap: 0 16px;
+        width: 1116px; 
+        /*
+            li의 넓이 267px * 4 = 1068px
+            li 사이의 여백 (16px) * 3 = 48px
+            1068 + 48 = 1116px
+        */
+        margin: var(--wrapper-margin);
+    }
+    .biz .list ul li {
+        width: 267px;
+        height: 394px;
+        padding: 0px 30px 30px 30px;
+        border: 0;
+        border-radius: 10px;
+    }
+    .biz .list ul li:first-child {
+        border-left: 0;
+    }
+    .biz .list ul li .txt {
+        white-space: wrap; /*줄바꿈 허용*/
+    }
+    .biz .list ul li .txt h3 {
+        font-size: 2rem;
+        margin: 5px 0 0 0;
+    }
+    .biz .list ul li .txt p {
+        display: none;
+    }
+    .biz .list ul li .txt a {
+        position: absolute; /*txt를 기준으로 정렬*/
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .biz .list ul li .txt a span {
+        display: none;
+    }
+}
+@media screen and (max-width:768px){
+    .biz {
+        padding: 70px 0;
+    }
+    .biz .tit h2 {
+        font-size: 2.4rem;
+    }
+    .biz .list {
+        margin-top: 15px;
+    }
+}
 
 
 

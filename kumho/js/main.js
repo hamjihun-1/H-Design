@@ -16,4 +16,22 @@ $(document).ready(function(){
 	//pauseOnHover: true, //마우스호버시 일시정지
 	infinite: true, //무한반복 (loop)
     });
+
+	
+	/**********************
+	* .biz .list ul li에 마우스를 오버하면
+	* 오버한 li에 active 클래스
+	* .biz .list에는 over 클래스 추가
+	* ---- 언제 out
+	**********************/
+	$('.biz .list ul li').on('mouseenter', function(){
+		$(this).addClass('active')
+		$('.biz .list').addClass('over')
+	})
+	$('.biz .list ul li').on('mouseleave', function(){
+		$(this).removeClass('active')
+		$('.biz .list').removeClass('over')
+	})
+
+
 })//맨끝
