@@ -279,6 +279,9 @@
     }
 }/* @media */
 @media screen and (max-width:1024px){
+    .biz {
+        padding: 90px 0;
+    }
     .biz .tit h2 {
         font-size: 3.2rem;
     }
