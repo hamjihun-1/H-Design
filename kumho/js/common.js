@@ -68,7 +68,7 @@ $(document).ready(function(){
         prev_scroll = scrolling
         scrolling = $(window).scrollTop()
         diff_scroll = prev_scroll - scrolling
-        console.log(diff_scroll)
+        // console.log(diff_scroll)
         if(diff_scroll < 0){//위로 스크롤
             $('header').addClass('up')
         }else{ //아래로 스크롤

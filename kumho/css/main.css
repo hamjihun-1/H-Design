@@ -122,24 +122,20 @@
         display: none;
     }
 }/* @media */
-
-.biz {
-    background-color: var(--background-color);
-    padding: 130px 0;
-}
-.biz .tit strong {
+/* section 제목 스타일 */
+section .tit strong {
     color: var(--color-white80);
     display: inline-block;
     margin-bottom:5px;
 }
-.biz .tit h2 {
+section .tit h2 {
     font-size: 4rem;
     font-weight: 700;
     line-height: 1.3;
     color: var(--color-white);
     position: relative; /* before 정렬의 기준 */
 }
-.biz .tit h2::before {
+section .tit h2::before {
     content: "";
     position: absolute; /* h2를 기준으로 정렬 */
     left: -31%;
@@ -148,6 +144,22 @@
     width: 30%;
     height: 0.025em;
     background-color: var(--color-white);
+}
+@media screen and (max-width:1024px){
+    section .tit h2 {
+        font-size: 3.2rem;
+    }
+} /*@media*/
+@media screen and (max-width:768px){
+    section .tit h2 {
+        font-size: 2.4rem;
+    }
+
+} /*@media*/
+
+.biz {
+    background-color: var(--background-color);
+    padding: 130px 0;
 }
 .biz .list {
     margin-top: 60px;
@@ -278,12 +290,13 @@
         font-size: 2.4rem;
     }
 }/* @media */
+
 @media screen and (max-width:1024px){
     .biz {
         padding: 90px 0;
     }
-    .biz .tit h2 {
-        font-size: 3.2rem;
+    .biz .tit h2::before {
+        display: none;
     }
     .biz .list {
         overflow-x: auto; /* 가로 스크롤 허용 */
@@ -329,21 +342,315 @@
     .biz .list ul li .txt a span {
         display: none;
     }
-}
+}/* @media */
 @media screen and (max-width:768px){
     .biz {
         padding: 70px 0;
     }
-    .biz .tit h2 {
-        font-size: 2.4rem;
-    }
     .biz .list {
         margin-top: 15px;
     }
+}/* @media */
+
+.news {
+    margin: 130px 0;
 }
+.news .tit strong {
+    color: var(--color-point);
+}
+.news .tit h2 {
+    color: var(--color-tit);
+}
+.news .tit h2::before {
+    background-color: var(--color-line);
+}
+.news .list {
+    margin: 50px 0 0 0;
+}
+.news .list .swiper-slide a {
+    display: block;
+    border-top: 2px solid var(--color-line);
+    position: relative; /* before 정렬의 기준*/
+}
+.news .list .swiper-slide a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-point);
+    transition: 0.5s;
+}
+.news .list .swiper-slide a:hover::before {
+    width: 100%;
+}
+.news .list .swiper-slide a .date {
+    display: block;
+    margin: 40px 0 20px 0;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-tit);
+}
+.news .list .swiper-slide a h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-tit);
+
+    /* 2줄 제한 */
+    line-height: 1.3;
+    height: 2.6em; /* 행간*줄수 = 단위 em */
+    overflow: hidden;
+    word-break: break-all; /*단어별 줄바꿈 해제*/
+}
+.news .list .swiper-slide a p {
+    margin: 15px 0 30px 0;
+    
+    /* 3줄 제한 */
+    line-height: 1.5;
+    height: 4.5em; /* 행간*줄수 = 단위 em */
+    overflow: hidden;
+    word-break: break-all; /*단어별 줄바꿈 해제*/
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 3번째 줄 넘어갈 시 ...으로 마무리 */
+    -webkit-box-orient: vertical;
+}
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 180px;
+}
+.news .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.news .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .ctrl_wrap {
+    margin: 60px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.news .ctrl_wrap .scrollbar  {
+    width: calc(100% - 200px);
+    height: 4px;
+    border-radius: 10px;
+    background-color: var(--color-line);
+}
+.news .ctrl_wrap .scrollbar .swiper-scrollbar-drag {
+    height: 6px;
+    background-color: var(--color-point);
+    top: -1px;
+}
+.news .ctrl_wrap .inner {
+    display: flex;
+    gap: 0 7px;
+}
+.news .ctrl_wrap .inner .ctrl_prev,
+.news .ctrl_wrap .inner .ctrl_next {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color-tit);
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 9px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 14' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 14L0 7L7 0L8.2425 1.2425L2.485 7L8.2425 12.7575L7 14Z' /%3E%3C/svg%3E%0A");
+}
+.news .ctrl_wrap .inner .ctrl_next {
+    transform: rotate(180deg);
+}
+.news .ctrl_wrap .inner .more a {
+    display: block;
+    height: 32px;
+    border: 1px solid #1d1d1d;
+    border-radius: 20px;
+    padding: 2px 55px 4px 15px;
+    position: relative; /* after 정렬의 기준 */
+    color: #1d1d1d;
+}
+.news .ctrl_wrap .inner .more a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13.33px;
+    height: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 10' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.33331 10L13.3333 5L8.33331 0L7.16665 1.20833L10.125 4.16667H-2.09808e-05V5.83333H10.125L7.16665 8.79167L8.33331 10Z' /%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px){
+    .news .tit h2::before {
+        display: none;
+    }
+    .news .list .swiper-slide a .date {
+        font-size: 2.8rem;
+    }
+    .news .list .swiper-slide a h2 {
+        font-size: 2rem;
+    }
+} /*@media*/
+@media screen and (max-width:768px){
+    .news {
+        margin: 70px 0;
+    }
+
+    .news .list {
+        margin: 30px 0 0 0;
+    }
+    .news .list .swiper-slide a::before {
+        display: none;
+    }
+    .news .list .swiper-slide a .date {
+        margin: 30px 0 20px 0;
+        font-size: 2.2rem;
+    }
+    .news .list .swiper-slide a h2 {
+        font-size: 1.9rem;
+    }
+    .news .list .swiper-slide a .photo {
+        height: 130px;
+    }
+    .news .ctrl_wrap {
+        margin: 50px 0 0 0;
+    }
+    .news .ctrl_wrap .scrollbar  {
+        width: calc(100% - 100px);
+    }
+    .news .ctrl_wrap .scrollbar .swiper-scrollbar-drag {
+        height: 4px;
+        top: 0;
+    }
+    .news .ctrl_wrap .inner {
+        gap: 0;
+    }
+    .news .ctrl_wrap .inner .ctrl_prev,
+    .news .ctrl_wrap .inner .ctrl_next {
+        display: none;
+    }
+    .news .ctrl_wrap .inner .more a {
+        height: 28px;
+        padding: 2px 33px 3px 15px;
+    }
+    .news .ctrl_wrap .inner .more a::after {
+        width: 12px;
+        height: 9px;
+    }
+}/*@media*/
+.service .tit {
+    display: none;
+}
+.service .list {
+    background: url(../images/main/service01.jpg) no-repeat center center / cover;
+    color: var(--color-white);
+    position: relative; /* before 정렬의 기준 */
+    transition: 0.5s;
+}
+.service .list::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* 속성 선택자
+<div class="list" data-bg="service01"> 이 요소를 선택 */
+.service .list[data-bg="service01"] {
+    background-image: url(../images/main/service02.jpg);
+}
+.service .list[data-bg="service02"] {
+    background-image: url(../images/main/service03.jpg);
+}
+.service .list[data-bg="service03"] {
+    background-image: url(../images/main/service04.jpg);
+}
+.service .list ul {
+    display: flex;
+}
+.service .list ul li {
+    width: 33.33%;
+    height: 532px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* after 정렬의 기준 */
+    z-index: 10;
+}
+.service .list ul li::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 100px;
+    background-color: var(--color-white60);
+}
+.service .list ul li:last-child::after {
+    display: none;
+}
+.service .list ul li a {
+    display: block;
+    transform: translateY(30px);
+    transition: transform 0.5s;
+}
+.service .list ul li:hover a {
+    transform: translateY(0);
+}
+.service .list ul li a strong {
+    color: var(--color-white80);
+}
+.service .list ul li a h3 {
+    margin: 5px 0 30px 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.service .list ul li a .more {
+    display: inline-block;
+    border: 1px solid var(--color-white);
+    border-radius: 20px;
+    padding: 2px 55px 4px 15px;
+    position: relative; /* after 정렬의 기준 */
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.service .list ul li:hover a .more {
+    opacity: 1;
+}
+.service .list ul li a .more::after {
+    content: "";
+    position: absolute; /* more를 기준으로 정렬 */
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13.33px;
+    height: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 10' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.33331 10L13.3333 5L8.33331 0L7.16665 1.20833L10.125 4.16667H-2.09808e-05V5.83333H10.125L7.16665 8.79167L8.33331 10Z' /%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px){
+    .service .list ul li a h3 {
+        font-size: 2.4rem;
+    }
+} /* @media */
 
 
 
 footer {
-    margin: 1000px 0 0 0;
+    margin: 500px 0 0 0;
 }
