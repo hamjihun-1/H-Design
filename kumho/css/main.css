@@ -545,112 +545,183 @@ section .tit h2::before {
         height: 9px;
     }
 }/*@media*/
-.service .tit {
-    display: none;
-}
-.service .list {
-    background: url(../images/main/service01.jpg) no-repeat center center / cover;
-    color: var(--color-white);
-    position: relative; /* before 정렬의 기준 */
-    transition: 0.5s;
-}
-.service .list::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-/* 속성 선택자
-<div class="list" data-bg="service01"> 이 요소를 선택 */
-.service .list[data-bg="service01"] {
-    background-image: url(../images/main/service02.jpg);
-}
-.service .list[data-bg="service02"] {
-    background-image: url(../images/main/service03.jpg);
-}
-.service .list[data-bg="service03"] {
-    background-image: url(../images/main/service04.jpg);
-}
-.service .list ul {
-    display: flex;
-}
-.service .list ul li {
-    width: 33.33%;
-    height: 532px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative; /* after 정렬의 기준 */
-    z-index: 10;
-}
-.service .list ul li::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2px;
-    height: 100px;
-    background-color: var(--color-white60);
-}
-.service .list ul li:last-child::after {
-    display: none;
-}
-.service .list ul li a {
-    display: block;
-    transform: translateY(30px);
-    transition: transform 0.5s;
-}
-.service .list ul li:hover a {
-    transform: translateY(0);
-}
-.service .list ul li a strong {
-    color: var(--color-white80);
-}
-.service .list ul li a h3 {
-    margin: 5px 0 30px 0;
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-.service .list ul li a .more {
-    display: inline-block;
-    border: 1px solid var(--color-white);
-    border-radius: 20px;
-    padding: 2px 55px 4px 15px;
-    position: relative; /* after 정렬의 기준 */
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-.service .list ul li:hover a .more {
-    opacity: 1;
-}
-.service .list ul li a .more::after {
-    content: "";
-    position: absolute; /* more를 기준으로 정렬 */
-    right: 13px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 13.33px;
-    height: 10px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 10' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.33331 10L13.3333 5L8.33331 0L7.16665 1.20833L10.125 4.16667H-2.09808e-05V5.83333H10.125L7.16665 8.79167L8.33331 10Z' /%3E%3C/svg%3E%0A");
-}
-@media screen and (max-width:1024px){
+@media screen and (min-width:769px){
+    .service .tit {
+        display: none;
+    }
+    .service .list {
+        background: url(../images/main/service01.jpg) no-repeat center center / cover;
+        color: var(--color-white);
+        position: relative; /* before 정렬의 기준 */
+        transition: 0.5s;
+    }
+    .service .list::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    /* 속성 선택자
+    <div class="list" data-bg="service01"> 이 요소를 선택 */
+    .service .list[data-bg="service01"] {
+        background-image: url(../images/main/service02.jpg);
+    }
+    .service .list[data-bg="service02"] {
+        background-image: url(../images/main/service03.jpg);
+    }
+    .service .list[data-bg="service03"] {
+        background-image: url(../images/main/service04.jpg);
+    }
+    .service .list ul {
+        display: flex;
+    }
+    .service .list ul li {
+        width: 33.33%;
+        height: 532px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative; /* after 정렬의 기준 */
+        z-index: 10;
+    }
+    .service .list ul li::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 100px;
+        background-color: var(--color-white60);
+    }
+    .service .list ul li:last-child::after {
+        display: none;
+    }
+    .service .list ul li a {
+        display: block;
+        transform: translateY(30px);
+        transition: transform 0.5s;
+    }
+    .service .list ul li:hover a {
+        transform: translateY(0);
+    }
+    .service .list ul li a strong {
+        color: var(--color-white80);
+    }
+    .service .list ul li a h3 {
+        margin: 5px 0 30px 0;
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+    .service .list ul li a .more {
+        display: inline-block;
+        border: 1px solid var(--color-white);
+        border-radius: 20px;
+        padding: 2px 55px 4px 15px;
+        position: relative; /* after 정렬의 기준 */
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    .service .list ul li:hover a .more {
+        opacity: 1;
+    }
+    .service .list ul li a .more::after {
+        content: "";
+        position: absolute; /* more를 기준으로 정렬 */
+        right: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 13.33px;
+        height: 10px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 10' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.33331 10L13.3333 5L8.33331 0L7.16665 1.20833L10.125 4.16667H-2.09808e-05V5.83333H10.125L7.16665 8.79167L8.33331 10Z' /%3E%3C/svg%3E%0A");
+    }
+} /* @media */
+@media screen and (min-width:769px) and (max-width:1150px){
+    /* 1150 ~ 769 사이 경우 */
     .service .list ul li a h3 {
         font-size: 2.4rem;
     }
-} /* @media */
-
-
-
-footer {
-    margin: 500px 0 0 0;
-}
+}/* @media */
+@media screen and (max-width:768px){
+    .service {
+        padding: 70px 0 70px 0 ;
+        background: url(../images/main/service_mo.jpg) no-repeat center center / cover;
+        position: relative; /* before 정렬의 기준 */
+    }
+    .service::before {
+        content: "";
+        position: absolute; /* list를 기준으로 정렬 */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .service .tit h2::before {
+        display: none;
+    }
+    .service .list {
+        margin: 40px 0 0 0;
+        color: var(--color-white);
+        padding: 0 var(--wrapper-margin);
+    }
+    .service .list ul li {
+        margin-bottom: 24px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+    }
+    .service .list ul li:last-child {
+        margin-bottom: 0;
+    }
+    .service .list ul li a {
+        display: block;
+        padding: 33px 25px;
+        position: relative; /* after 정렬의 기준 */
+    }
+    .service .list ul li a::after {
+        content: "";
+        position: absolute;
+        right: 25px;
+        top: 45%;
+        width: 35px;
+        height: 35px;
+        background-color: var(--color-white);
+        border-radius: 50%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 14.89px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 12' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.30392 11.1647L14.8863 5.58235L9.30392 0L8.00137 1.34907L11.3043 4.65196H0V6.51275H11.3043L8.00137 9.81564L9.30392 11.1647Z' /%3E%3C/svg%3E%0A");
+    }
+    .service .list ul li a strong {
+        color: var(--color-white80);
+        font-size: 1.4rem;
+    }
+    .service .list ul li a h3 {
+        margin-top: 5px;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .service .list ul li a .more {
+        display: none;
+    }
+}/* @media */
+@media screen and (max-width:640px){
+    .service .list {
+        margin: 30px 0 0 0;
+    }
+    .service .list ul li {
+        margin-bottom: 16px;
+    }
+    .service .list ul li a {
+        padding: 28px 25px;
+    }
+}/* @media */
