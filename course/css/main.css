@@ -34,7 +34,7 @@
 .list ul li a:hover strong img { transform:scale3d(1.1,1.1,1); opacity:0.2 }
 .list ul li a:hover span { opacity:1 }
 @media screen and (max-width:768px){
-	.list ul li a span {font-size: 0.7rem;}
+	.list ul li a span {font-size: 0.9rem;}
 }
 @media screen and (max-width:1020px){
 	.list ul li { width:31.33%; }
