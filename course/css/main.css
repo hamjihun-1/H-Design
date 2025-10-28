@@ -33,7 +33,9 @@
 .list ul li a span { padding: 0 10px; opacity:0; position:absolute; left:0; top:50%; width:100%; text-align:center; color:#FFF; font-size:1.2rem; font-weight:600; transform:translateY(-50%); transition:0.5s }
 .list ul li a:hover strong img { transform:scale3d(1.1,1.1,1); opacity:0.2 }
 .list ul li a:hover span { opacity:1 }
-
+@media screen and (max-width:768px){
+	.list ul li a span {font-size: 0.7rem;}
+}
 @media screen and (max-width:1020px){
 	.list ul li { width:31.33%; }
 }
