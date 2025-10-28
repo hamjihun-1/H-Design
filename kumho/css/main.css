@@ -586,7 +586,7 @@ section .tit h2::before {
         align-items: center;
         text-align: center;
         position: relative; /* after 정렬의 기준 */
-        z-index: 10;
+        z-index: 5;
     }
     .service .list ul li::after {
         content: "";
@@ -722,6 +722,6 @@ section .tit h2::before {
         margin-bottom: 16px;
     }
     .service .list ul li a {
-        padding: 28px 25px;
+        padding: 30px 25px;
     }
 }/* @media */
