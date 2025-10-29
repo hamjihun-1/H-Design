@@ -214,7 +214,7 @@ header.up:not(.menu_pc, .menu_mo) {
     header .gnb .gnb_wrap ul.depth1 > li > a:focus > span::after {
         bottom: -33px;
     }
-}
+}/*@media*/
 
 /*모바일메뉴 시작*/
 @media screen and (max-width:1024px){
@@ -357,7 +357,59 @@ header.up:not(.menu_pc, .menu_mo) {
     header .gnb .gnb_wrap .gnb_close {
         background-size: 16.5px;
     }
-}
+}/*@media*/
+
+@media screen and (min-width:1025px){
+/*********************서브에서 이미 선택되있는 메뉴 디자인하기***********************/
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
+        color: var(--color-point);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a > span::after,
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a:focus > span::after {
+        content: "";
+        position: absolute; /* span 정렬의 기준 */
+        left: 0;
+        bottom: -32px;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-point);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
+        color: var(--color-point);
+        font-weight: 700;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a > span::before,
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a:focus > span::before {
+        content: "";
+        position: absolute; /* span을 기준으로 정렬 */
+        left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: var(--color-point);
+    }
+/*********************서브에서 이미 선택되있는 메뉴 디자인하기***********************/
+} /*@media*/
+@media screen and (max-width:768px){
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
+        color: var(--color-point);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::before,
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after {
+       background-color: var(--color-point);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after {
+        transform: rotate(0)
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 {
+        display: block;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
+        color: var(--color-point);
+    }
+} /*@media*/
 
 footer {
     background-color: var(--footer-bg-color);
