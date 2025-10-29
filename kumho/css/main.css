@@ -302,6 +302,9 @@ section .tit h2::before {
         overflow-x: auto; /* 가로 스크롤 허용 */
         margin-top: 30px;
     }
+    .biz .list::-webkit-scrollbar {
+        display: none;
+    }
     .biz .list ul {
         gap: 0 16px;
         width: 1116px; 

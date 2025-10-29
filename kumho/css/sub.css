@@ -65,6 +65,9 @@
 
 @media screen and (max-width:768px){
     .sub_visual {
+        height: 250px;
+    }
+    .sub_visual {
         padding: 0 0 80px 0;
     }
     .sub_visual .sub_tit {
@@ -103,14 +106,25 @@
 }
 
 @media screen and (max-width:768px){
+    .snb {
+        height: 55px;
+    }
     .snb ul {
         justify-content: flex-start;
-        overflow-x: auto;
+        overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+        overflow-x: auto; /* 좌우 스크롤바 생성 */
+        
+        -ms-overflow-style: none;  /* IE, Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .snb ul::-webkit-scrollbar {
+        display: none;
     }
     .snb ul li {
         min-width: 100px;
     }
     .snb ul li a {
+        line-height: 55px;
     }
     .snb ul li a:hover {
         display: none;

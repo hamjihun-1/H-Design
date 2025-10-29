@@ -11,7 +11,7 @@ $(document).ready(function(){
         }else{
             device_status = 'mobile'
         }
-        console.log(device_status)
+        // console.log(device_status)
     }
     device_chk() //문서 로딩되었을때 1번 실행
     $(window).resize(function(){
