@@ -90,5 +90,79 @@ $(document).ready(function(){
             ceo_ani() // 브라우저가 로딩되었을 때 단 한번
         }
     })
-    
+    /********************************************
+     * 회사소개 > 연혁
+    ********************************************/
+    let history_length =$('.ctn_history').length
+
+    const snbScroll = function() {
+        const $menu_wrap = $(".ctn_history .his_bar ul");  /* 선택자를 잘 입력해야함 */
+        const $menu_li = $(".ctn_history .his_bar ul li");  
+        function scrollToElement($element) {
+            const containerWidth = $menu_wrap.width();
+            const itemWidth = $element.outerWidth(true);
+            const totalItemsWidth = $menu_wrap[0].scrollWidth;
+            const newScrollPosition = ($element.index() === 0) ? 0 :
+                ($element.index() === $menu_li.length - 1) ? totalItemsWidth - containerWidth :
+                $element.position().left + $menu_wrap.scrollLeft() - (containerWidth - itemWidth) / 2;
+            $menu_wrap.animate({
+                scrollLeft: newScrollPosition
+            }, 500);
+        }
+        const $activeItem = $menu_wrap.find(".active");
+        if ($activeItem.length) {
+            scrollToElement($activeItem);
+        }
+    } 
+    if(history_length > 0){
+        snbScroll();   /* 함수의 실행 */    
+    }
+
+
+    /*
+        .ctn_history .his_head가 여러개(4개) 
+        4개 각각의 애니메이션 시작 시기와 종료시기를 계산해야함
+        콘텐츠가 브라우저 아래에서 위로 올라오는 위치
+        스크롤 값 + 브라우저의 높이 == 콘텐츠이 offset().top 값과 같음
+        ++ 브라우저 높이의 몇%를 더하면 애니메이션 시작 시기
+    */
+    function his_head(){
+        let obj_name = $('.ctn_history .his_head') // 영역
+        let obj_txt = 'h3 strong' // 애니메이션 글자
+        let obj_length = obj_name.length // 저 선택자로 선택되는 요소의 갯수
+        let obj_top // 위에서부터 해당 요소의 위까지의 거리
+        let obj_start // 애니메이션 시작 시기
+        let obj_end // 애니메이션 종료 시기
+        let obj_per // 애니메이션 진행률
+        let scrolling = $(window).scrollTop() // 스크롤 값
+        let win_h = $(window).height() //브라우저 높이
+
+        for(i=0; i<obj_length; i++){
+            obj_top = obj_name.eq(i).offset().top
+            obj_start = obj_top - win_h + (win_h * 0.5)
+            obj_end = obj_top - win_h + (win_h * 0.7)
+            // console.log(i, '번째', scrolling, obj_end)
+            if(scrolling > obj_end){ //애니메이션 종료
+                console.log(i, '종료')
+                obj_per = 100
+            }else if(scrolling < obj_start){ //애니메이션 시작 전
+                console.log(i, '시작전')
+                obj_per = 0
+            }else{
+                console.log(i, '진행중')
+                obj_per = (scrolling - obj_start) / (obj_end - obj_start) * 100
+            }
+            // console.log(i, '번째', obj_per)
+            obj_name.eq(i).find(obj_txt).width(obj_per + '%')
+        }
+    }
+    if(history_length > 0){
+        his_head();   /* 함수의 실행 */    
+    }
+    $(window).scroll(function(){
+        if(history_length > 0){
+            his_head();   /* 함수의 실행 */    
+        } 
+    })
+
 })// 맨끝
