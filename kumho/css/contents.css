@@ -163,6 +163,7 @@
 }
 .ctn_history .his_cont {
     margin: 150px 0 170px 0;
+    
 }
 .ctn_history .his_cont .wrapper {
     display: flex; /*his_tit - his_year 좌우배치*/
@@ -289,6 +290,10 @@
     padding: 5px;
     max-width: 95%;
     overflow: hidden;
+    transition: bottom 0.5s;
+}
+.ctn_history .his_bar.hide {
+    bottom: -5%;
 }
 .ctn_history .his_bar ul {
     display: flex;
@@ -301,14 +306,14 @@
 .ctn_history .his_bar ul::-webkit-scrollbar {
     display: none;
 }
-.ctn_history .his_bar ul li button {
+.ctn_history .his_bar ul li a {
     display: block;
     font-size: 15px;
     padding: 0.3333em 1em;
     border-radius: 40px;
     white-space: nowrap;
 }
-.ctn_history .his_bar ul li.active button {
+.ctn_history .his_bar ul li.active a {
     background-color: var(--color-tit);
 }
 @media screen and (max-width:768px){
