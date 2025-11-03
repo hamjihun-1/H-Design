@@ -492,3 +492,238 @@
         gap: 0 8px;
     }
 }/* @media */
+
+/******* 홍보센터 > 금호역사관 *******/
+.ctn_pr05 .search {
+    max-width: 800px;
+    margin: 0 auto; /* 좌우 auto는 가운데 정렬 */
+}
+.ctn_pr05 .search .sch_wrap {
+    border: 2px solid #CC001F;
+    border-radius: 40px;
+    height: 60px;
+    padding: 0 20px 0 40px;
+    display: flex; /* 검색어입력 - 버튼 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+.ctn_pr05 .search .sch_wrap label {
+    display: none; /* 접근성 때문에 필수 입력 */
+}
+.ctn_pr05 .search .sch_wrap input[type="text"] { /* 검색 창 */
+    height: 45px;
+    width: calc(100% - 60px);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-tit);
+    border: none;
+    outline: none;
+}
+.ctn_pr05 .search .sch_wrap input[type="text"]::placeholder {
+    font-weight: 400;
+}
+.ctn_pr05 .search .sch_wrap input[type="submit"] { /* 검색 아이콘 */
+    width: 45px;
+    height: 45px;
+    background-color: transparent; /* 배경색 투명 */
+    border: 0;
+    color: transparent; /* 글자 투명 - font-size: 0 하면 안됨 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 26.25px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 27 27' fill='%23CC001F' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.2083 26.25L15.0208 17.0625C14.2917 17.6458 13.4531 18.1076 12.5052 18.4479C11.5573 18.7882 10.5486 18.9583 9.47917 18.9583C6.82986 18.9583 4.58767 18.0408 2.7526 16.2057C0.917535 14.3707 0 12.1285 0 9.47917C0 6.82986 0.917535 4.58767 2.7526 2.7526C4.58767 0.917535 6.82986 0 9.47917 0C12.1285 0 14.3707 0.917535 16.2057 2.7526C18.0408 4.58767 18.9583 6.82986 18.9583 9.47917C18.9583 10.5486 18.7882 11.5573 18.4479 12.5052C18.1076 13.4531 17.6458 14.2917 17.0625 15.0208L26.25 24.2083L24.2083 26.25ZM9.47917 16.0417C11.3021 16.0417 12.8516 15.4036 14.1276 14.1276C15.4036 12.8516 16.0417 11.3021 16.0417 9.47917C16.0417 7.65625 15.4036 6.10677 14.1276 4.83073C12.8516 3.55469 11.3021 2.91667 9.47917 2.91667C7.65625 2.91667 6.10677 3.55469 4.83073 4.83073C3.55469 6.10677 2.91667 7.65625 2.91667 9.47917C2.91667 11.3021 3.55469 12.8516 4.83073 14.1276C6.10677 15.4036 7.65625 16.0417 9.47917 16.0417Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join {
+    margin: 0 0 107px 0; 
+}
+.ctn_pr05 .join h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-tit);
+    margin: 80px 0 40px 0;
+}
+.ctn_pr05 .join .agree_box {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0 27px;
+    height: 292px;
+    overflow-y: auto;
+}
+.ctn_pr05 .join .agree_box {
+    white-space: pre-line;
+    background-color: #f7f7f7;
+}
+.ctn_pr05 .join .agree_box::-webkit-scrollbar {
+    width: 20px
+}
+.ctn_pr05 .join .agree_box::-webkit-scrollbar-thumb {
+    height: 42px;
+    background: #999;
+    border-radius: 10px;
+    border: 6px solid #f7f7f7
+}
+.ctn_pr05 .join .agree_box::-webkit-scrollbar-track {
+    border-radius: 0 6px 6px 0;
+    background-color: transparent
+}
+.ctn_pr05 .join .agree .agree_btn {
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 35px;
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"] {
+    display: none; /* input은 스타일 주기 힘듬 그래서 숨기고 대신 label에 스타일을 줌 */
+}
+.ctn_pr05 .join .agree .agree_btn label {
+    padding: 5px 0 5px 43px; /* 앞에 체크가 들어갈 만큼 여백 */
+    position: relative; /* before 정렬의 기준 */
+    cursor: pointer; /* 마우스를 오버 시 손바닥 모양 */
+}
+.ctn_pr05 .join .agree .agree_btn label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='%23CCCCCC' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.75 7.78777L0 4.09627L1.1875 3.1734L4.75 5.94202L12.3958 0L13.5833 0.922875L4.75 7.78777Z' /%3E%3C/svg%3E%0A");
+}
+/* <input type="radio" name="agree" id="yes"><label for="yes">동의함</label>
+    input 뒤에 label 왔을 때 input + label
+    이때 input이 체크되면 :checked 상태
+*/
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label {
+    color: #CC001F;
+    font-weight: 700;
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label::before {
+    border-color: var(--color-point);
+    background-color: var(--color-point);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.75 7.78777L0 4.09627L1.1875 3.1734L4.75 5.94202L12.3958 0L13.5833 0.922875L4.75 7.78777Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join .join_info {
+    border-top: 2px solid #111;
+    border-bottom: 2px solid #111;
+    padding: 60px 0 40px 0;
+}
+.ctn_pr05 .join .join_info .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px 0;
+}
+.ctn_pr05 .join .join_info .item label {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-tit);
+}
+.ctn_pr05 .join .join_info .item select,
+.ctn_pr05 .join .join_info .item input[type="text"],
+.ctn_pr05 .join .join_info .item textarea {
+    width: calc(100% - 145px);
+    height: 46px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    outline: 0;
+    background-color: #f7f7f7;
+}
+.ctn_pr05 .join .join_info .item textarea {
+    height: 450px;
+    resize: none;
+    padding: 10px;
+}
+.ctn_pr05 .join .join_btn {
+    margin: 50px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 23px;
+}
+.ctn_pr05 .join .join_btn input,
+.ctn_pr05 .join .join_btn a,
+.ctn_pr05 .join .join_btn button {
+    display: block;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 50px;
+    color: var(--color-white);
+    width: 119px;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #222;
+    border: 0;
+}
+.ctn_pr05 .join .join_btn input.ok,
+.ctn_pr05 .join .join_btn a.ok,
+.ctn_pr05 .join .join_btn button.ok {
+    background-color: #CC001F;
+}
+@media screen and (max-width:768px){
+    .ctn_pr05 .join h3 {
+        font-size: 20px;
+        margin: 50px 0 30px 0;
+    }
+    .ctn_pr05 .join .join_info {
+        border-top: 2px solid #111;
+        border-bottom: 2px solid #111;
+        padding: 30px 0 20px 0;
+    }
+    .ctn_pr05 .join .join_info .item {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 0 20px 0;
+    }
+    .ctn_pr05 .join .join_info .item label {
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+    .ctn_pr05 .join .join_info .item select,
+    .ctn_pr05 .join .join_info .item input[type="text"],
+    .ctn_pr05 .join .join_info .item textarea {
+        width: 100%;
+    }
+    .ctn_pr05 .join .join_info .item textarea {
+        height: 250px;
+    }
+    .ctn_pr05 .join .join_btn {
+        margin: 25px 0 0 0;
+    }
+    .ctn_pr05 .join .join_btn input,
+    .ctn_pr05 .join .join_btn a,
+    .ctn_pr05 .join .join_btn button {
+        display: block;
+        font-size: 15px;
+        line-height: 40px;
+        width: 80px;
+        height: 40px;
+    }
+} /* @media */
+
+/********** IR > 재무정보 *********/
+.ctn_ir03 {
+    padding-bottom: 200px;
+}
+.ctn_ir03 h3 {
+    margin: 50px 0 10px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-tit);
+}
+@media screen and (max-width:768px){
+    /* 모바일에서 몇칸 날리기 */
+    .ctn_ir03 .table_wrap.count table col:last-child,
+    .ctn_ir03 .table_wrap.count table th:last-child,
+    .ctn_ir03 .table_wrap.count table td:last-child {
+        display: none;
+    }
+}
