@@ -384,3 +384,111 @@
         margin: 0 0 20px 75px;
     }
 } /*@media*/
+
+
+/******* 회사소개 > 찾아오시는 길 *******/
+.ctn_map {
+    margin-bottom: 200px;
+}
+.ctn_map .map_area {
+    height: 600px;
+}
+.ctn_map .map_area iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+.ctn_map .map_info {
+    margin-top: -100px;
+    position: relative;
+    z-index: 10;
+}
+.ctn_map .map_info .inner_wrap {
+    background-color: #CC001F;
+    color: var(--color-white);
+    padding: 50px 50px;
+    border-radius: 20px;
+}
+.ctn_map .map_info .inner_wrap h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 40px;
+}
+.ctn_map .map_info .inner_wrap .group {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 54px;
+}
+.ctn_map .map_info .inner_wrap .group .item {
+    position: relative; /* before 정렬의 기준*/
+    padding-left: 90px;
+}
+.ctn_map .map_info .inner_wrap .group .item::before {
+    content: "";
+    position: absolute; /* item을 기준으로 정렬 */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #222;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+}
+.ctn_map .map_info .inner_wrap .group .item.add::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 30L10 26.5L2.25 29.5C1.69444 29.7222 1.18056 29.6597 0.708333 29.3125C0.236111 28.9653 0 28.5 0 27.9167V4.58333C0 4.22222 0.104167 3.90278 0.3125 3.625C0.520833 3.34722 0.805555 3.13889 1.16667 3L10 0L20 3.5L27.75 0.5C28.3056 0.277778 28.8194 0.340278 29.2917 0.6875C29.7639 1.03472 30 1.5 30 2.08333V25.4167C30 25.7778 29.8958 26.0972 29.6875 26.375C29.4792 26.6528 29.1944 26.8611 28.8333 27L20 30ZM18.3333 25.9167V6.41667L11.6667 4.08333V23.5833L18.3333 25.9167ZM21.6667 25.9167L26.6667 24.25V4.5L21.6667 6.41667V25.9167ZM3.33333 25.5L8.33333 23.5833V4.08333L3.33333 5.75V25.5Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_info .inner_wrap .group .item.tel::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28.25 30C24.7778 30 21.3472 29.2431 17.9583 27.7292C14.5694 26.2153 11.4861 24.0694 8.70833 21.2917C5.93056 18.5139 3.78472 15.4306 2.27083 12.0417C0.756945 8.65278 0 5.22222 0 1.75C0 1.25 0.166667 0.833333 0.5 0.5C0.833333 0.166667 1.25 0 1.75 0H8.5C8.88889 0 9.23611 0.131944 9.54167 0.395833C9.84722 0.659722 10.0278 0.972222 10.0833 1.33333L11.1667 7.16667C11.2222 7.61111 11.2083 7.98611 11.125 8.29167C11.0417 8.59722 10.8889 8.86111 10.6667 9.08333L6.625 13.1667C7.18056 14.1944 7.84028 15.1875 8.60417 16.1458C9.36806 17.1042 10.2083 18.0278 11.125 18.9167C11.9861 19.7778 12.8889 20.5764 13.8333 21.3125C14.7778 22.0486 15.7778 22.7222 16.8333 23.3333L20.75 19.4167C21 19.1667 21.3264 18.9792 21.7292 18.8542C22.1319 18.7292 22.5278 18.6944 22.9167 18.75L28.6667 19.9167C29.0556 20.0278 29.375 20.2292 29.625 20.5208C29.875 20.8125 30 21.1389 30 21.5V28.25C30 28.75 29.8333 29.1667 29.5 29.5C29.1667 29.8333 28.75 30 28.25 30ZM5.04167 10L7.79167 7.25L7.08333 3.33333H3.375C3.51389 4.47222 3.70833 5.59722 3.95833 6.70833C4.20833 7.81944 4.56944 8.91667 5.04167 10ZM19.9583 24.9167C21.0417 25.3889 22.1458 25.7639 23.2708 26.0417C24.3958 26.3194 25.5278 26.5 26.6667 26.5833V22.9167L22.75 22.125L19.9583 24.9167Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_info .inner_wrap .group .item h4 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.ctn_map .map_info .inner_wrap .group .item p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 16px;
+}
+@media screen and (max-width:768px){
+    .ctn_map {
+        margin-bottom: 100px;
+    }
+    .ctn_map .map_area {
+        height: 400px;
+    }
+    .ctn_map .map_info {
+        margin-top: -50px;
+    }
+    .ctn_map .map_info .inner_wrap {
+        padding: 25px 25px;
+        border-radius: 10px;
+    }
+    .ctn_map .map_info .inner_wrap h3 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+    .ctn_map .map_info .inner_wrap .group {
+        flex-direction: column;
+        gap: 20px 0;
+    }
+    .ctn_map .map_info .inner_wrap .group .item {
+        padding-left: 60px;
+    }
+    .ctn_map .map_info .inner_wrap .group .item::before {
+        width: 40px;
+        height: 40px;
+        background-size: 18px;
+    }
+    .ctn_map .map_info .inner_wrap .group .item h4 {
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+    .ctn_map .map_info .inner_wrap .group .item p {
+        gap: 0 8px;
+    }
+}/* @media */
