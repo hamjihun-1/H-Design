@@ -406,7 +406,7 @@
 .ctn_map .map_info .inner_wrap {
     background-color: #CC001F;
     color: var(--color-white);
-    padding: 50px 50px;
+    padding: 50px;
     border-radius: 20px;
 }
 .ctn_map .map_info .inner_wrap h3 {
@@ -465,11 +465,11 @@
         margin-top: -50px;
     }
     .ctn_map .map_info .inner_wrap {
-        padding: 25px 25px;
+        padding: 30px;
         border-radius: 10px;
     }
     .ctn_map .map_info .inner_wrap h3 {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
         margin-bottom: 20px;
     }
     .ctn_map .map_info .inner_wrap .group {
