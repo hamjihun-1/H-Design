@@ -1,0 +1,79 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+#fp-nav ul li:last-child {
+    display: none;
+}
+#fp-nav.fp-left {
+    left: 30px;
+}
+
+/* 
+    <li>
+    <a></a>
+    <span class="fp-tooltip"></span>
+    </li>
+*/
+#fp-nav ul li{
+    width: auto;
+    height: auto;
+    margin: 9px 0 9px 0;
+}
+#fp-nav ul li a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid red;
+}
+#fp-nav ul li a span {
+    display: none;
+}
+#fp-nav ul li .fp-tooltip {
+    position: relative;
+    left: auto;
+    top: auto;
+    color: var(--color-white70);
+    font-size: 17px;
+    font-family: inherit;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: visible;
+    display: block;
+    opacity: 1;
+    width: auto;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+h2 {
+    font-size: 100px;
+    font-weight: 700;
+    text-align: center;
+}
+.visual {
+    background-color: blueviolet;
+    color: #fff;
+}
+.tree {
+    background-color: seagreen;
+    color: #fff;
+}
+.work {
+    
+}
+.news {
+    
+}
+footer {
+    background-color: red;
+    color: #fff;
+}
+
