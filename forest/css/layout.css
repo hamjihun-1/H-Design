@@ -270,6 +270,9 @@ footer .f_sub .copyright p + p {
         font-size: 20px;
         margin-bottom: 10px;
     }
+    footer .f_head .item h2 span {
+        display: none;
+    }
     footer .f_head .item p {
         display: none;
     }
