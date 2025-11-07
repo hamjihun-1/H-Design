@@ -901,6 +901,9 @@ body #fp-nav.hide {
     .news .tit h2 {
         font-size: 30px;
     }
+    .news .list .swiper-slide:hover a {
+        transform: translateY(0);
+    }
     .news .list .swiper-slide a h3 {
         font-size: 18px;
     }
@@ -910,6 +913,9 @@ body #fp-nav.hide {
     }
     .news .list .swiper-slide a .photo .cate {
         font-size: 16px;
+    }
+    .news .list .swiper-slide:hover a .over {
+        display: none;
     }
     .news .more {
         position: relative;
@@ -926,6 +932,9 @@ body #fp-nav.hide {
         border-radius: 2.3529em;
         padding: 0.2941em 2.6471em 0.2941em 1.0588em;
         position: relative;
+    }
+    .news .more a:hover {
+        display: none;
     }
 } /*@media*/
 
