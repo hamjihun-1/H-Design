@@ -1,0 +1,729 @@
+/**********************
+* 파일명 : contents.css
+* 작성자 : 함지훈
+* 작성일 : 25-10-23
+* 설  명 : 연혁, 인사말 등의 각페이지에만 들어가는 스타일들을 모두 모음..
+            이 파일에 있는 css를 수정하면 그 페이지 한개에만 영향을 끼침
+****************************/
+
+/* 회사소개 - CEO인시말 (메뉴명을 써줌) */
+
+.ctn_ceo .ceo_head {
+    height: 300dvh;
+    position: relative; /* ceo_photo 정렬의 기준 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.ctn_ceo .ceo_head .ceo_photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100dvh;
+}
+.ctn_ceo .ceo_head .ceo_photo[data-status="ing"] {
+    position: fixed;
+}
+.ctn_ceo .ceo_head .ceo_photo[data-status="end"] {
+    top: auto;
+    bottom: 0;
+}
+.ctn_ceo .ceo_head .ceo_photo .ceo_img {
+    position: absolute; /* ceo_head를 기준으로 정렬 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: url(../images/contents/ceo_01.jpg) no-repeat center center / cover;
+    transition: width 0.2s, height 0.2s;
+}
+.ctn_ceo .ceo_head .ceo_photo .ceo_img .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.4;
+}
+.ctn_ceo .ceo_head .ceo_txt {
+    height: 110dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ctn_ceo .ceo_head .ceo_txt p {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-white);
+    margin: 30px 0 0 0;
+}
+.ctn_ceo .ceo_cont {
+    margin: 80px 0;
+}
+.ctn_ceo .ceo_cont h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-tit);
+}
+.ctn_ceo .ceo_cont p {
+    margin: 40px 0;
+    word-break: break-all;
+    line-height: 1.7;
+}
+.ctn_ceo .ceo_cont .sign {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px 0;
+}
+.ctn_ceo .ceo_cont .sign strong {
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-tit);
+}
+.ctn_ceo .ceo_cont .sign .sign_img {
+    display: block;
+    background: url(../images/contents/ceo_sign01.jpg) no-repeat center center / contain;
+    width: 167px;
+    height: 84px;
+}
+@media screen and (max-width:768px){
+    .ctn_ceo .ceo_head .ceo_txt {
+        height: 90dvh;
+    }
+    .ctn_ceo .ceo_head .ceo_txt p {
+        font-size: 2.8rem;
+    }
+    .ctn_ceo .ceo_cont {
+        margin: 60px 0;
+    }
+    .ctn_ceo .ceo_cont h3 {
+        font-size: 2.2rem;
+    }
+    .ctn_ceo .ceo_cont p {
+        margin: 30px 0 40px 0;
+    }
+    .ctn_ceo .ceo_cont .sign .sign_img {
+        width: 114px;
+        height: 57px;
+    }
+} /* @media */
+
+/********** 기업소개 > 연혁 ***********/
+.ctn_history {
+    color : #111;
+}
+.ctn_history .his_head {
+    font-size: clamp(18px, 4vw, 60px);
+    padding: 3em 0;
+    background: url(../images/contents/his_head01.jpg) no-repeat center center / cover;
+    color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.ctn_history .his_head::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.ctn_history .his_head.bg2 {
+    background-image: url(../images/contents/his_head02.jpg);
+}
+.ctn_history .his_head.bg3 {
+    background-image: url(../images/contents/his_head03.jpg);
+}
+.ctn_history .his_head.bg4 {
+    background-image: url(../images/contents/his_head04.jpg);
+}
+.ctn_history .his_head  h3 {
+    font-weight: 700;
+    line-height: 1.3;
+    position: relative; /* strong태그 정렬의 기준 */
+    white-space: nowrap; /* 줄바꿈 금지 */
+}
+.ctn_history .his_head  h3 strong {
+    position: absolute; /* h3를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 0;
+    overflow: hidden;
+    color: var(--color-white);
+    transition: width 0.5s;
+}
+.ctn_history .his_cont {
+    margin: 150px 0 170px 0;
+    
+}
+.ctn_history .his_cont .wrapper {
+    display: flex; /*his_tit - his_year 좌우배치*/
+    justify-content: space-between;
+}
+.ctn_history .his_cont.tit_right .wrapper {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+.ctn_history .his_cont .his_tit {
+    max-width: 45%;
+}
+.ctn_history .his_cont .his_tit strong {
+    font-size: clamp(17px, 1.5vw, 24px);
+    font-weight: 700;
+    color: var(--color-point);
+    margin-bottom: 10px;
+}
+.ctn_history .his_cont .his_tit h4 {
+    font-size: clamp(24px, 4vw, 60px);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-tit);
+}
+.ctn_history .his_cont .his_year {
+    width: 50%;
+    position: relative; /* before 정렬의 기준 */
+    padding-left: 35px;
+}
+.ctn_history .his_cont.tit_right .his_year {
+    padding-left: 0;
+    padding-right: 35px;
+}
+.ctn_history .his_cont .his_year::before { /* 중앙 라인 선 */
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #aaa;
+}
+.ctn_history .his_cont.tit_right .his_year::before { /* 중앙 라인 선 */
+    left: auto;
+    right: 0;
+}
+.ctn_history .his_cont .his_year .year_tit {
+    font-size: clamp(22px, 2vw, 32px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 30px 0;
+    position: relative; /* before 정렬의 기준 */
+}
+.ctn_history .his_cont .his_year .year_tit::before { /* year_tit 포인트 동그라미 */
+    content: "";
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-point);
+}
+.ctn_history .his_cont.tit_right .his_year .year_tit::before { /* year_tit 포인트 동그라미 */
+    left: auto;
+    right: -40px;
+}
+.ctn_history .his_cont .his_year .year_tit:first-child:after { /* 맨위 라인선 삭제 */
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 0;
+    width: 2px;
+    height: 22px;
+    background-color: var(--color-white);
+}
+.ctn_history .his_cont.tit_right .his_year .year_tit:first-child:after { /* 맨위 라인선 삭제 */
+    left: auto;
+    right: -35px;
+}
+.ctn_history .his_cont .his_year .year_list + .year_tit { /* 첫번째x 두번째부터 year_tit margin 부여 */
+    margin-top: 90px;
+}
+.ctn_history .his_cont .his_year .year_list {
+    position: relative; /* after 정렬의 기준 */
+}
+.ctn_history .his_cont .his_year .year_list:last-child::after {
+    content: "";
+    position: absolute;
+    left: -35px;
+    bottom: -26px;
+    width: 2px;
+    height: calc(100% + 75px);
+    background-color: var(--color-white);
+}
+.ctn_history .his_cont.tit_right .his_year .year_list:last-child::after {
+    left: auto;
+    right: -35px;
+}
+.ctn_history .his_cont .his_year .year_list dl dt {
+    color: #666;
+    float: left;
+}
+.ctn_history .his_cont.tit_right .his_year .year_list dl dt {
+    float: right;
+}
+.ctn_history .his_cont .his_year .year_list dl dd {
+    margin: 0 0 25px 92px;
+}
+.ctn_history .his_cont.tit_right .his_year .year_list dl dd {
+    margin: 0 92px 25px 0;
+}
+.ctn_history .his_bar {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+    z-index: 100;
+    background-image: linear-gradient(90deg, #FF7F3F, #CC001F);
+    color: var(--color-white);
+    border-radius: 40px;
+    padding: 5px;
+    max-width: 95%;
+    overflow: hidden;
+    transition: bottom 0.5s;
+}
+.ctn_history .his_bar.hide {
+    bottom: -5%;
+}
+.ctn_history .his_bar ul {
+    display: flex;
+    gap: 0 10px;
+    overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+    overflow-x: auto; /* 좌우 스크롤바 생성 */
+    -ms-overflow-style: none;  /* IE, Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.ctn_history .his_bar ul::-webkit-scrollbar {
+    display: none;
+}
+.ctn_history .his_bar ul li a {
+    display: block;
+    font-size: 15px;
+    padding: 0.3333em 1em;
+    border-radius: 40px;
+    white-space: nowrap;
+}
+.ctn_history .his_bar ul li.active a {
+    background-color: var(--color-tit);
+}
+@media screen and (max-width:768px){
+    .ctn_history .his_cont {
+        margin: 70px 0 90px 0;
+    }
+    .ctn_history .his_cont .wrapper {
+        display: block; /*his_tit - his_year 위아래배치*/
+    }
+    .ctn_history .his_cont.tit_right .wrapper {
+        text-align: left;
+    }
+    .ctn_history .his_cont .his_tit {
+        max-width: 100%;
+    }
+    .ctn_history .his_cont .his_tit h4 {
+        margin-bottom: clamp(20px, 5vw, 35px);
+    }
+    .ctn_history .his_cont .his_year {
+        width: auto;
+        padding-left: 25px;
+    }
+    .ctn_history .his_cont.tit_right .his_year {
+        padding-left: 25px;
+        padding-right: 0;
+    }
+    .ctn_history .his_cont.tit_right .his_year::before { /* 중앙 라인 선 */
+        left: 0; /*auto -> 0*/
+        right: auto; /* 0 -> auto */
+    }
+    .ctn_history .his_cont .his_year .year_tit::before { /* year_tit 포인트 동그라미 */
+        left: -30px;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_tit::before { /* year_tit 포인트 동그라미 */
+        left: -30px; /* auto -> -30px */
+        right: auto; /* -40px -> auto */
+    }
+    .ctn_history .his_cont .his_year .year_tit:first-child:after { /* 맨위 라인선 삭제 */
+        left: -25px;
+        height: 10px;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_tit:first-child:after { /* 맨위 라인선 삭제 */
+        left: -25px; /* auto -> -25px */
+        right: auto; /* -35px -> auto */
+    }
+    .ctn_history .his_cont .his_year .year_list + .year_tit { /* 첫번째x 두번째부터 year_tit margin 부여 */
+        margin-top: 70px;
+    }
+    .ctn_history .his_cont .his_year .year_list:last-child::after {
+        left: -25px;
+        bottom: -26px;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_list:last-child::after {
+        left: -25px; /* auto -> -25px */
+        right: auto; /* -35px -> auto */
+    }
+    .ctn_history .his_cont .his_year .year_list dl dt {
+        color: #666;
+        float: left;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_list dl dt {
+        float: left; /* right - left로 변경 */
+    }
+    .ctn_history .his_cont .his_year .year_list dl dd {
+        margin: 0 0 20px 75px;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_list dl dd {
+        margin: 0 0 20px 75px;
+    }
+} /*@media*/
+
+
+/******* 회사소개 > 찾아오시는 길 *******/
+.ctn_map {
+    margin-bottom: 200px;
+}
+.ctn_map .map_area {
+    height: 600px;
+}
+.ctn_map .map_area iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+.ctn_map .map_info {
+    margin-top: -100px;
+    position: relative;
+    z-index: 10;
+}
+.ctn_map .map_info .inner_wrap {
+    background-color: #CC001F;
+    color: var(--color-white);
+    padding: 50px;
+    border-radius: 20px;
+}
+.ctn_map .map_info .inner_wrap h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 40px;
+}
+.ctn_map .map_info .inner_wrap .group {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 54px;
+}
+.ctn_map .map_info .inner_wrap .group .item {
+    position: relative; /* before 정렬의 기준*/
+    padding-left: 90px;
+}
+.ctn_map .map_info .inner_wrap .group .item::before {
+    content: "";
+    position: absolute; /* item을 기준으로 정렬 */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #222;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+}
+.ctn_map .map_info .inner_wrap .group .item.add::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 30L10 26.5L2.25 29.5C1.69444 29.7222 1.18056 29.6597 0.708333 29.3125C0.236111 28.9653 0 28.5 0 27.9167V4.58333C0 4.22222 0.104167 3.90278 0.3125 3.625C0.520833 3.34722 0.805555 3.13889 1.16667 3L10 0L20 3.5L27.75 0.5C28.3056 0.277778 28.8194 0.340278 29.2917 0.6875C29.7639 1.03472 30 1.5 30 2.08333V25.4167C30 25.7778 29.8958 26.0972 29.6875 26.375C29.4792 26.6528 29.1944 26.8611 28.8333 27L20 30ZM18.3333 25.9167V6.41667L11.6667 4.08333V23.5833L18.3333 25.9167ZM21.6667 25.9167L26.6667 24.25V4.5L21.6667 6.41667V25.9167ZM3.33333 25.5L8.33333 23.5833V4.08333L3.33333 5.75V25.5Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_info .inner_wrap .group .item.tel::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28.25 30C24.7778 30 21.3472 29.2431 17.9583 27.7292C14.5694 26.2153 11.4861 24.0694 8.70833 21.2917C5.93056 18.5139 3.78472 15.4306 2.27083 12.0417C0.756945 8.65278 0 5.22222 0 1.75C0 1.25 0.166667 0.833333 0.5 0.5C0.833333 0.166667 1.25 0 1.75 0H8.5C8.88889 0 9.23611 0.131944 9.54167 0.395833C9.84722 0.659722 10.0278 0.972222 10.0833 1.33333L11.1667 7.16667C11.2222 7.61111 11.2083 7.98611 11.125 8.29167C11.0417 8.59722 10.8889 8.86111 10.6667 9.08333L6.625 13.1667C7.18056 14.1944 7.84028 15.1875 8.60417 16.1458C9.36806 17.1042 10.2083 18.0278 11.125 18.9167C11.9861 19.7778 12.8889 20.5764 13.8333 21.3125C14.7778 22.0486 15.7778 22.7222 16.8333 23.3333L20.75 19.4167C21 19.1667 21.3264 18.9792 21.7292 18.8542C22.1319 18.7292 22.5278 18.6944 22.9167 18.75L28.6667 19.9167C29.0556 20.0278 29.375 20.2292 29.625 20.5208C29.875 20.8125 30 21.1389 30 21.5V28.25C30 28.75 29.8333 29.1667 29.5 29.5C29.1667 29.8333 28.75 30 28.25 30ZM5.04167 10L7.79167 7.25L7.08333 3.33333H3.375C3.51389 4.47222 3.70833 5.59722 3.95833 6.70833C4.20833 7.81944 4.56944 8.91667 5.04167 10ZM19.9583 24.9167C21.0417 25.3889 22.1458 25.7639 23.2708 26.0417C24.3958 26.3194 25.5278 26.5 26.6667 26.5833V22.9167L22.75 22.125L19.9583 24.9167Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_info .inner_wrap .group .item h4 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.ctn_map .map_info .inner_wrap .group .item p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 16px;
+}
+@media screen and (max-width:768px){
+    .ctn_map {
+        margin-bottom: 100px;
+    }
+    .ctn_map .map_area {
+        height: 400px;
+    }
+    .ctn_map .map_info {
+        margin-top: -50px;
+    }
+    .ctn_map .map_info .inner_wrap {
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .ctn_map .map_info .inner_wrap h3 {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+    .ctn_map .map_info .inner_wrap .group {
+        flex-direction: column;
+        gap: 20px 0;
+    }
+    .ctn_map .map_info .inner_wrap .group .item {
+        padding-left: 60px;
+    }
+    .ctn_map .map_info .inner_wrap .group .item::before {
+        width: 40px;
+        height: 40px;
+        background-size: 18px;
+    }
+    .ctn_map .map_info .inner_wrap .group .item h4 {
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+    .ctn_map .map_info .inner_wrap .group .item p {
+        gap: 0 8px;
+    }
+}/* @media */
+
+/******* 홍보센터 > 금호역사관 *******/
+.ctn_pr05 .search {
+    max-width: 800px;
+    margin: 0 auto; /* 좌우 auto는 가운데 정렬 */
+}
+.ctn_pr05 .search .sch_wrap {
+    border: 2px solid #CC001F;
+    border-radius: 40px;
+    height: 60px;
+    padding: 0 20px 0 40px;
+    display: flex; /* 검색어입력 - 버튼 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+.ctn_pr05 .search .sch_wrap label {
+    display: none; /* 접근성 때문에 필수 입력 */
+}
+.ctn_pr05 .search .sch_wrap input[type="text"] { /* 검색 창 */
+    height: 45px;
+    width: calc(100% - 60px);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-tit);
+    border: none;
+    outline: none;
+}
+.ctn_pr05 .search .sch_wrap input[type="text"]::placeholder {
+    font-weight: 400;
+}
+.ctn_pr05 .search .sch_wrap input[type="submit"] { /* 검색 아이콘 */
+    width: 45px;
+    height: 45px;
+    background-color: transparent; /* 배경색 투명 */
+    border: 0;
+    color: transparent; /* 글자 투명 - font-size: 0 하면 안됨 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 26.25px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 27 27' fill='%23CC001F' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.2083 26.25L15.0208 17.0625C14.2917 17.6458 13.4531 18.1076 12.5052 18.4479C11.5573 18.7882 10.5486 18.9583 9.47917 18.9583C6.82986 18.9583 4.58767 18.0408 2.7526 16.2057C0.917535 14.3707 0 12.1285 0 9.47917C0 6.82986 0.917535 4.58767 2.7526 2.7526C4.58767 0.917535 6.82986 0 9.47917 0C12.1285 0 14.3707 0.917535 16.2057 2.7526C18.0408 4.58767 18.9583 6.82986 18.9583 9.47917C18.9583 10.5486 18.7882 11.5573 18.4479 12.5052C18.1076 13.4531 17.6458 14.2917 17.0625 15.0208L26.25 24.2083L24.2083 26.25ZM9.47917 16.0417C11.3021 16.0417 12.8516 15.4036 14.1276 14.1276C15.4036 12.8516 16.0417 11.3021 16.0417 9.47917C16.0417 7.65625 15.4036 6.10677 14.1276 4.83073C12.8516 3.55469 11.3021 2.91667 9.47917 2.91667C7.65625 2.91667 6.10677 3.55469 4.83073 4.83073C3.55469 6.10677 2.91667 7.65625 2.91667 9.47917C2.91667 11.3021 3.55469 12.8516 4.83073 14.1276C6.10677 15.4036 7.65625 16.0417 9.47917 16.0417Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join {
+    margin: 0 0 107px 0; 
+}
+.ctn_pr05 .join h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-tit);
+    margin: 80px 0 40px 0;
+}
+.ctn_pr05 .join .agree_box {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0 27px;
+    height: 292px;
+    overflow-y: auto;
+}
+.ctn_pr05 .join .agree_box {
+    white-space: pre-line;
+    background-color: #f7f7f7;
+}
+.ctn_pr05 .join .agree_box::-webkit-scrollbar {
+    width: 20px
+}
+.ctn_pr05 .join .agree_box::-webkit-scrollbar-thumb {
+    height: 42px;
+    background: #999;
+    border-radius: 10px;
+    border: 6px solid #f7f7f7
+}
+.ctn_pr05 .join .agree_box::-webkit-scrollbar-track {
+    border-radius: 0 6px 6px 0;
+    background-color: transparent
+}
+.ctn_pr05 .join .agree .agree_btn {
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 35px;
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"] {
+    display: none; /* input은 스타일 주기 힘듬 그래서 숨기고 대신 label에 스타일을 줌 */
+}
+.ctn_pr05 .join .agree .agree_btn label {
+    padding: 5px 0 5px 43px; /* 앞에 체크가 들어갈 만큼 여백 */
+    position: relative; /* before 정렬의 기준 */
+    cursor: pointer; /* 마우스를 오버 시 손바닥 모양 */
+}
+.ctn_pr05 .join .agree .agree_btn label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='%23CCCCCC' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.75 7.78777L0 4.09627L1.1875 3.1734L4.75 5.94202L12.3958 0L13.5833 0.922875L4.75 7.78777Z' /%3E%3C/svg%3E%0A");
+}
+/* <input type="radio" name="agree" id="yes"><label for="yes">동의함</label>
+    input 뒤에 label 왔을 때 input + label
+    이때 input이 체크되면 :checked 상태
+*/
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label {
+    color: #CC001F;
+    font-weight: 700;
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label::before {
+    border-color: var(--color-point);
+    background-color: var(--color-point);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.75 7.78777L0 4.09627L1.1875 3.1734L4.75 5.94202L12.3958 0L13.5833 0.922875L4.75 7.78777Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join .join_info {
+    border-top: 2px solid #111;
+    border-bottom: 2px solid #111;
+    padding: 60px 0 40px 0;
+}
+.ctn_pr05 .join .join_info .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px 0;
+}
+.ctn_pr05 .join .join_info .item label {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-tit);
+}
+.ctn_pr05 .join .join_info .item select,
+.ctn_pr05 .join .join_info .item input[type="text"],
+.ctn_pr05 .join .join_info .item textarea {
+    width: calc(100% - 145px);
+    height: 46px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    outline: 0;
+    background-color: #f7f7f7;
+}
+.ctn_pr05 .join .join_info .item textarea {
+    height: 450px;
+    resize: none;
+    padding: 10px;
+}
+.ctn_pr05 .join .join_btn {
+    margin: 50px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 23px;
+}
+.ctn_pr05 .join .join_btn input,
+.ctn_pr05 .join .join_btn a,
+.ctn_pr05 .join .join_btn button {
+    display: block;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 50px;
+    color: var(--color-white);
+    width: 119px;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #222;
+    border: 0;
+}
+.ctn_pr05 .join .join_btn input.ok,
+.ctn_pr05 .join .join_btn a.ok,
+.ctn_pr05 .join .join_btn button.ok {
+    background-color: #CC001F;
+}
+@media screen and (max-width:768px){
+    .ctn_pr05 .join h3 {
+        font-size: 20px;
+        margin: 50px 0 30px 0;
+    }
+    .ctn_pr05 .join .join_info {
+        border-top: 2px solid #111;
+        border-bottom: 2px solid #111;
+        padding: 30px 0 20px 0;
+    }
+    .ctn_pr05 .join .join_info .item {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 0 20px 0;
+    }
+    .ctn_pr05 .join .join_info .item label {
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+    .ctn_pr05 .join .join_info .item select,
+    .ctn_pr05 .join .join_info .item input[type="text"],
+    .ctn_pr05 .join .join_info .item textarea {
+        width: 100%;
+    }
+    .ctn_pr05 .join .join_info .item textarea {
+        height: 250px;
+    }
+    .ctn_pr05 .join .join_btn {
+        margin: 25px 0 0 0;
+    }
+    .ctn_pr05 .join .join_btn input,
+    .ctn_pr05 .join .join_btn a,
+    .ctn_pr05 .join .join_btn button {
+        display: block;
+        font-size: 15px;
+        line-height: 40px;
+        width: 80px;
+        height: 40px;
+    }
+} /* @media */
+
+/********** IR > 재무정보 *********/
+.ctn_ir03 {
+    padding-bottom: 200px;
+}
+.ctn_ir03 h3 {
+    margin: 50px 0 10px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-tit);
+}
+@media screen and (max-width:768px){
+    /* 모바일에서 몇칸 날리기 */
+    .ctn_ir03 .table_wrap.count table col:last-child,
+    .ctn_ir03 .table_wrap.count table th:last-child,
+    .ctn_ir03 .table_wrap.count table td:last-child {
+        display: none;
+    }
+}
