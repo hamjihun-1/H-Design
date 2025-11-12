@@ -13,3 +13,185 @@
 @import url(fonts.css);
 @import url(common.css);
 @import url(layout.css);
+
+.visual {
+    position: relative; /* ctrl_btn 정렬의 기준*/
+}
+.visual .swiper {
+    width: 100%;
+    height: 100dvh;
+}
+.visual .swiper-slide .photo, 
+.visual .swiper-slide .video {
+    position: absolute; /* swiper-slide를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .swiper-slide .photo img,
+.visual .swiper-slide .video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper-slide .photo img {
+    transition: transform 3s;
+}
+.visual .swiper-slide.swiper-slide-active .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.visual .swiper-slide .txt {
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.visual .swiper-slide .txt h3 {
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    /* 글자 나타나는 효과 */
+    transition: 1s;
+    transition-delay: 0.3s;
+    transform: translate(0, 50px);
+    opacity: 0;
+}
+.visual .swiper-slide .txt p {
+    margin: 0 0 calc(20dvh + 130px) 0;
+    /* 글자 나타나는 효과 */
+    transition: 1s;
+    transition-delay: 0.7s;
+    transform: translate(0, 50px);
+    opacity: 0;
+}
+.visual .swiper-slide.swiper-slide-active .txt h3,
+.visual .swiper-slide.swiper-slide-active .txt p {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.visual .ctrl_btn {
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: calc(50% - 630px);
+    bottom: 20%;
+    z-index: 1;
+    display: flex;
+    gap: 0 13px;
+}
+.visual .ctrl_btn .paging {
+    display: flex;
+    align-items: center;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+}
+.visual .ctrl_btn .paging .current,
+.visual .ctrl_btn .paging .total {
+    margin-bottom: 8px;
+    font-size: 2.4rem;
+}
+.visual .ctrl_btn .paging .bar {
+    width: 200px;
+    height: 5px;
+    background-color: var(--color-white50);
+    margin: 0 10px;
+    position: relative; /* before 정렬의 기준 */
+}
+.visual .ctrl_btn .paging .bar span {
+    position: absolute; /* bar를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-white);
+}
+.visual .ctrl_btn .stop,
+.visual .ctrl_btn .play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    fill: var(--color-white);
+    margin-top: 11px;
+}
+.visual .ctrl_btn .play {
+    display: none; /* 숨김처리 */
+}
+.visual .ctrl_btn .stop i {
+    display: block;
+    width: 10px;
+    /* 이미지나 svg 아이콘은 넓이만 넣어줘도 높이는 비율에 맞게 들어감 */
+}
+.visual .ctrl_btn .play i {
+    display: block;
+    width: 11px;
+}
+.visual .scroll {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12%;
+    z-index: 1;
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+.visual .scroll::after {
+    content: "";
+    position: absolute;
+    left: 28px;
+    bottom: -25px;
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 23.8px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 15' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.8035 2.11191L11.9018 14.0137L-4.37114e-07 2.11191L2.11256 -0.000652423L11.9018 9.78855L21.691 -0.000653442L23.8035 2.11191Z' /%3E%3C/svg%3E%0A");
+    animation: scroll 1.2s linear infinite;
+}
+@keyframes scroll {
+    0% { bottom: -25px;}    
+    50% { bottom: -45px;}
+    100% { bottom: -25px;}
+}
+@media screen and (max-width:1320px){
+    .visual .ctrl_btn {
+        left: 30px;
+    }
+} /*@media*/
+@media screen and (max-width:1024px){
+    .visual .swiper-slide .txt h3 {
+        font-size: 50px;
+    }
+    .visual .swiper-slide .txt p {
+        margin: 0 0 25dvh 0;
+    }
+    .visual .ctrl_btn {
+        bottom: 15dvh;
+    }
+} /*@media*/
+@media screen and (max-width:768px){
+    .visual .swiper {
+        height: 700px;
+    }
+    .visual .swiper-slide .txt p {
+        margin: 0 0 20dvh 0;
+    }
+    .visual .ctrl_btn {
+        left: 16px;
+        bottom: 10dvh;
+    }
+    .visual .scroll {
+        display: none;
+    }
+} /*@media*/
+@media screen and (max-width:640px){
+    .visual .swiper-slide .txt h3 {
+        font-size: 32px;
+    }
+    .visual .swiper-slide .txt p {
+        font-size: 15px;
+    }
+}

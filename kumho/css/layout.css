@@ -27,6 +27,9 @@ header .logo a {
     background: url(../images/common/logo_w.svg) no-repeat center center / contain;
     margin-bottom: 20px;
 }
+header .gnb_open {
+    display: none; /* 모바일에서 나옴 */
+}
 header .util .lang {
     display: block;
     padding-left: 1.7647em;
