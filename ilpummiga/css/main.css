@@ -394,7 +394,7 @@ section .tit h2 {
 .product .tab_list ul {
     display: flex;
     justify-content: center;
-    gap: 0 24px;
+    gap: 0 16px;
 }
 .product .tab_list ul li button {
     display: block;
@@ -425,6 +425,10 @@ section .tit h2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.product .tab_content .tab_item .photo:hover img {
+    transition: 0.5s;
+    transform: scale3d(1.2, 1.2, 1);
 }
 .product .tab_content .tab_item .group {
     width: 60%;
@@ -478,6 +482,7 @@ section .tit h2 {
     height: 100%;
     object-fit: cover;
 }
+
 @media screen and (max-width:768px){
     .product {
         padding: 80px 0 100px 0;
