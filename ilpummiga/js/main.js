@@ -72,7 +72,7 @@ $(document).ready(function(){
 		$('.company .list').removeClass('over')
 	})
     /****************company 종료 ********************/
-    /************찾습니다 tab::시작***********
+    /************new menu tab::시작***********
      * .product .tab_list ul li를 클릭했을 때 1번째를 클릭하면 active 클래스를 주고 
      * li에서 어떤 tab_item을 보이게 해야하는 지 단서를 줘야함
      * .product .tab_content .tab_item에서 1번째 요소에 active 클래스 줌
@@ -98,8 +98,27 @@ $(document).ready(function(){
         $('.product .tab_content .tab_item').attr('title', '')
         $('.product .tab_content').find('.' + tab_name).attr('title', '선택됨')
     })
-    /************찾습니다 tab::끝************/
+    /************new menu tab::끝************/
 
+    /************레시피 swiper::시작***********/
+        const Recipe_swiper = new Swiper('.Recipe .swiper', { /* 팝업을 감싼는 요소의 class명 */
+            slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+            spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+            breakpoints: {
+                1024: {    /* 640px 이상일때 적용 */
+                    slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                    spaceBetween: 207,
+                },
+            },
+            centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+            // loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+            navigation: {
+                nextEl: '.Recipe .next',
+                prevEl: '.Recipe .prev',
+            },
+        });
+    /************레시피 swiper::끝***********/
 
 
 
