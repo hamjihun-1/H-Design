@@ -18,11 +18,13 @@
     --color-sub : #555;
     --color-white : #fff;
     --color-white80 : rgba(255, 255, 255, 0.8);
-    --color-white40 : rgba(255, 255, 255, 0.7);
+    --color-white70 : rgba(255, 255, 255, 0.7);
     --color-white60 : rgba(255, 255, 255, 0.6);
     --color-white50 : rgba(255, 255, 255, 0.5);
+    --color-white40 : rgba(255, 255, 255, 0.4);
     --color-white30 : rgba(255, 255, 255, 0.3);
     --color-white20 : rgba(255, 255, 255, 0.2);
+    --color-white10 : rgba(255, 255, 255, 0.1);
     --header-h : 90px;
     --header-var : clamp(60px, 9vw, 90px);
     --wrapper-margin : 30px;

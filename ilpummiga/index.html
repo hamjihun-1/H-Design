@@ -7,6 +7,7 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
     
     <!--개인 파일-->
     <link rel="stylesheet" href="css/main.css">
@@ -20,7 +21,7 @@
         <!-- pc버전에서 메뉴에 오버하면 menu_pc 클래스 추가
              모바일버전에서 메뉴를 열면 menu_mo 클래스 추가
              header가 상단에 고정될 때 fiexd 클래스 추가  -->
-        <header class="menu_mo">
+        <header>
             <h1 class="logo"><a href="index.html"><span class="blind">ilpummiga</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open"><span class="blind">메뉴열기</span></button>
@@ -131,9 +132,189 @@
                 </div> 
                 <div class="scroll">Scroll Down</div>
             </section> <!--visual-->
-            <section class="company"></section> <!--company-->
-            <section class="product"></section> <!--product-->
-            <section class="Recipe"></section> <!--Recipe-->
+            <section class="company">
+                <div class="tit">
+                    <div class="wrapper">
+                        <h2>자연 그대로, <br>
+                            건강과 정성의 <span>일품미가</span></h2>
+                        <p>첨가물 없는 원재료와 황토가마 공법으로, 맛과 건강을 모두 담은 신뢰의 간식을 선보입니다.</p>
+                    </div> <!--wrapper-->
+                </div> <!--tit-->
+                <!-- 마우스를 li에 오버하면 오버한 li에는 active 클래스 추가
+                     li를 감싸고 있는 요소 (.list)에도 class(over 추가) -->
+                <div class="list">
+                    <ul>
+                        <li class="company01 ">
+                            <div class="txt">
+                                <h3>무첨가, 자연 건강</h3>
+                                <p>불필요한 화학첨가물과 보존료를 배제하고, 자연이 가진 순수한 맛과 향을 그대로 담았습니다. <br>입안 가득 고소함과 부드러움이 퍼지며, 본연의 풍미를 느낄 수 있습니다.</p>
+                            </div> <!--txt-->
+                        </li>
+                        <li class="company02 ">
+                            <div class="txt">
+                                <h3>황토가마, 깊은 풍미</h3>
+                                <p>독자적인 황토가마 특허 공법을 통해 재료의 본질적인 맛을 섬세하게 살렸습니다. <br>자연의 고소한 향과 깊은 풍미가 조화를 이루며, 부드럽고 풍부한 맛으로 완성되었습니다.</p>
+                            </div> <!--txt-->
+                        </li>
+                        <li class="company03 ">
+                            <div class="txt">
+                                <h3>하루를 채우는 정성</h3>
+                                <p>까다롭게 선별한 원재료와 섬세한 제조 공정을 통해 맛과 건강을 동시에 담아냈습니다. <br>깊은 풍미와 부드러운 식감이 어우러져, 한층 품격 있는 간식으로 완성되었습니다.</p>
+                            </div> <!--txt-->
+                        </li>
+                    </ul>
+                </div> <!--list-->
+            </section> <!--company-->
+            <section class="product">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2><span>N</span>ew Menu</h2>
+                        <p>새로운 맛의 여정</p>
+                    </div> <!--tit-->
+                    <div class="tab_list">
+                        <!-- 선택된 탭에는 active 클래스 추가 
+                                 button안에 span태그한테 선택됨이라고 글자를 써줌
+                             각자의 li에 li를 클릭하면 보일 tab_item의 이름을 써주는 게 좋음
+                             나를 클릭하면 tab_item 중에 item1을 보이게 해줘라고 기록해 놓는게 좋음
+                             그런데 class는 중복해서 다양한 값이 들어가서 class값 하기는 어려움
+                             그래서 별도의 속성명을 써서 사용 data-명칭 속성
+                             css에서 공식으로 지정되어 있는 속성이 아닌 퍼블이 임의로 만든 속성 (많이 씀) -->
+                        <ul>
+                            <li class="item1 active" data-tab="item1"><button>피스타치오 버터<span class="blind">선택됨</span></button></li>
+                            <li class="item2" data-tab="item2"><button>땅콩 버터<span class="blind"></span></button></li>
+                            <li class="item3" data-tab="item3"><button>아몬드 스프레드<span class="blind"></span></button></li>
+                            <li class="item4" data-tab="item4"><button>캐슈넛 버터<span class="blind"></span></button></li>
+                        </ul>
+                    </div> <!--tab_list-->
+                    <div class="tab_content">
+                        <!-- 선택된 tab_item은 active 클래스가 추가 title에 선택됨이라고 써줌-->
+                        <div class="tab_item item1 active" title="선택됨">
+                            <h3><span class="blind">피스타치오 버터</span></h3>
+                            <div class="photo"><img src="images/main/product/product_item01.jpg" alt="피스타치오 버터 대표이미지"></div>
+                            <div class="group">
+                                <div class="txt">
+                                    <strong>Pistachio Butter</strong>
+                                    <h4>피스타치오 버터</h4>
+                                    <p>고소하고 부드러운 피스타치오를 100% 그대로 담은 프리미엄 버터. 불필요한 첨가물 없이 자연의 풍미와 진한 고소함을 온전히 느낄 수 있습니다. 비타민 E와 불포화지방이 풍부해 피부 건강과 혈관 건강에 도움을 주며, 식이섬유와 단백질이 가득해 포만감 있는 건강 간식으로도 완벽합니다.</p>
+                                    <a href="#n"><span class="blind">more</span></a>
+                                </div>
+                                <div class="photo_list">
+                                    <ul>
+                                        <li><img src="images/main/product/product_item01_list01.jpg" alt="피스타치오 버터 상세이미지01"></li>
+                                        <li><img src="images/main/product/product_item01_list02.jpg" alt="피스타치오 버터 상세이미지02"></li>
+                                        <li><img src="images/main/product/product_item01_list03.jpg" alt="피스타치오 버터 상세이미지03"></li>
+                                    </ul>
+                                </div> <!--photo_list-->
+                            </div> <!--group-->
+                        </div> <!--tab_item-->
+                        <div class="tab_item item2">
+                            <h3><span class="blind">땅콩 버터</span></h3>
+                            <div class="photo"><img src="images/main/product/product_item02.jpg" alt="땅콩 버터 대표이미지"></div>
+                            <div class="group">
+                                <div class="txt">
+                                    <strong>peanut butter</strong>
+                                    <h4>땅콩 버터</h4>
+                                    <p>고소한 땅콩을 그대로 갈아 만든 땅콩버터는 단백질과 불포화지방산이 풍부해 포만감을 오래 유지시켜 줍니다. 비타민 E와 마그네슘이 함유되어 피로 회복과 혈관 건강에 도움을 주며, 하루를 든든하게 채워주는 에너지원이 됩니다. 입안 가득 고소한 풍미와 부드러운 질감으로, 누구나 부담 없이 즐길 수 있는 건강한 간식입니다.</p>
+                                    <a href="#n"><span class="blind">more</span></a>
+                                </div>
+                                <div class="photo_list">
+                                    <ul>
+                                        <li><img src="images/main/product/product_item02_list01.jpg" alt="땅콩 버터 상세이미지01"></li>
+                                        <li><img src="images/main/product/product_item02_list02.jpg" alt="땅콩 버터 상세이미지02"></li>
+                                        <li><img src="images/main/product/product_item02_list03.jpg" alt="땅콩 버터 상세이미지03"></li>
+                                    </ul>
+                                </div> <!--photo_list-->
+                            </div> <!--group-->
+                        </div> <!--tab_item-->
+                        <div class="tab_item item3">
+                            <h3><span class="blind">아몬드 스프레드</span></h3>
+                            <div class="photo"><img src="images/main/product/product_item03.jpg" alt="아몬드 스프레드 대표이미지"></div>
+                            <div class="group">
+                                <div class="txt">
+                                    <strong>Almond Spread</strong>
+                                    <h4>아몬드 스프레드</h4>
+                                    <p>고소하고 부드러운 아몬드의 풍미를 그대로 담아낸 건강한 프리미엄 스프레드입니다. 풍부한 비타민 E와 식이섬유가 가득해 피부 건강과 장 건강에 도움을 주며, 단백질과 불포화지방산이 풍부해 활력 있는 하루를 지원합니다. 자연 그대로의 영양소가 조화롭게 어우러져 맛과 건강을 동시에 즐길 수 있는 최상의 간식입니다.</p>
+                                    <a href="#n"><span class="blind">more</span></a>
+                                </div>
+                                <div class="photo_list">
+                                    <ul>
+                                        <li><img src="images/main/product/product_item03_list01.jpg" alt="아몬드 스프레드 상세이미지01"></li>
+                                        <li><img src="images/main/product/product_item03_list02.jpg" alt="아몬드 스프레드 상세이미지02"></li>
+                                        <li><img src="images/main/product/product_item03_list03.jpg" alt="아몬드 스프레드 상세이미지03"></li>
+                                    </ul>
+                                </div> <!--photo_list-->
+                            </div> <!--group-->
+                        </div>
+                        <div class="tab_item item4">
+                            <h3><span class="blind">캐슈넛 버터</span></h3>
+                            <div class="photo"><img src="images/main/product/product_item04.jpg" alt="캐슈넛 버터 대표이미지"></div>
+                            <div class="group">
+                                <div class="txt">
+                                    <strong>Cashew Butter</strong>
+                                    <h4>캐슈넛 버터</h4>
+                                    <p>부드럽고 은은한 단맛이 매력적인 캐슈넛은 불포화지방산과 단백질, 미네랄이 풍부한 고급 견과류입니다. 심혈관 건강을 돕고 피로 회복, 면역력 강화에 효과적이며 피부 탄력 유지에도 좋습니다. 식이섬유가 풍부해 포만감을 오래 유지시켜 다이어트 간식으로도 적합합니다. 맛과 영양을 모두 갖춘 하루 에너지원으로 건강한 균형을 채워줍니다.</p>
+                                    <a href="#n"><span class="blind">more</span></a>
+                                </div>
+                                <div class="photo_list">
+                                    <ul>
+                                        <li><img src="images/main/product/product_item04_list01.jpg" alt="캐슈넛 버터 상세이미지01"></li>
+                                        <li><img src="images/main/product/product_item04_list02.jpg" alt="캐슈넛 버터 상세이미지02"></li>
+                                        <li><img src="images/main/product/product_item04_list03.jpg" alt="캐슈넛 버터 상세이미지03"></li>
+                                    </ul>
+                                </div>
+                            </div> <!--group-->
+                        </div>
+                    </div> <!--tab_content-->
+                </div> <!--wrapper-->
+            </section> <!--product-->
+            <section class="Recipe">
+                <div class="tit">
+                    <h2>Our Kitchen</h2>
+                    <p>특별한 원물을 활용하는 레시피와 팁</p>
+                </div>
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/Recipe/Recipe01.jpg" alt=""></div>
+                                <div class="txt">
+                                    <a href="#n">
+                                        <strong>by 갱스홈쿡</strong>
+                                        <h3>네이버블로거_갱스홈쿡 : 땅콩버터 바나나 토스트</h3>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/Recipe/Recipe02.jpg" alt=""></div>
+                                <div class="txt">
+                                    <a href="#n">
+                                        <strong>by 철든철부지</strong>
+                                        <h3>네이버블로거_철든철부지 :피스타치오 버터 토스트</h3>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/Recipe/Recipe03.jpg" alt=""></div>
+                                <div class="txt">
+                                    <a href="#n">
+                                        <strong>by 핑쿠</strong>
+                                        <h3>네이버블로거_핑쿠 : 아몬드 스프레드 사과 조합</h3>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/main/Recipe/Recipe04.jpg" alt=""></div>
+                                <div class="txt">
+                                    <a href="#n">
+                                        <strong>by 그리팅 Greating</strong>
+                                        <h3>네이버블로거_그리팅 : 캐슈넛 버터 크림 파스타</h3>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section> <!--Recipe-->
             <section class="news"></section> <!--news-->
             <section class="review"></section> <!--review-->
         </div> <!--container-->

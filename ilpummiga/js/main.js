@@ -56,4 +56,51 @@ $(document).ready(function(){
     visual_swiper.on('slideChange', function () {
         updateCurrent();
     });
+    /****************company 시작 ********************/
+    /**********************
+	* .company .list ul li에 마우스를 오버하면
+	* 오버한 li에 active 클래스
+	* .company .list에는 over 클래스 추가
+	* ---- 언제 out
+	**********************/
+	$('.company .list ul li').on('mouseenter', function(){
+		$(this).addClass('active')
+		$('.company .list').addClass('over')
+	})
+	$('.company .list ul li').on('mouseleave', function(){
+		$(this).removeClass('active')
+		$('.company .list').removeClass('over')
+	})
+    /****************company 종료 ********************/
+    /************찾습니다 tab::시작***********
+     * .product .tab_list ul li를 클릭했을 때 1번째를 클릭하면 active 클래스를 주고 
+     * li에서 어떤 tab_item을 보이게 해야하는 지 단서를 줘야함
+     * .product .tab_content .tab_item에서 1번째 요소에 active 클래스 줌
+     * 
+    */
+    let tab_name
+    $('.product .tab_list ul li').on('click', function(){
+        // 클릭한 li에만 active 클래스 추가
+        $('.product .tab_list ul li').removeClass('active')
+        $(this).addClass('active')
+
+        // 클릭한 li에만 button에다가 선택됨이라고 글자쓰기
+        $('.product .tab_list ul li button span').text('')
+        $(this).find('button span').text('선택됨')
+        
+        //클릭한 li와 관련된 tab_content tab_item에 active 클래스 추가
+        tab_name = $(this).attr('data-tab')
+        $('.product .tab_content .tab_item').removeClass('active')
+        //find로 찾을 때는 클래스명이면 .이 추가되어야함, 내가 가져온 이름은 .이 없음
+        $('.product .tab_content').find('.' + tab_name).addClass('active')
+
+        //선택됨 tab_item의 title에만 '선택됨'이라고 써주기
+        $('.product .tab_content .tab_item').attr('title', '')
+        $('.product .tab_content').find('.' + tab_name).attr('title', '선택됨')
+    })
+    /************찾습니다 tab::끝************/
+
+
+
+
 })//맨끝
