@@ -102,8 +102,8 @@ $(document).ready(function(){
 
     /************레시피 swiper::시작***********/
         const Recipe_swiper = new Swiper('.Recipe .swiper', { /* 팝업을 감싼는 요소의 class명 */
-            slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-            spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+            slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+            spaceBetween: 50, /* 팝업과 팝업 사이 여백 */
             breakpoints: {
                 1024: {    /* 640px 이상일때 적용 */
                     slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
@@ -117,8 +117,90 @@ $(document).ready(function(){
                 nextEl: '.Recipe .next',
                 prevEl: '.Recipe .prev',
             },
+            // navigation: {
+            //     nextE1: '.Recipe .ctrl_btn .mo_next',
+            //     prevE1: '.Recipe .ctrl_btn .mo_prev',
+            // },
+        });
+        document.querySelector('.mo_next').addEventListener('click', () => {
+            Recipe_swiper.slideNext();
+        });
+        
+        document.querySelector('.mo_prev').addEventListener('click', () => {
+            Recipe_swiper.slidePrev();
         });
     /************레시피 swiper::끝***********/
+
+    /************new 오버시 이미지 생성::시작***********/
+    const items = document.querySelectorAll('.news .list li');
+    const preview = document.querySelector('.news .preview');
+
+    items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const img = item.getAttribute('data-img');
+            preview.style.backgroundImage = `url(${img})`;
+            preview.style.opacity = '1';
+        });
+    });
+
+    // 마우스가 리스트 쪽에서 벗어나면 숨기기
+    document.querySelector('.news .list').addEventListener('mouseleave', () => {
+        preview.style.opacity = '0';
+    });
+    /************new 오버시 이미지 생성::끝***********/
+
+
+
+    /************리뷰 swiper::시작***********/
+    const review_swiper = new Swiper('.review .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* css에서 slide의 넓이ㅓ 지정 */
+        spaceBetween: 70, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            769: {    /* 768px 이상일때 적용 */
+                spaceBetween: 70,
+            },
+            1501: {    /* 768px 이상일때 적용 */
+                spaceBetween: 90,
+            },
+        },
+        centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        
+        navigation: {
+            nextEl: '.review .next',
+            prevEl: '.review .prev',
+        },
+        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+            el: '.review .paging', /* 해당 요소의 class명 */
+            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+        },
+        on: {
+            slideChange: function() {
+                const activeSlide = this.slides[this.activeIndex]
+                const activeSlideWidth = activeSlide.offsetWidth
+                const otherSlides = this.slides[this.previousIndex]
+                const otherSlideWidth = otherSlides.offsetWidth			
+                const slideWidthDifference = activeSlideWidth - otherSlideWidth;
+                this.setTranslate(this.translate - slideWidthDifference);
+            },
+            slideChangeTransitionEnd: function() {
+                // 전환이 끝나면 Swiper를 다시 업데이트
+                setTimeout(() => {
+                    this.update();
+                }, 10);  // 잠시 딜레이를 주고 업데이트
+            }
+        },
+    });
+    /************리뷰 swiper::시작***********/
+
+
+
+
+
+
+
+
+
 
 
 
