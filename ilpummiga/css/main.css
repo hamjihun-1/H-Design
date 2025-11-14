@@ -579,7 +579,7 @@ section .tit h2 {
 }/*@media*/
 .Recipe {
     position: relative;
-    padding: 110px 0 170px 0;
+    padding: 110px 0 120px 0;
     background: url(../images/main/Recipe/Recipe_bg.jpg) no-repeat center center / cover;
 }
 .Recipe::before {
@@ -615,15 +615,14 @@ section .tit h2 {
 .Recipe .tit p {
     color: var(--color-white70);
 }
-.Recipe .list .swiper {
-    overflow: visible;
-}
+
 .Recipe .list {
     margin-top: 60px;
 }
 .Recipe .list .swiper-slide {
     width: 620px;
     position: relative;
+    margin-bottom: 80px;
 }
 .Recipe .list .swiper-slide::before {
     content: "";
@@ -764,7 +763,7 @@ section .tit h2 {
     }
     .Recipe .list {
         margin-top: 40px;
-        padding-bottom: 90px;
+        padding-bottom: 20px;
     }
     .Recipe .list .swiper-slide {
         width: 290px;
@@ -1043,7 +1042,7 @@ section .tit h2 {
 }
 .review .swiper {
     margin-top: 70px;
-    overflow: visible;
+    /* overflow: visible; */
 }
 .review .swiper .swiper-wrapper {
     align-items: center;
@@ -1052,7 +1051,7 @@ section .tit h2 {
 .review .swiper .swiper-slide {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     width: 28.75%;
@@ -1145,6 +1144,7 @@ section .tit h2 {
 .review .swiper .swiper-slide.swiper-slide-active {
     width: 41.98%;
     opacity: 1;
+    margin-bottom: 20px;
 }
 .review .swiper .swiper-slide.swiper-slide-active .photo {
     padding: 30px;
@@ -1187,7 +1187,7 @@ section .tit h2 {
     top: 50%;
     transform: translateY(-50%);
     z-index: 20;
-    background-color: #fff;
+    background-color: #C79A63;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -1203,7 +1203,7 @@ section .tit h2 {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 17px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 30' fill='%23C79A63' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.8772 29.4888L0 14.6116L14.8772 -0.265625L17.5179 2.37508L5.28141 14.6116L17.5179 26.8481L14.8772 29.4888Z' /%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 30' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.8772 29.4888L0 14.6116L14.8772 -0.265625L17.5179 2.37508L5.28141 14.6116L17.5179 26.8481L14.8772 29.4888Z' /%3E%3C/svg%3E%0A");
 }
 .review .swiper .next {
     position: absolute;
@@ -1211,7 +1211,7 @@ section .tit h2 {
     top: 50%;
     transform: translateY(-50%);
     z-index: 20;
-    background-color: #fff;
+    background-color: #C79A63;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -1227,7 +1227,7 @@ section .tit h2 {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 17px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 30' fill='%23C79A63' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.64062 29.7544L17.5178 14.8772L2.64062 0L-8.39233e-05 2.6407L12.2364 14.8772L-8.39233e-05 27.1137L2.64062 29.7544Z' /%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 30' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.64062 29.7544L17.5178 14.8772L2.64062 0L-8.39233e-05 2.6407L12.2364 14.8772L-8.39233e-05 27.1137L2.64062 29.7544Z' /%3E%3C/svg%3E%0A");
 }
 /* 슬라이드 동그라미 */
 .review .swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -1335,52 +1335,24 @@ section .tit h2 {
     }
     /* 정중앙에 위치한 카드 */
     .review .swiper .prev {
-        position: absolute;
         left: 30%;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 20;
-        background-color: #fff;
-        border-radius: 50%;
         width: 50px;
         height: 50px;
     }
     .review .swiper .prev::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         width: 25px;
         height: 25px;
-        background-position: center center;
-        background-repeat: no-repeat;
         background-size: 15px;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 30' fill='%23C79A63' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.8772 29.4888L0 14.6116L14.8772 -0.265625L17.5179 2.37508L5.28141 14.6116L17.5179 26.8481L14.8772 29.4888Z' /%3E%3C/svg%3E%0A");
     }
     .review .swiper .next {
-        position: absolute;
         right: 30%;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 20;
-        background-color: #fff;
-        border-radius: 50%;
         width: 50px;
         height: 50px;
     }
     .review .swiper .next::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         width: 25px;
         height: 25px;
-        background-position: center center;
-        background-repeat: no-repeat;
         background-size: 15px;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 30' fill='%23C79A63' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.64062 29.7544L17.5178 14.8772L2.64062 0L-8.39233e-05 2.6407L12.2364 14.8772L-8.39233e-05 27.1137L2.64062 29.7544Z' /%3E%3C/svg%3E%0A");
     }
     /* 슬라이드 동그라미 */
     .review .swiper-pagination-bullets.swiper-pagination-horizontal {

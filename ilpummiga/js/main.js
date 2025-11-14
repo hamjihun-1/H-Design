@@ -154,7 +154,7 @@ $(document).ready(function(){
     /************리뷰 swiper::시작***********/
     const review_swiper = new Swiper('.review .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 'auto', /* css에서 slide의 넓이ㅓ 지정 */
-        spaceBetween: 70, /* 팝업과 팝업 사이 여백 */
+        spaceBetween: 40, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
             769: {    /* 768px 이상일때 적용 */
                 spaceBetween: 70,
