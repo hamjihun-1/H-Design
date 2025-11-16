@@ -323,12 +323,13 @@ footer .f_head {
     padding: 33px 0 33px;
     color: #111;
 }
-footer .wrapper {
+footer .f_head .wrapper {
     display: flex;
     justify-content: space-between;
     position: relative;
+    padding-left: var(--wrapper-margin);
 }
-footer .wrapper::before {
+footer .f_head .wrapper::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -338,19 +339,22 @@ footer .wrapper::before {
     height: 150px;
     background-color: #ccc;
 }
-footer .customer,
-footer .bank_info {
+footer .f_head .customer {
+    display: flex;
+}
+footer .f_head .customer,
+footer .f_head .bank_info {
     width: 45%;
 }
-footer .customer .info strong,
-footer .bank_info strong {
+footer .f_head .customer .info strong,
+footer .f_head .bank_info strong {
     font-weight: 700;
     line-height: 1.3;
     position: relative;
     padding-left: 14px;
 }
-footer .customer .info strong::before,
-footer .bank_info strong::before {
+footer .f_head .customer .info strong::before,
+footer .f_head .bank_info strong::before {
     content: "";
     position: absolute;
     left: 0;
@@ -359,14 +363,17 @@ footer .bank_info strong::before {
     height: 17px;
     background-color: #C79A63;
 } 
-footer .customer {
+footer .f_head .customer {
     position: relative;
 }
-footer .customer .info span{
+footer .f_head .customer .info span {
     width: 70%;
     display: block;
 }
-footer .customer .info h3 {
+footer .f_head .customer .info span .mo_only {
+    display: none;
+}
+footer .f_head .customer .info h3 {
     font-size: 22px;
     font-weight: 700;
     line-height: 1.3;
@@ -374,7 +381,7 @@ footer .customer .info h3 {
     position: relative;
     padding-left: 34px;
 }
-footer .customer .info h3::before {
+footer .f_head .customer .info h3::before {
     content: "";
     position: absolute;
     left: 0;
@@ -386,23 +393,21 @@ footer .customer .info h3::before {
     background-size: 17.5px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5465 17.5715C14.5128 17.5715 12.5034 17.1281 10.5185 16.2414C8.53356 15.3547 6.7276 14.0979 5.10061 12.4709C3.47362 10.8439 2.21677 9.03793 1.33006 7.053C0.443355 5.06807 0 3.05874 0 1.025C0 0.732146 0.0976194 0.488097 0.292858 0.292858C0.488097 0.0976194 0.732146 0 1.025 0H4.97859C5.20637 0 5.40974 0.077282 5.58871 0.231846C5.76768 0.38641 5.87343 0.569447 5.90597 0.780955L6.5405 4.19763C6.57304 4.45795 6.5649 4.6776 6.51609 4.85656C6.46729 5.03553 6.3778 5.1901 6.24764 5.32026L3.88037 7.71193C4.20577 8.31392 4.59218 8.89557 5.0396 9.45688C5.48702 10.0182 5.97919 10.5592 6.51609 11.0798C7.02046 11.5842 7.54923 12.0519 8.10241 12.4831C8.65559 12.9142 9.2413 13.3088 9.85956 13.6667L12.1536 11.3727C12.3 11.2262 12.4912 11.1164 12.7271 11.0432C12.963 10.97 13.1949 10.9496 13.4227 10.9822L16.7905 11.6655C17.0183 11.7306 17.2054 11.8486 17.3518 12.0194C17.4983 12.1902 17.5715 12.3814 17.5715 12.5929V16.5465C17.5715 16.8393 17.4739 17.0834 17.2786 17.2786C17.0834 17.4739 16.8393 17.5715 16.5465 17.5715Z' fill='%23111111'/%3E%3C/svg%3E%0A");
 }
-footer .customer .info span {
+footer .f_head .customer .info span {
     font-size: 15px;
 }
-footer .customer .info p {
+footer .f_head .customer .info p {
     font-size: 15px;
     color: #767676;
     margin: 11px 0 0 0;
 }
-footer .customer .quick_menu {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-footer .customer .quick_menu ul li + li {
+footer .f_head .customer .quick_menu {
     margin: 10px 0 0 0;
 }
-footer .customer .quick_menu ul li a {
+footer .f_head .customer .quick_menu ul li + li {
+    margin: 10px 0 0 0;
+}
+footer .f_head .customer .quick_menu ul li a {
     display: block;
     border: 1px solid #ccc;
     border-radius: 30px;
@@ -410,30 +415,107 @@ footer .customer .quick_menu ul li a {
     padding: 8px 25px;
     text-align: center;
 }
-footer .bank_info strong {
+footer .f_head .bank_info strong {
     display: block;
     margin: 0 0 20px 0;
 }
-footer .bank_info .inner {
+footer .f_head .bank_info .inner {
     display: flex;
     gap: 0 40px;
 }
-footer .bank_info .inner ul li {
+footer .f_head .bank_info .inner ul li {
     display: grid;
     grid-template-columns: 50px 1fr; /* ← 왼쪽 고정, 오른쪽 자동 */
     column-gap: 30px;
     align-items: center;
 }
-footer .bank_info .inner ul li + li {
+footer .f_head .bank_info .inner ul li + li {
     margin-top: 5px;
 }
-footer .bank_info .inner .bank_img {
+footer .f_head .bank_info .inner .bank_img {
     overflow: hidden;
     width: 50px;
     height: 63px;
 }
-footer .bank_info .inner .bank_img img {
+footer .f_head .bank_info .inner .bank_img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
+footer .f_sub {
+    background-color: #111;
+    padding: 70px 0 100px 0;
+}
+footer .f_sub .f_logo img {
+    width: 150px;
+}
+/***** 모바일메뉴 시작 *****/
+@media screen and (max-width:768px){
+    footer .f_head {
+        border: 0;
+        padding: 0;
+        border-top:1px solid #ccc;
+        position: relative;
+    }
+    footer .f_head::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 134px;
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+    }
+    footer .f_head .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: var(--wrapper-margin);
+    }
+    footer .f_head .wrapper::before {
+        display: none;
+    }
+    footer .f_head .customer {
+        display: flex;
+        justify-content: space-between;
+    }
+    footer .f_head .customer,
+    footer .f_head .bank_info {
+        width: 100%;
+        margin: 27px 0 0 0;
+    }
+    footer .f_head .customer .info span .mo_only {
+        display: block;
+    }
+    footer .f_head .customer .info h3 {
+        font-size: 17px;
+    }
+    footer .f_head .customer .info h3::before {
+        top: 3px;
+        background-size: 15px;
+    }
+    footer .f_head .customer .quick_menu ul li a {
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        color: #767676;
+        padding: 8px 25px;
+        text-align: center;
+    }
+    footer .f_head .bank_info {
+        margin: 27px 0 27px 0;
+    }
+    footer .f_head .bank_info strong {
+        display: block;
+        margin: 0 0 20px 0;
+    }
+    footer .f_head .bank_info .inner ul li {
+        column-gap: 20px;
+    }
+    footer .f_head .bank_info .inner .bank_img {
+        width: 40px;
+        height: 53px;
+
+    }
+}
+/***** 모바일메뉴 시작 *****/
