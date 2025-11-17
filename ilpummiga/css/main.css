@@ -1002,6 +1002,11 @@ section .tit h2 {
         align-items: flex-start;
         gap: 10px 0;
     }
+    .news .list ul li.active .txt h3,
+    .news .list ul li.active .txt span {
+        color: #fff;
+        font-weight: 400;
+    }
     .news .list ul li .txt h3 {
         font-size: 20px;
         width: 100%;
