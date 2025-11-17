@@ -1404,13 +1404,10 @@ section .tit h2 {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #555;
+    background-color: #C79A63;
     display: block;
     cursor: pointer;
     display: none;
-}
-.top:hover {
-    background-color: #C79A63;
 }
 .top::before {
     content: "";
@@ -1427,7 +1424,7 @@ section .tit h2 {
 }
 @media screen and (max-width:768px){
     .top {
-        right: 25px;
+        right: 16px;
         bottom: 25px;
         width: 40px;
         height: 40px;
