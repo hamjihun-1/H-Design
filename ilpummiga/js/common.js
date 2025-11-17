@@ -108,6 +108,20 @@ $(document).ready(function(){
     $(window).scroll(function(){
         scroll_chk() // 스크롤 할 때마다 실행
     })
-    
+    // top 버튼을 클릭하면 상단으로 이동
+    $('.top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+    const topBtn = document.querySelector(".top");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 250) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+    });
 
 })//맨끝
