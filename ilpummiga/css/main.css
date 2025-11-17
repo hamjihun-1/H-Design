@@ -909,7 +909,8 @@ section .tit h2 {
     opacity: 0;
     transition: opacity .3s;
 }
-.news li:hover ~ .preview {
+.news li:hover ~ .preview,
+.news li.active ~ .preview {
     opacity: 1;
 }
 .news .list ul li .txt {
@@ -930,14 +931,16 @@ section .tit h2 {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.news .list ul li:hover .txt h3 {
+.news .list ul li:hover .txt h3,
+.news .list ul li.active .txt h3 {
     color: #C79A63;
     font-weight: 700;
 }
 .news .list ul li .txt span {
     color: var(--color-white80);
 }
-.news .list ul li:hover .txt span {
+.news .list ul li:hover .txt span,
+.news .list ul li.active .txt span {
     color: #C79A63;
 }
 .news .more {
@@ -975,6 +978,8 @@ section .tit h2 {
     background-size: 16px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 17' fill='%23C79A63' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.91406 0.0126953V7.15332H16.0547V8.91406H8.91406V16.0547H7.15332V8.91406H0.0126953V7.15332H7.15332V0.0126953H8.91406Z' stroke='%23C79A63' stroke-width='0.025'/%3E%3C/svg%3E%0A");
 }
+/**************active 클래스가 추가 되었을 때 **************/
+
 @media screen and (max-width:768px){
     .news {
         padding: 60px 0 100px 0;

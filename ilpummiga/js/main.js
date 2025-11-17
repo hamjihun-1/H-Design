@@ -134,19 +134,37 @@ $(document).ready(function(){
     /************new 오버시 이미지 생성::시작***********/
     const items = document.querySelectorAll('.news .list li');
     const preview = document.querySelector('.news .preview');
+    const list = document.querySelector('.news .list');
+
+    // 초기 active 이미지 세팅
+    const activeItemInit = document.querySelector('.news .list li.active');
+    if (activeItemInit) {
+        preview.style.backgroundImage = `url(${activeItemInit.dataset.img})`;
+        preview.style.opacity = '1';
+    }
 
     items.forEach(item => {
+        // hover 시 active 옮기기 + 이미지 변경
         item.addEventListener('mouseenter', () => {
-            const img = item.getAttribute('data-img');
-            preview.style.backgroundImage = `url(${img})`;
+            // 기존 active 제거
+            items.forEach(i => i.classList.remove('active'));
+            // 현재 아이템에 active 추가
+            item.classList.add('active');
+            // 이미지 변경
+            preview.style.backgroundImage = `url(${item.dataset.img})`;
             preview.style.opacity = '1';
         });
     });
 
-    // 마우스가 리스트 쪽에서 벗어나면 숨기기
-    document.querySelector('.news .list').addEventListener('mouseleave', () => {
-        preview.style.opacity = '0';
+    // 리스트 밖으로 나가도 마지막 hover(active) 이미지 유지
+    list.addEventListener('mouseleave', () => {
+        const activeItem = document.querySelector('.news .list li.active');
+        if (activeItem) {
+            preview.style.backgroundImage = `url(${activeItem.dataset.img})`;
+            preview.style.opacity = '1';
+        }
     });
+    
     /************new 오버시 이미지 생성::끝***********/
 
 
