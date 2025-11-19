@@ -31,12 +31,17 @@
     top: 0;
     width: 100%;
     height: 100dvh;
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.2);
 }
 .visual .swiper .swiper-slide .photo img {
     width: 100%;
     height: 100dvh;
     object-fit: cover;
+    transition: transform 5s;
+}
+.visual .swiper .swiper-slide.swiper-slide-active .photo img {
+    transform: scale3d(1.2, 1.2, 1);
 }
 .visual .swiper .visual_wrap {
     position: absolute;
@@ -44,22 +49,86 @@
     top: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
 }
 .visual .swiper .visual_wrap .visual_txt h3 {
     font-size: 70px;
     font-weight: 700;
-    margin: 0 0 5px 0;
 }
 .visual .swiper .visual_wrap .visual_txt p {
     font-size: 17px; 
+    margin: 5px 0 30px 0;
 }
+/* 페이지 동그라미 */
+.visual .swiper .visual_wrap .visual_ctrl {
+    display: flex;
+    justify-content: center;
+    gap: 0 30px;
+    height: 24px;
+}
+.visual .swiper .visual_wrap .visual_ctrl .paging {
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+}
+.visual .swiper .visual_wrap .visual_ctrl .paging .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    background: var(--swiper-pagination-bullet-inactive-color, #fff);
+    opacity: 1;
+    margin: 0;
+    position: relative;
+}
+.visual .swiper .visual_wrap .visual_ctrl .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+.visual .swiper .visual_wrap .visual_ctrl .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+}
+/* 페이지 동그라미 */
+.visual .swiper .visual_wrap .btn_play {
+    display: none;
+}
+.visual .swiper .visual_wrap .btn_stop,
+.visual .swiper .visual_wrap .btn_play {
+    position: relative;
+}
+.visual .swiper .visual_wrap .btn_stop::before,
+.visual .swiper .visual_wrap .btn_play::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .swiper .visual_wrap .btn_stop::before {
+    background-size: 11px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 14' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 14V0H12V14H8ZM0 14V0H4V14H0Z' /%3E%3C/svg%3E%0A");
+}
+.visual .swiper .visual_wrap .btn_play::before {
+    background-size: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 14' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22392e-06 -9.61651e-07L11 7L0 14L1.22392e-06 -9.61651e-07Z' /%3E%3C/svg%3E%0A");
+}
+/******드롭박스******/
 .visual .reservation {
     position: absolute;
     left: calc(50% - 630px);
     bottom: 10%;
-    z-index: 1;
+    z-index: 2;
     background-color: #fff;
     height: 8rem;
 }
@@ -114,28 +183,31 @@
     font-size: 13px;
 }
 .visual .reservation .reservation-select {
-    border-right:1px solid #ccc ;
+    border-right:1px solid #ccc;
+}
+.visual .reservation .reservation-select.Children {
+    border-right:0;
 }
 .visual .reservation .reservation-select,
 .visual .reservation .reservation-btn {
     width: 15%;
 }
-.visual .reservation .reservation-select a {
+.visual .reservation .reservation-select >  a {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 17px 50px 17px 50px;
     position: relative;
 }
-.visual .reservation .reservation-select a strong {
+.visual .reservation .reservation-select >  a strong {
     font-size: 17px;
     font-weight: 700;
     color: #111;
 }
-.visual .reservation .reservation-select a span {
+.visual .reservation .reservation-select >  a span {
     font-size: 13px;
 }
-.visual .reservation .reservation-select a::before {
+.visual .reservation .reservation-select >  a::before {
     content: "";
     position: absolute;
     left: 12px;
@@ -145,29 +217,33 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
-.visual .reservation .reservation-select.select-medium.room a::before {
+.visual .reservation .reservation-select.select-medium.room > a::before {
     background-size: 22px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 22 18' fill='%231C1B1F' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 18C3.71667 18 3.47917 17.9042 3.2875 17.7125C3.09583 17.5208 3 17.2833 3 17V16C2.16667 16 1.45833 15.7083 0.875 15.125C0.291667 14.5417 0 13.8333 0 13V8C0 7.16667 0.291667 6.45833 0.875 5.875C1.45833 5.29167 2.16667 5 3 5V3C3 2.16667 3.29167 1.45833 3.875 0.875C4.45833 0.291667 5.16667 0 6 0H16C16.8333 0 17.5417 0.291667 18.125 0.875C18.7083 1.45833 19 2.16667 19 3V5C19.8333 5 20.5417 5.29167 21.125 5.875C21.7083 6.45833 22 7.16667 22 8V13C22 13.8333 21.7083 14.5417 21.125 15.125C20.5417 15.7083 19.8333 16 19 16V17C19 17.2833 18.9042 17.5208 18.7125 17.7125C18.5208 17.9042 18.2833 18 18 18C17.7167 18 17.4792 17.9042 17.2875 17.7125C17.0958 17.5208 17 17.2833 17 17V16H5V17C5 17.2833 4.90417 17.5208 4.7125 17.7125C4.52083 17.9042 4.28333 18 4 18ZM3 14H19C19.2833 14 19.5208 13.9042 19.7125 13.7125C19.9042 13.5208 20 13.2833 20 13V8C20 7.71667 19.9042 7.47917 19.7125 7.2875C19.5208 7.09583 19.2833 7 19 7C18.7167 7 18.4792 7.09583 18.2875 7.2875C18.0958 7.47917 18 7.71667 18 8V12H4V8C4 7.71667 3.90417 7.47917 3.7125 7.2875C3.52083 7.09583 3.28333 7 3 7C2.71667 7 2.47917 7.09583 2.2875 7.2875C2.09583 7.47917 2 7.71667 2 8V13C2 13.2833 2.09583 13.5208 2.2875 13.7125C2.47917 13.9042 2.71667 14 3 14ZM6 10H16V8C16 7.55 16.0917 7.14167 16.275 6.775C16.4583 6.40833 16.7 6.08333 17 5.8V3C17 2.71667 16.9042 2.47917 16.7125 2.2875C16.5208 2.09583 16.2833 2 16 2H6C5.71667 2 5.47917 2.09583 5.2875 2.2875C5.09583 2.47917 5 2.71667 5 3V5.8C5.3 6.08333 5.54167 6.40833 5.725 6.775C5.90833 7.14167 6 7.55 6 8V10Z' /%3E%3C/svg%3E%0A");
 }
-.visual .reservation .reservation-select.select-medium.Adult a::before {
+.visual .reservation .reservation-select.select-medium.Adult >  a::before {
     background-size: 8px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 20' fill='%231C1B1F' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 20V13H0V7C0 6.45 0.195833 5.97917 0.5875 5.5875C0.979167 5.19583 1.45 5 2 5H6C6.55 5 7.02083 5.19583 7.4125 5.5875C7.80417 5.97917 8 6.45 8 7V13H6V20H2ZM4 4C3.45 4 2.97917 3.80417 2.5875 3.4125C2.19583 3.02083 2 2.55 2 2C2 1.45 2.19583 0.979167 2.5875 0.5875C2.97917 0.195833 3.45 0 4 0C4.55 0 5.02083 0.195833 5.4125 0.5875C5.80417 0.979167 6 1.45 6 2C6 2.55 5.80417 3.02083 5.4125 3.4125C5.02083 3.80417 4.55 4 4 4Z' /%3E%3C/svg%3E%0A");
 }
-.visual .reservation .reservation-select.select-medium.Children a::before {
+.visual .reservation .reservation-select.select-medium.Children >  a::before {
     background-size: 17px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 17 20' fill='%231C1B1F' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 4C2.95 4 2.47917 3.80417 2.0875 3.4125C1.69583 3.02083 1.5 2.55 1.5 2C1.5 1.45 1.69583 0.979167 2.0875 0.5875C2.47917 0.195833 2.95 0 3.5 0C4.05 0 4.52083 0.195833 4.9125 0.5875C5.30417 0.979167 5.5 1.45 5.5 2C5.5 2.55 5.30417 3.02083 4.9125 3.4125C4.52083 3.80417 4.05 4 3.5 4ZM14 9C13.5833 9 13.2292 8.85417 12.9375 8.5625C12.6458 8.27083 12.5 7.91667 12.5 7.5C12.5 7.08333 12.6458 6.72917 12.9375 6.4375C13.2292 6.14583 13.5833 6 14 6C14.4167 6 14.7708 6.14583 15.0625 6.4375C15.3542 6.72917 15.5 7.08333 15.5 7.5C15.5 7.91667 15.3542 8.27083 15.0625 8.5625C14.7708 8.85417 14.4167 9 14 9ZM1.5 20V13H0V7C0 6.45 0.195833 5.97917 0.5875 5.5875C0.979167 5.19583 1.45 5 2 5H5C5.36667 5 5.7 5.0875 6 5.2625C6.3 5.4375 6.54167 5.68333 6.725 6L10.3 12.175L11.325 10.65C11.4583 10.45 11.6375 10.2917 11.8625 10.175C12.0875 10.0583 12.325 10 12.575 10H15.5C15.9167 10 16.2708 10.1458 16.5625 10.4375C16.8542 10.7292 17 11.0833 17 11.5V15H16V20H12V12.9L11.225 14H9.025L6.5 9.6V20H1.5Z' /%3E%3C/svg%3E%0A");
 }
-.visual .reservation .reservation-select a::after {
+.visual .reservation .reservation-select > a::after {
     content: "";
     position: absolute;
     right: 12px;
     top: 25px;
     width: 24px;
     height: 24px;
+    transition: 0.25s;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 10px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 5' fill='%23767676' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L0 0H10L5 5Z' /%3E%3C/svg%3E%0A");
+}
+.visual .reservation .reservation-select > a strong em {
+    color: #C9A86A;
 }
 .visual .reservation .reservation-btn {
     background-color: #0E3B2F;
@@ -198,3 +274,59 @@
     background-size: 22.5px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 23 23' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.75 22.5L12.875 14.625C12.25 15.125 11.5312 15.5208 10.7187 15.8125C9.90625 16.1042 9.04167 16.25 8.125 16.25C5.85417 16.25 3.93229 15.4635 2.35938 13.8906C0.786458 12.3177 0 10.3958 0 8.125C0 5.85417 0.786458 3.93229 2.35938 2.35938C3.93229 0.786458 5.85417 0 8.125 0C10.3958 0 12.3177 0.786458 13.8906 2.35938C15.4635 3.93229 16.25 5.85417 16.25 8.125C16.25 9.04167 16.1042 9.90625 15.8125 10.7187C15.5208 11.5312 15.125 12.25 14.625 12.875L22.5 20.75L20.75 22.5ZM8.125 13.75C9.6875 13.75 11.0156 13.2031 12.1094 12.1094C13.2031 11.0156 13.75 9.6875 13.75 8.125C13.75 6.5625 13.2031 5.23438 12.1094 4.14062C11.0156 3.04688 9.6875 2.5 8.125 2.5C6.5625 2.5 5.23438 3.04688 4.14062 4.14062C3.04688 5.23438 2.5 6.5625 2.5 8.125C2.5 9.6875 3.04688 11.0156 4.14062 12.1094C5.23438 13.2031 6.5625 13.75 8.125 13.75Z' /%3E%3C/svg%3E%0A");
 }
+/******드롭박스******/
+/******드롭다운 박스 설정******/
+.visual .reservation .reservation-select {
+    position: relative;
+}
+.visual .reservation .reservation-select.is-open > a::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 5' fill='%23767676' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L0 0H10L5 5Z' /%3E%3C/svg%3E%0A");
+    transform: rotate(180deg);
+}
+.visual .reservation .reservation-select.is-open .dropdown-content.room,
+.visual .reservation .reservation-select.is-open .dropdown-content.Adult,
+.visual .reservation .reservation-select.is-open .dropdown-content.Children {
+    display: block;
+}
+.visual .reservation .reservation-select .dropdown-content.room,
+.visual .reservation .reservation-select .dropdown-content.Adult,
+.visual .reservation .reservation-select .dropdown-content.Children {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    z-index: 10;
+    background-color: white; /* 배경색 설정 */
+    width: 100%;
+    display: none;
+}
+.visual .reservation .reservation-select.is-open .dropdown-content.room,
+.visual .reservation .reservation-select.is-open .dropdown-content.Adult,
+.visual .reservation .reservation-select.is-open .dropdown-content.Children {
+    overflow-y: auto;
+    height: 200px;
+}
+.visual .reservation .reservation-select.is-open .dropdown-content.room ul > li,
+.visual .reservation .reservation-select.is-open .dropdown-content.Adult ul > li,
+.visual .reservation .reservation-select.is-open .dropdown-content.Children ul > li {
+    border-bottom: 1px solid #ccc ;
+}
+.visual .reservation .reservation-select.is-open .dropdown-content.room ul > li > a,
+.visual .reservation .reservation-select.is-open .dropdown-content.Adult ul > li > a,
+.visual .reservation .reservation-select.is-open .dropdown-content.Children ul > li > a {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    color: #111;
+    padding: 17px 0 17px 50px;
+}
+.visual .reservation .reservation-select.is-open .dropdown-content.room ul > li > a:hover,
+.visual .reservation .reservation-select.is-open .dropdown-content.Adult ul > li > a:hover,
+.visual .reservation .reservation-select.is-open .dropdown-content.Children ul > li > a:hover {
+    background-color: #f4f4f4;
+}
+.visual .reservation .reservation-select.is-open .dropdown-content.room ul > li > a em,
+.visual .reservation .reservation-select.is-open .dropdown-content.Adult ul > li > a em,
+.visual .reservation .reservation-select.is-open .dropdown-content.Children ul > li > a em {
+    color: #C9A86A;
+}
+/******드롭다운 박스 설정******/
