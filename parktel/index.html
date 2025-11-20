@@ -10,13 +10,84 @@
 
     <!-- 개인파일 -->
     <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>서울올림픽파크텔</title>
 </head>
 <body>
     <div id="wrap">
-        <header></header>
+        <header>
+            <div class="wrapper">
+                <div class="hd_top">
+                    <div class="hd_top_left">
+                        <a href="#n">고객지원</a>
+                        <a href="#n">찾아오시는 길</a>
+                    </div> <!--head_left-->
+                    <h1 class="logo"><a href="index.html"><span class="blind">서울올림픽파크텔 Seoul Olympic Parktel</span></a></h1>
+                    <div class="hd_top_right">
+                        <button class="lang"><span>KOR</span>
+                        </button>
+                        <button class="top_menu"><span class="blind">메뉴열기</span></button>
+                    </div> <!--head_right-->
+                </div> <!--head_top-->
+                <div class="hd_bottom">
+                    <nav class="gnb">
+                        <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                        <div class="gnb_wrap">
+                            <div class="gnb_logo"><span class="blind">서울올림픽파크텔 Seoul Olympic Parktel</span></div>
+                            <ul class="depth1">
+                                <li>
+                                    <a href="#n"><span>객실</span></a>
+                                    <ul class="depth2">
+                                        <li><a href="#n"><span>전체보기</span></a></li>
+                                        <li><a href="#n"><span>스탠다드</span></a></li>
+                                        <li><a href="#n"><span>디럭스 트윈</span></a></li>
+                                        <li><a href="#n"><span>스위트</span></a></li>
+                                        <li><a href="#n"><span>다인실</span></a></li>
+                                        <li><a href="#n"><span>한실</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n"><span>웨딩&연회</span></a>
+                                    <ul class="depth2">
+                                        <li><a href="#n"><span>웨딩</span></a></li>
+                                        <li><a href="#n"><span>대연회장</span></a></li>
+                                        <li><a href="#n"><span>중연회장</span></a></li>
+                                        <li><a href="#n"><span>소연회장</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n"><span>부대업장</span></a>
+                                    <ul class="depth2">
+                                        <li><a href="#n"><span>식음업장</span></a></li>
+                                        <li><a href="#n"><span>편의시설</span></a></li>
+                                        <li><a href="#n"><span>스마트 스포츠체험관</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n"><span>멤버십</span></a>
+                                    <ul class="depth2">
+                                        <li><a href="#n"><span>멤버십 가입 안내</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n"><span>컨시어지 라운지</span></a>
+                                    <ul class="depth2">
+                                        <li><a href="#n"><span>스페셜 오퍼</span></a></li>
+                                        <li><a href="#n"><span>주변 소개</span></a></li>
+                                        <li><a href="#n"><span>찾아오시는 길</span></a></li>
+                                        <li><a href="#n"><span>유스호스텔 소개</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#n" class="reser"><span>예약하기</span></a></li>
+                            </ul>
+                            <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                        </div> <!--gnb_gwrap-->
+                    </nav> <!--gnb-->
+                </div> <!--hd_bottom-->
+            </div> <!--wrapper-->
+        </header>
         <main class="container">
             <section class="visual">
                 <h2 class="blind">팝업</h2>
@@ -45,72 +116,69 @@
                     </div> <!--visual_wrap-->
                 </div>
                 <div class="reservation">
-                    <div class="wrapper">
-                        <span class="moblie_circle"><b>1</b>박</span>
-                        <div class="reservation-date checkin">
-                            <a href="#n">
-                                <strong>Check-in</strong>
-                                <span>날짜 선택</span>
-                            </a>
+                    <div class="reservation-date checkin">
+                        <a href="#n">
+                            <strong>Check-in</strong>
+                            <span>날짜 선택</span>
+                        </a>
+                    </div>
+                    <div class="reservation-date checkout">
+                        <a href="#n">
+                            <strong>Check-out</strong>
+                            <span>날짜 선택</span>
+                        </a>
+                    </div>
+                    <div class="reservation-select select-medium room">
+                        <a href="#n">
+                            <strong>Room <em>1</em></strong>
+                            <span>객실 수</span>
+                        </a>
+                        <div class="dropdown-content room">
+                            <ul>
+                                <li><a href="#n" data-value="1">Room <Em>1</Em></a></li>
+                                <li><a href="#n" data-value="2">Room <Em>2</Em></a></li>
+                                <li><a href="#n" data-value="3">Room <Em>3</Em></a></li>
+                                <li><a href="#n" data-value="4">Room <Em>4</Em></a></li>
+                                <li><a href="#n" data-value="5">Room <Em>5</Em></a></li>
+                                <li><a href="#n" data-value="6">Room <Em>6</Em></a></li>
+                            </ul>
                         </div>
-                        <div class="reservation-date checkout">
-                            <a href="#n">
-                                <strong>Check-out</strong>
-                                <span>날짜 선택</span>
-                            </a>
+                    </div>
+                    <div class="reservation-select select-medium Adult">
+                        <a href="#n">
+                            <strong>Adult <em>1</em></strong>
+                            <span>성인</span>
+                        </a>
+                        <div class="dropdown-content Adult">
+                            <ul>
+                                <li><a href="#n" data-value="1">Adult <Em>1</Em></a></li>
+                                <li><a href="#n" data-value="2">Adult <Em>2</Em></a></li>
+                                <li><a href="#n" data-value="3">Adult <Em>3</Em></a></li>
+                                <li><a href="#n" data-value="4">Adult <Em>4</Em></a></li>
+                                <li><a href="#n" data-value="5">Adult <Em>5</Em></a></li>
+                                <li><a href="#n" data-value="6">Adult <Em>6</Em></a></li>
+                            </ul>
                         </div>
-                        <div class="reservation-select select-medium room">
-                            <a href="#n">
-                                <strong>Room <em>1</em></strong>
-                                <span>객실 수</span>
-                            </a>
-                            <div class="dropdown-content room">
-                                <ul>
-                                    <li><a href="#n" data-value="1">Room <Em>1</Em></a></li>
-                                    <li><a href="#n" data-value="2">Room <Em>2</Em></a></li>
-                                    <li><a href="#n" data-value="3">Room <Em>3</Em></a></li>
-                                    <li><a href="#n" data-value="4">Room <Em>4</Em></a></li>
-                                    <li><a href="#n" data-value="5">Room <Em>5</Em></a></li>
-                                    <li><a href="#n" data-value="6">Room <Em>6</Em></a></li>
-                                </ul>
-                             </div>
+                    </div>
+                    <div class="reservation-select select-medium Children">
+                        <a href="#n">
+                            <strong>Children <em>0</em></strong>
+                            <span>어린이</span>
+                        </a>
+                        <div class="dropdown-content Children">
+                            <ul>
+                                <li><a href="#n" data-value="0">Children <Em>0</Em></a></li>
+                                <li><a href="#n" data-value="1">Children <Em>1</Em></a></li>
+                                <li><a href="#n" data-value="2">Children <Em>2</Em></a></li>
+                                <li><a href="#n" data-value="3">Children <Em>3</Em></a></li>
+                                <li><a href="#n" data-value="4">Children <Em>4</Em></a></li>
+                                <li><a href="#n" data-value="5">Children <Em>5</Em></a></li>
+                            </ul>
                         </div>
-                        <div class="reservation-select select-medium Adult">
-                            <a href="#n">
-                                <strong>Adult <em>1</em></strong>
-                                <span>성인</span>
-                            </a>
-                            <div class="dropdown-content Adult">
-                                <ul>
-                                    <li><a href="#n" data-value="1">Adult <Em>1</Em></a></li>
-                                    <li><a href="#n" data-value="2">Adult <Em>2</Em></a></li>
-                                    <li><a href="#n" data-value="3">Adult <Em>3</Em></a></li>
-                                    <li><a href="#n" data-value="4">Adult <Em>4</Em></a></li>
-                                    <li><a href="#n" data-value="5">Adult <Em>5</Em></a></li>
-                                    <li><a href="#n" data-value="6">Adult <Em>6</Em></a></li>
-                                </ul>
-                             </div>
-                        </div>
-                        <div class="reservation-select select-medium Children">
-                            <a href="#n">
-                                <strong>Children <em>0</em></strong>
-                                <span>어린이</span>
-                            </a>
-                            <div class="dropdown-content Children">
-                                <ul>
-                                    <li><a href="#n" data-value="0">Children <Em>0</Em></a></li>
-                                    <li><a href="#n" data-value="1">Children <Em>1</Em></a></li>
-                                    <li><a href="#n" data-value="2">Children <Em>2</Em></a></li>
-                                    <li><a href="#n" data-value="3">Children <Em>3</Em></a></li>
-                                    <li><a href="#n" data-value="4">Children <Em>4</Em></a></li>
-                                    <li><a href="#n" data-value="5">Children <Em>5</Em></a></li>
-                                </ul>
-                             </div>
-                        </div>
-                        <div class="reservation-btn">
-                            <a href="#n"><span>Search</span></a>
-                        </div>
-                    </div> <!--wrapper-->
+                    </div>
+                    <div class="reservation-btn">
+                        <a href="#n"><span>Search</span></a>
+                    </div>
                 </div> <!--reservation-->
             </section> <!--visual-->
             <section class="room"></section> <!--room-->
