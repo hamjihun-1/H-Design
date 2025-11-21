@@ -321,7 +321,7 @@
     font-size: 17px;
     font-weight: 700;
     color: #111;
-    padding: 17px 0 17px 50px;
+    padding: 20px 0 20px 50px;
 }
 .visual .reservation .reservation-select.is-open .dropdown-content.room ul > li > a:hover,
 .visual .reservation .reservation-select.is-open .dropdown-content.Adult ul > li > a:hover,
@@ -501,7 +501,7 @@
     .visual .reservation .reservation-select.is-open .dropdown-content.Adult ul > li > a,
     .visual .reservation .reservation-select.is-open .dropdown-content.Children ul > li > a {
         font-size: 15px;
-        padding: 20px 20px 20px 20px;
+        padding: 21px 20px 22px 20px;
     }
 } /*@media*/
 @media screen and (max-width:320px){
@@ -928,14 +928,14 @@ section.room .ctrl_btn button.next::before {
     font-family: 'Pretendard';
 }
 .facilties .tab_content .list .swiper .swiper-slide .txt > strong {
-    font-size: 17px;
+    font-weight: 700;
     color: #0E3B2F;
 }
 .facilties .tab_content .list .swiper .swiper-slide .txt h4 {
     font-size: 22px;
     font-weight: 700;
     color: #111;
-    margin: 10px 0 15px 0;
+    margin: 5px 0 15px 0;
 }
 .facilties .tab_content .list .swiper .swiper-slide .txt ul li {
     display: flex;
@@ -951,6 +951,7 @@ section.room .ctrl_btn button.next::before {
 }
 /***슬라이드 버튼***/
 .facilties .prev {
+    display: block;
     position: absolute; 
     left: -10%;
     top: 50%;
@@ -961,6 +962,7 @@ section.room .ctrl_btn button.next::before {
     opacity: 0.5;
 }
 .facilties .next {
+    display: block;
     position: absolute; 
     right: -10%;
     top: 50%;
