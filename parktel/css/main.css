@@ -861,4 +861,7 @@ section.room .ctrl_btn button.next::before {
     section.room .tab_content .tab_item .room_info h3 {
         margin: 20px 0 5px 0;
     }
+    section.room .ctrl_btn {
+        display: none;
+    }
 }/*@media*/
