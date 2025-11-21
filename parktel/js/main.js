@@ -99,7 +99,7 @@ $(document).ready(function(){
     });
 /********************visual 끝::드롭박스**********************/
 
-    /************new menu tab::시작***********
+    /************room menu tab::시작***********
      * section.room .tab_list ul li를 클릭했을 때 1번째를 클릭하면 active 클래스를 주고 
      * li에서 어떤 tab_item을 보이게 해야하는 지 단서를 줘야함
      * section.room .tab_content .tab_item에서 1번째 요소에 active 클래스 줌
@@ -125,7 +125,7 @@ $(document).ready(function(){
         $('section.room .tab_content .tab_item').attr('title', '')
         $('section.room .tab_content').find('.' + tab_name).attr('title', '선택됨')
     })
-    /************new menu tab::끝************/
+    /************room menu tab::끝************/
     // 필요한 DOM 요소 변수로 선언 (코드의 재사용성과 가독성을 높입니다)
     const $roomSection = $('section.room');
     const $tabListItems = $roomSection.find('.tab_list ul li');
@@ -234,13 +234,38 @@ $(document).ready(function(){
         },
         //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.facilties .next',
+            prevEl: '.facilties .prev',
         },
     });
 /************facilties swiper 종료************/
 
+    /************room menu tab::시작***********
+     * .facilties .tab_list ul li를 클릭했을 때 1번째를 클릭하면 active 클래스를 주고 
+     * li에서 어떤 tab_item을 보이게 해야하는 지 단서를 줘야함
+     * .facilties .tab_content .tab_item에서 1번째 요소에 active 클래스 줌
+     * 
+    */
+    $('.facilties .tab_list ul li').on('click', function(){
+        // 클릭한 li에만 active 클래스 추가
+        $('.facilties .tab_list ul li').removeClass('active')
+        $(this).addClass('active')
 
+        // 클릭한 li에만 button에다가 선택됨이라고 글자쓰기
+        $('.facilties .tab_list ul li button span').text('')
+        $(this).find('button span').text('선택됨')
+        
+        //클릭한 li와 관련된 tab_content tab_item에 active 클래스 추가
+        tab_name = $(this).attr('data-tab')
+        $('.facilties .tab_content .tab_item').removeClass('active')
+        //find로 찾을 때는 클래스명이면 .이 추가되어야함, 내가 가져온 이름은 .이 없음
+        $('.facilties .tab_content').find('.' + tab_name).addClass('active')
+
+        //선택됨 tab_item의 title에만 '선택됨'이라고 써주기
+        $('.facilties .tab_content .tab_item').attr('title', '')
+        $('.facilties .tab_content').find('.' + tab_name).attr('title', '선택됨')
+    })
+    /************room menu tab::끝************/
 
 
 
