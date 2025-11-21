@@ -26,7 +26,6 @@
     --color-white20 : rgba(255, 255, 255, 0.2);
     --color-white10 : rgba(255, 255, 255, 0.1);
     --header-h : 200px;
-    --header-var : clamp(60px, 9vw, 90px);
     --wrapper-margin : 50px;
 }
 

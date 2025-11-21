@@ -99,10 +99,128 @@ $(document).ready(function(){
     });
 /********************visual 끝::드롭박스**********************/
 
+    /************new menu tab::시작***********
+     * section.room .tab_list ul li를 클릭했을 때 1번째를 클릭하면 active 클래스를 주고 
+     * li에서 어떤 tab_item을 보이게 해야하는 지 단서를 줘야함
+     * section.room .tab_content .tab_item에서 1번째 요소에 active 클래스 줌
+     * 
+    */
+    let tab_name
+    $('section.room .tab_list ul li').on('click', function(){
+        // 클릭한 li에만 active 클래스 추가
+        $('section.room .tab_list ul li').removeClass('active')
+        $(this).addClass('active')
 
+        // 클릭한 li에만 button에다가 선택됨이라고 글자쓰기
+        $('section.room .tab_list ul li button span').text('')
+        $(this).find('button span').text('선택됨')
+        
+        //클릭한 li와 관련된 tab_content tab_item에 active 클래스 추가
+        tab_name = $(this).attr('data-tab')
+        $('section.room .tab_content .tab_item').removeClass('active')
+        //find로 찾을 때는 클래스명이면 .이 추가되어야함, 내가 가져온 이름은 .이 없음
+        $('section.room .tab_content').find('.' + tab_name).addClass('active')
 
+        //선택됨 tab_item의 title에만 '선택됨'이라고 써주기
+        $('section.room .tab_content .tab_item').attr('title', '')
+        $('section.room .tab_content').find('.' + tab_name).attr('title', '선택됨')
+    })
+    /************new menu tab::끝************/
+    // 필요한 DOM 요소 변수로 선언 (코드의 재사용성과 가독성을 높입니다)
+    const $roomSection = $('section.room');
+    const $tabListItems = $roomSection.find('.tab_list ul li');
+    const $tabContents = $roomSection.find('.tab_content .tab_item');
+    // 이전/다음 버튼을 변수로 선언합니다.
+    const $prevButton = $roomSection.find('.ctrl_btn .prev');
+    const $nextButton = $roomSection.find('.ctrl_btn .next');
+    
+    // === 1. Room - 객실 타입 (TWIN/DOUBLE 등) 전환 함수 정의 ===
+    function switchRoomType($button) {
+        const $activeTab = $button.closest('.tab_item');
+        const selectedType = $button.attr('data-type');
+        
+        // 1-1. 버튼 활성화 상태 업데이트
+        $activeTab.find('.room_list .option-btn').removeClass('active');
+        $button.addClass('active');
 
+        // 1-2. 이미지 전환
+        $activeTab.find('.photo_box .room_image').removeClass('active');
+        // data-type 값과 일치하는 이미지에 active 클래스 추가
+        $activeTab.find(`.photo_box .room_image.${selectedType}`).addClass('active');
+    }
 
+    // === 2. 탭 전환 및 객실 타입 초기화 로직 (핵심 함수) ===
+    function updateActiveTab(targetTabElement) {
+        const tab_name = $(targetTabElement).attr('data-tab'); 
+
+        // 2-1. 탭 리스트 상태 업데이트
+        $tabListItems.removeClass('active');
+        $(targetTabElement).addClass('active');
+
+        // blind 텍스트 업데이트 (선택됨 표시)
+        $tabListItems.find('button span.blind').text(''); 
+        $(targetTabElement).find('button span.blind').text('선택됨');
+        
+        // 2-2. 콘텐츠 상태 업데이트 및 타겟 변수 지정
+        $tabContents.removeClass('active').attr('title', '');
+        
+        const $targetTabItem = $roomSection.find('.tab_content').find('.' + tab_name);
+        $targetTabItem.addClass('active').attr('title', '선택됨');
+
+        // 2-3. 새 탭으로 전환 시, 객실 타입 초기화 (첫 번째 옵션 버튼 강제 클릭)
+        // 이 부분이 없으면 새 탭 전환 시 이미지가 안 보일 수 있습니다.
+        const $firstOptionButton = $targetTabItem.find('.room_list .option-btn:first');
+        if ($firstOptionButton.length) {
+            switchRoomType($firstOptionButton);
+        }
+    }
+
+    // === 3. 이벤트 핸들러 등록 ===
+
+    // 3-1. 메인 탭 클릭 이벤트 (기존 기능)
+    $tabListItems.on('click', function(){
+        updateActiveTab(this);
+    });
+
+    // 3-2. 객실 타입 버튼 클릭 이벤트 (기존 기능)
+    $roomSection.on('click', '.room_list .option-btn', function() {
+        switchRoomType($(this));
+    });
+
+    // 3-3. 이전 버튼 클릭 이벤트 (새로 추가된 기능: 탭 순환)
+    $prevButton.on('click', function() {
+        // 현재 활성화된 탭의 인덱스를 찾습니다.
+        let currentIndex = $tabListItems.index($tabListItems.filter('.active'));
+        let newIndex = currentIndex - 1;
+
+        // 인덱스가 0보다 작으면 (맨 앞에서 이전), 마지막 탭으로 이동 (순환)
+        if (newIndex < 0) {
+            newIndex = $tabListItems.length - 1; 
+        }
+        
+        // 새로운 탭 요소를 찾아서 탭 전환 함수 실행
+        updateActiveTab($tabListItems.eq(newIndex));
+    });
+
+    // 3-4. 다음 버튼 클릭 이벤트 (새로 추가된 기능: 탭 순환)
+    $nextButton.on('click', function() {
+        // 현재 활성화된 탭의 인덱스를 찾습니다.
+        let currentIndex = $tabListItems.index($tabListItems.filter('.active'));
+        let newIndex = currentIndex + 1;
+
+        // 인덱스가 총 개수보다 크거나 같으면 (맨 뒤에서 다음), 첫 번째 탭으로 이동 (순환)
+        if (newIndex >= $tabListItems.length) {
+            newIndex = 0; 
+        }
+        
+        // 새로운 탭 요소를 찾아서 탭 전환 함수 실행
+        updateActiveTab($tabListItems.eq(newIndex));
+    });
+
+    // 3-5. 초기 로드 시: 첫 번째 탭의 객실 타입 이미지 설정 (HTML의 초기 active 상태 반영)
+    $roomSection.find('.tab_item.active .room_list .option-btn:first').each(function() {
+        switchRoomType($(this));
+    });
 
 
 
