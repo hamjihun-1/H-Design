@@ -55,6 +55,7 @@
 .visual .swiper .visual_wrap .visual_txt h3 {
     font-size: 70px;
     font-weight: 700;
+    line-height: 1.4;
 }
 .visual .swiper .visual_wrap .visual_txt p {
     font-size: 17px; 
@@ -308,6 +309,24 @@
 .visual .reservation .reservation-select.is-open .dropdown-content.Children {
     overflow-y: auto;
     height: 200px;
+}
+.visual .reservation .reservation-select.is-open .dropdown-content.room::-webkit-scrollbar,
+.visual .reservation .reservation-select.is-open .dropdown-content.Adult::-webkit-scrollbar,
+.visual .reservation .reservation-select.is-open .dropdown-content.Children::-webkit-scrollbar { /* 스크롤바의 영역 */
+    width: 7px;
+    height: 7px;
+}
+.visual .reservation .reservation-select.is-open .dropdown-content.room::-webkit-scrollbar-thumb,
+.visual .reservation .reservation-select.is-open .dropdown-content.Adult::-webkit-scrollbar-thumb,
+.visual .reservation .reservation-select.is-open .dropdown-content.Children::-webkit-scrollbar-thumb {  /* 스크롤바의 색상 및 스타일 */
+    height: 30%;
+    background: #1b5344;
+    border-radius: 10px;
+}
+.visual .reservation .reservation-select.is-open .dropdown-content.room::-webkit-scrollbar-track,
+.visual .reservation .reservation-select.is-open .dropdown-content.Adult::-webkit-scrollbar-track,
+.visual .reservation .reservation-select.is-open .dropdown-content.Children::-webkit-scrollbar-track { /* 스크롤바 하단 색상 */
+    background: #fff;
 }
 .visual .reservation .reservation-select.is-open .dropdown-content.room ul > li,
 .visual .reservation .reservation-select.is-open .dropdown-content.Adult ul > li,
@@ -600,6 +619,7 @@ section.room .tab_content .tab_item .room_info strong {
 section.room .tab_content .tab_item .room_info h3 {
     font-size: 45px;
     font-weight: 700;
+    line-height: 1.4;
     margin: 0 0 5px 0;
 }
 section.room .tab_content .tab_item .room_info p {
@@ -878,6 +898,7 @@ section.room .ctrl_btn button.next::before {
 .facilties .tit h2 {
     font-size: 45px;
     font-weight: 700;
+    line-height: 1.4;
     color: #0E3B2F;
     margin: 0 0 5px 0;
 }
@@ -1052,6 +1073,7 @@ section.room .ctrl_btn button.next::before {
 .moments .tit h2 {
     font-size: 45px;
     font-weight: 700;
+    line-height: 1.4;
     color: #0E3B2F;
     margin: 5px 0 0 0;
 }
@@ -1117,20 +1139,20 @@ section.room .ctrl_btn button.next::before {
     background-size: 8px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 12' fill='%230E3B2F' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.6 6L0 1.4L1.4 0L7.4 6L1.4 12L0 10.6L4.6 6Z' /%3E%3C/svg%3E%0A");
 }
-.moments .wedding_list .txt .wedding_btn a.contact, 
-.moments .banquet_list .txt .banquet_btn a.contact {
+.moments .wedding_list .txt .wedding_btn a.cont, 
+.moments .banquet_list .txt .banquet_btn a.cont {
     display: block;
     padding: 6px 12px 6px 18px;
     border:1px solid #0E3B2F;
     color: #0E3B2F;
 }
-.moments .wedding_list .txt .wedding_btn a.contact span,
-.moments .banquet_list .txt .banquet_btn a.contact span {
+.moments .wedding_list .txt .wedding_btn a.cont span,
+.moments .banquet_list .txt .banquet_btn a.cont span {
     position: relative;
     padding-right: 36px;
 }
-.moments .wedding_list .txt .wedding_btn a.contact span::after,
-.moments .banquet_list .txt .banquet_btn a.contact span::after {
+.moments .wedding_list .txt .wedding_btn a.cont span::after,
+.moments .banquet_list .txt .banquet_btn a.cont span::after {
     content: "";
     position: absolute;
     right: 0;
@@ -1146,8 +1168,8 @@ section.room .ctrl_btn button.next::before {
 /***a 오버 스타일***/
 .moments .wedding_list .txt .wedding_btn a.more:hover,
 .moments .banquet_list .txt .banquet_btn a.more:hover,
-.moments .wedding_list .txt .wedding_btn a.contact:hover, 
-.moments .banquet_list .txt .banquet_btn a.contact:hover {
+.moments .wedding_list .txt .wedding_btn a.cont:hover, 
+.moments .banquet_list .txt .banquet_btn a.cont:hover {
     color: #fff;
     background-color: #0E3B2F;
     transition: 0.3s;
@@ -1156,8 +1178,8 @@ section.room .ctrl_btn button.next::before {
 .moments .banquet_list .txt .banquet_btn a.more:hover span::after {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 12' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.6 6L0 1.4L1.4 0L7.4 6L1.4 12L0 10.6L4.6 6Z' /%3E%3C/svg%3E%0A");
 }
-.moments .wedding_list .txt .wedding_btn a.contact:hover span::after,
-.moments .banquet_list .txt .banquet_btn a.contact:hover span::after {
+.moments .wedding_list .txt .wedding_btn a.cont:hover span::after,
+.moments .banquet_list .txt .banquet_btn a.cont:hover span::after {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 12' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.6 6L0 1.4L1.4 0L7.4 6L1.4 12L0 10.6L4.6 6Z' /%3E%3C/svg%3E%0A");
 }
 /***a 오버 스타일***/
@@ -1248,17 +1270,17 @@ section.room .ctrl_btn button.next::before {
         height: 18px;
         background-size: 6px;
     }
-    .moments .wedding_list .txt .wedding_btn a.contact, 
-    .moments .banquet_list .txt .banquet_btn a.contact {
+    .moments .wedding_list .txt .wedding_btn a.cont, 
+    .moments .banquet_list .txt .banquet_btn a.cont {
         padding: 7px 12px 6px 18px;
         font-size: 13px;
     }
-    .moments .wedding_list .txt .wedding_btn a.contact span,
-    .moments .banquet_list .txt .banquet_btn a.contact span {
+    .moments .wedding_list .txt .wedding_btn a.cont span,
+    .moments .banquet_list .txt .banquet_btn a.cont span {
         padding-right: 26px;
     }
-    .moments .wedding_list .txt .wedding_btn a.contact span::after,
-    .moments .banquet_list .txt .banquet_btn a.contact span::after {
+    .moments .wedding_list .txt .wedding_btn a.cont span::after,
+    .moments .banquet_list .txt .banquet_btn a.cont span::after {
         width: 18px;
         height: 18px;
         background-size: 6px;
@@ -1286,6 +1308,7 @@ section.room .ctrl_btn button.next::before {
 .special .tit h2 {
     font-size: 45px;
     font-weight: 700;
+    line-height: 1.4;
     color: #C9A86A;
     margin: 0 0 5px 0
 }
@@ -1538,14 +1561,14 @@ section.room .ctrl_btn button.next::before {
     .special .list > .more::after {
         top: 40%;
         transform: translateY(-50%);
-        width: 17px;
-        height: 17px;
-        background-size: 13px;
+        width: 18px;
+        height: 18px;
+        background-size: 12px;
     }
     /******swiper-active 추가 시******/
 } /*@media*/
 .notice {
-    margin: 110px;
+    margin: 110px 0 200px 0;
 }
 .notice .wrapper {
     position: relative;
@@ -1556,6 +1579,7 @@ section.room .ctrl_btn button.next::before {
 .notice .tit h2 {
     font-size: 45px;
     font-weight: 700;
+    line-height: 1.4;
     color: #0E3B2F;
     margin: 0 0 5px 0
 }
@@ -1621,7 +1645,7 @@ section.room .ctrl_btn button.next::before {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -30%;
+    bottom: -22%;
     color: #0E3B2F;
 }
 .notice a.more::before {
@@ -1656,135 +1680,174 @@ section.room .ctrl_btn button.next::before {
 }   
 @media screen and (max-width:1024px){
     .notice {
-        margin: 90px;
+        margin: 90px 0 150px 0;
     }
     .notice .tit h2 {
         font-size: 32px;
     }
-    .notice .list ul li a {
-        margin: 60px 0 0 0;
-    }
-    .notice .list ul li a h3 {
-        font-size: 22px;
-    }
-    .notice a.more {
-        display: block;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -20%;
-        color: #0E3B2F;
-    }
-}/*@media*/
-@media screen and (max-width:768px){
-    .notice {
-        margin: 110px;
-    }
-    .notice .wrapper {
-        position: relative;
-    }
-    .notice .tit {
-        text-align: center;
-    }
-    .notice .tit h2 {
-        font-size: 45px;
-        font-weight: 700;
-        color: #0E3B2F;
-        margin: 0 0 5px 0
-    }
     .notice .list ul {
-        display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
     }
     .notice .list ul li {
-            /* 감싸고 있는 ul의 넓이에 몇개가 정렬 - 4 = 25%
-           100% / 한줄의 li의 갯수 = 100/4 = 25%
-           한줄의 사이 여백의 합 24*3 = 72 / 4 (한줄의 li의 갯수) = 18
-           calc(25% - 18px) */
-           width: calc(25% - 18px);
-    }
-    .notice .list ul li a {
-        margin: 60px 0 0 0;
-        display: block;
-        border-top: 1px solid #C9A86A;
-        position: relative;
-        transition: 0.3s;
-    }
-    .notice .list ul li a:hover {
-        transform: translateY(-20px);
-    }
-    .notice .list ul li a.new_list {
-        border-top: 1px solid #0E3B2F;
-    }
-    .notice .list ul li a strong {
-        background-color: #C9A86A;
-        padding: 8px 26px 8px 26px;
-        color: #fff;
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-    .notice .list ul li a.new_list strong {
-        background-color: #0E3B2F;
-    }
-    .notice .list ul li a h3 {
-        margin: 80px 0 25px 0;
-        font-size: 24px;
-        font-weight: 700;
-        color: #111;
-        /* 2줄제한 */
-        overflow: hidden;
-        line-height: 1.5; /*행간*줄수 = 단위 em*/
-        height: 3em;
-    }
-    .notice .list ul li a p {
-        word-break: break-all; /* 단어별 줄바꿈 x */
-        /* 3줄제한 */
-        overflow: hidden;
-        line-height: 1.5; /*행간*줄수 = 단위 em*/
-        height: 4.5em;
-        /* 글에 ...추가 */
-        display: -webkit-box;
-        -webkit-line-clamp: 3; /*2번째 줄 넘어갈 시 ...으로 마무리*/
-        -webkit-box-orient: vertical;
-        margin: 0 0 40px 0;
-    }
-    .notice a.more {
-        display: block;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -30%;
-        color: #0E3B2F;
-    }
-    .notice a.more::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 0;
-        height: 1px;
-        background-color: #0E3B2F;
-        transition: 0.3s;
-    }
-    .notice a.more:hover::before {
         width: 100%;
     }
+    .notice .list ul li:last-child {
+        border-bottom: 1px solid #0E3B2F;
+        padding: 0 0 30px 0;
+    }
+    .notice .list ul li:nth-child(n+2) a {
+        margin: 30px 0 0 0;
+    }
+    .notice .list ul li a h3 {
+        margin: 70px 0 15px 0;
+        font-size: 22px;
+        height: 1.5em;
+    }
+    .notice .list ul li a p {
+        /* 2줄제한 */
+        height: 3em;
+        -webkit-line-clamp: 2; /*2번째 줄 넘어갈 시 ...으로 마무리*/
+        margin: 0 0 20px 0;
+    }
+    .notice a.more {
+        bottom: -8%;
+    }
+} /*@media*/
+@media screen and (max-width:768px){
+    .notice {
+        margin: 80px 0 130px 0;
+    }
+    .notice .tit h2 {
+        font-size: 28px;
+    }
+    .notice .list ul li a:hover {
+        transform: translateY(0);
+    }
+    .notice .list ul li:last-child {
+        border-bottom: 1px solid #0E3B2F;
+        padding: 0 0 30px 0;
+    }
+    .notice .list ul li:nth-child(n+2) a {
+        margin: 30px 0 0 0;
+    }
+    .notice .list ul li a strong {
+        padding: 6px 20px 6px 20px;
+    }
+    .notice .list ul li a h3 {
+        margin: 50px 0 10px 0;
+        font-size: 20px;
+        overflow: visible;
+        word-break: break-all; /* 단어별 줄바꿈 x */
+    }
+    .notice .list ul li a p {
+        display: none;
+    }
+    .notice a.more {
+        bottom: -8%;
+    }
     .notice a.more span {
-        position: relative;
-        padding-right: 34px;
+        padding-right: 25px;
     }
     .notice a.more span::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 45%;
-        transform: translateY(-50%);
-        width: 22px;
-        height: 22px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 14px;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='%230E3B2F' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8H0V6H6V0H8V6H14V8H8V14H6V8Z' /%3E%3C/svg%3E%0A");
-    }   
+        width: 18px;
+        height: 18px;
+        background-size: 12px;
+    }
+} /*@media*/
+@media screen and (max-width:450px){
+    .notice .list ul li a h3 {
+        margin: 50px 0 40px 0;
+        overflow: visible;
+        word-break: break-all; /* 단어별 줄바꿈 x */
+    }
+} /*@media*/
+.contact {
+    background: url(../images/main/contact/contact_bg.jpg) no-repeat center center / cover;
+    height: 500px;
+    text-align: center;
+    position: relative;
 }
+.contact::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.contact .tit {
+    padding: 150px 0 0 0;
+    color: #fff;
+    position: relative;
+}
+.contact .tit h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+}
+.contact .tit h2 span {
+    color: #C9A86A;
+}
+.contact .tit p {
+    font-family: 'Pretendard';
+    color: var(--color-white90);
+}
+.contact .btn {
+    position: relative;
+    margin: 35px 0 0 0;
+}
+.contact .btn ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 20px;
+}
+.contact .btn ul li a {
+    display: block;
+    padding: 12px 54px;
+    transition: 0.3s;
+}
+.contact .btn ul li a.btn_map {
+    background-color: #0E3B2F;
+    color: #fff;
+}
+.contact .btn ul li a.btn_map:hover {
+    background-color: #1b5344;
+}
+.contact .btn ul li a.btn_inquiry {
+    background-color: #D9E4DD;
+    color: #0E3B2F;
+}
+.contact .btn ul li a.btn_inquiry:hover {
+    background-color: #c5ddd0;
+}
+@media screen and (max-width:1024px){
+    .contact .tit h2 {
+        font-size: 32px;
+    }
+} /*@media*/
+@media screen and (max-width:768px){
+    .contact {
+        height: 300px;
+    }
+    .contact .tit {
+        padding: 75px 0 0 0;
+    }
+    .contact .tit h2 {
+        font-size: 28px;
+    }
+    .contact .btn {
+        margin: 25px 0 0 0;
+    }
+    .contact .btn ul li a {
+        padding: 8px 40px;
+    }
+} /*@media*/
+@media screen and (max-width:450px){
+    .contact .btn ul li a {
+        padding: 8px 30px;
+    }
+} /*@media*/

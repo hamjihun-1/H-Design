@@ -64,4 +64,17 @@ $(document).ready(function(){
     })
     /************모바일 메뉴 닫기::끝************/
 
+
+    // footer .f_right .family_site .family_open 열기를 클릭하면
+    // footer .f_right .family_site 에 open 클래스 추가
+    // footer .f_right .family_site .family_close 닫기를 클릭하면
+    $('footer .f_right .family_site .family_open').on('click', function(){
+        $('footer .f_right .family_site').addClass('open')
+        $('footer .f_right .family_site .family_wrap').slideDown()
+    })
+    $('footer .f_right .family_site .family_close').on('click', function(){
+        $('footer .f_right .family_site').removeClass('open')
+        $('footer .f_right .family_site .family_wrap').slideUp()
+    })
+
 })//맨끝
