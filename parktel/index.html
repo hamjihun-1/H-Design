@@ -26,8 +26,13 @@
                     </div> <!--head_left-->
                     <h1 class="logo"><a href="index.html"><span class="blind">서울올림픽파크텔 Seoul Olympic Parktel</span></a></h1>
                     <div class="hd_top_right">
-                        <button class="lang"><span>KOR</span>
-                        </button>
+                        <div class="lang">
+                            <button class="lang_current"><span>KOR</span></button>
+                            <ul class="lang_list">
+                                <li><button data-lang="KOR">KOR</button></li>
+                                <li><button data-lang="ENG">ENG</button></li>
+                            </ul>
+                        </div>
                         <button class="top_menu"><span class="blind">메뉴열기</span></button>
                     </div> <!--head_right-->
                 </div> <!--head_top-->
@@ -788,6 +793,18 @@
                 </div> <!--f_left-->
             </div> <!--wrapper-->
         </footer>
+        <aside class="quick">
+            <button class="quick_open" title="열기"><span class="blind">퀵메뉴 열기</span></button>
+            <div class="quick_wrap">
+                <ul>
+                    <li class="quick_event"><a href="#n"><span>이벤트</span></a></li>
+                    <li class="quick_reserve"><a href="#n"><span>예약</span></a></li>
+                    <li class="quick_map"><a href="#n"><span>오시는 길</span></a></li>
+                    <li class="quick_top"><a href="#Main"><span>TOP</span></a></li>
+                </ul>
+            </div>
+            <button class="quick_close" title="닫기"><span class="blind">퀵메뉴 닫기</span></button>
+        </aside> <!--quick-->
     </div>
 </body>
 </html>

@@ -29,6 +29,33 @@ $(document).ready(function(){
     $('.visual').on('focusin', function(){
         $('header').removeClass('menu_pc')
     })
+
+    /************header lang_list 열기::시작************/
+    const langCurrent = document.querySelector('.lang_current');
+    const langList = document.querySelector('.lang_list');
+    const langItems = document.querySelectorAll('.lang_list button');
+
+    // 현재 버튼 클릭 → 리스트 열기/닫기
+    langCurrent.addEventListener('click', () => {
+        langList.classList.toggle('open');
+    });
+
+    // 리스트에서 언어 선택 시 변경
+    langItems.forEach(item => {
+        item.addEventListener('click', () => {
+            langCurrent.querySelector('span').textContent = item.dataset.lang;
+            langList.classList.remove('open');
+        });
+    });
+
+    // 밖을 클릭하면 닫힘
+    document.addEventListener('click', (e) => {
+        if (!document.querySelector('.lang').contains(e.target)) {
+            langList.classList.remove('open');
+        }
+    });
+    /************header lang_list 열기::끝************/
+
     /************모바일 메뉴 1차 open::시작***********
      * 닫혀있는 메뉴를 클릭하면 기존에 열려있던 다른 메뉴를 닫고 나만 열기 (li open 클래스 추가)
      * 열려있는 메뉴를 클릭하면 나 자신을 닫고 끝남
@@ -76,5 +103,9 @@ $(document).ready(function(){
         $('footer .f_right .family_site').removeClass('open')
         $('footer .f_right .family_site .family_wrap').slideUp()
     })
+    
+
+
+
 
 })//맨끝

@@ -296,6 +296,26 @@ $(document).ready(function(){
         },
     });
     /************special swiper::끝************/
-
-
+    /******************
+	 * 퀵메뉴 열고 닫기
+	 * aside.quick .quick_open를 클릭하면 aside.quick open
+	 * ----> aside.quick .quick_wrap slideDown()으로 나타내기
+	 * aside.quick .quick_close를 클릭하면 aside.quick에 open 삭제
+	 * ----> aside.quick .quick_wrap slideup()으로 나타내기
+	*/
+	$('aside.quick .quick_open').on('click', function(){
+		$('aside.quick').addClass('open')
+		$('aside.quick .quick_wrap').slideDown()
+	})
+	$('aside.quick .quick_close').on('click', function(){
+		$('aside.quick').removeClass('open')
+		$('aside.quick .quick_wrap').slideUp()
+	})
+    /******************/
+    // top 버튼을 클릭하면 상단으로 이동
+    $('aside.quick .quick_wrap .quick_top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
 })//맨끝

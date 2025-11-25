@@ -63,9 +63,13 @@ header .hd_top .hd_top_right {
 }
 header .hd_top .hd_top_right .lang {
     position: relative;
+}
+header .hd_top .hd_top_right .lang .lang_current {
+    display: block;
+    position: relative;
     padding-right: 24px;
 }
-header .hd_top .hd_top_right .lang::after {
+header .hd_top .hd_top_right .lang .lang_current::after {
     content: "";
     position: absolute;
     right: 0;
@@ -77,7 +81,25 @@ header .hd_top .hd_top_right .lang::after {
     background-size: 10px;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 5' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L0 0H10L5 5Z' /%3E%3C/svg%3E%0A");
 }
-
+header .hd_top .hd_top_right .lang .lang_list {
+    display: none;
+    position: absolute;
+    left: -5px;
+    top: 36px;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    padding: 15px 0 15px 0;
+    text-align: center;
+}
+header .hd_top .hd_top_right .lang .lang_list li + li {
+    margin: 10px 0 0 0;
+}
+header .hd_top .hd_top_right .lang .lang_list li button:hover {
+    font-weight: 700;
+}
+header .hd_top .hd_top_right .lang .lang_list.open {
+    display: block;
+}
 header .hd_top .hd_top_right .top_menu {
     position: relative;
 }
