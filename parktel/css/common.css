@@ -63,7 +63,7 @@ body {
 
 #wrap {
     position: relative; /* header 정렬의 기준 */
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 /* html문서 구조상 글자를 써줘야 하는데

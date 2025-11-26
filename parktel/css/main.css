@@ -11,7 +11,7 @@
 **********************/
 @import url(default.css);
 @import url(fonts.css);
-@import url(common.css);
+@import url(common.css?v=20251126);
 @import url(layout.css);
 
 .visual {
