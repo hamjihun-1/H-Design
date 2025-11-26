@@ -106,5 +106,5 @@ body {
 }
 
 ::selection {
-    /* background-color: var(--color-point); */
+    background-color: #DDE7E3;
 }
