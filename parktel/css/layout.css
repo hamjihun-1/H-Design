@@ -432,7 +432,6 @@ footer .f_right .youth_hostel a {
     padding: 13px 79px 13px 23px;
     background-color: #092C6F;
     color: #fff;
-    font-size: 17px;
     font-weight: 700;
     line-height: 1.4;
     position: relative;
@@ -482,7 +481,7 @@ footer .f_right .family_site .family_wrap ul li + li {
 }
 footer .f_right .family_site .family_wrap ul li a {
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--color-white70);
     position: relative;
 }
@@ -507,7 +506,6 @@ footer .f_right .family_site .family_close {
     padding: 13px 100px 13px 20px;
     background-color: #252525;
     color: #fff;
-    font-size: 17px;
     font-weight: 700;
     line-height: 1.4;
     position: relative;
