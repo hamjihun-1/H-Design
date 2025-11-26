@@ -19,6 +19,9 @@ $(document).ready(function(){
         pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
             el: '.visual .paging', /* 해당 요소의 class명 */
             clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+            renderBullet: function (i, className) {
+                return '<button class="' + className + '"><svg viewBox="0 0 73 73" xmlns="http://www.w3.org/2000/svg"><circle cx="36.5" cy="36.5" r="35.5" class="circle"></circle></svg></button>';
+            }
         },
 
     });

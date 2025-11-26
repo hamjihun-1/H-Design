@@ -83,19 +83,50 @@
     margin: 0;
     position: relative;
 }
-.visual .swiper .visual_wrap .visual_ctrl .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
-    content: "";
+.visual .swiper .visual_wrap .visual_ctrl .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+}
+.visual .paging .swiper-pagination-bullet {
+    width: auto; 
+    height: auto; 
+    background: transparent; 
+    margin: 0; 
+    opacity: 1; 
+    position: relative; 
+    cursor: pointer; 
+    border-radius: 50%;
+    display:flex; justify-content:center; align-items:center; /* 가운데 동그라미와 svg선을 가운데 정렬하기 위한 스타일 */
+}
+.visual .paging .swiper-pagination-bullet:after {
+    content:""; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform : translate(-50%, -50%);
+    width: 5px; height: 5px; border-radius: 50%; background-color: #fff; /* 가운데 동그라미 스타일 */
+}
+.visual .paging .swiper-pagination-bullet svg {
+    width:25px; height:25px; overflow:visible; /* 원을 그리는 동그라미의 크기 */
+    transform:rotate(-90deg); /* 12시 방향에서 시작하기 위해서 회전 */
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 1px solid #fff;
 }
-.visual .swiper .visual_wrap .visual_ctrl .swiper-pagination-bullets.swiper-pagination-horizontal {
-    width: auto;
+.visual .paging .swiper-pagination-bullet svg .circle {
+    fill: transparent; 
+    stroke-linecap: round;
+    stroke: #fff; 
+    stroke-width: 5; /* 동그라미를 그리는 선의 색상/두께 */
+    stroke-dasharray: 250; 
+    stroke-dashoffset: 250; /* 선 총 길이인데 너무 길면 애니메이션이 빨리 끝나고 짧으면 다 안그려짐 */
+}
+.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active svg .circle {
+    animation: progress 8s ease 1 forwards; /* 애니메이션이름, 시간, 가속도, 1번실행, 마지막상태유지 */
+}
+@keyframes progress{
+    0% { stroke-dashoffset: 250 }
+    100% { stroke-dashoffset: 0 }
 }
 /* 페이지 동그라미 */
 .visual .swiper .visual_wrap .btn_play {
