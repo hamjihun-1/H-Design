@@ -1,0 +1,178 @@
+/**********************
+* 파일명 : main.css
+* 작성자 : 함지훈
+* 작성일 : 25-10-23
+* 설  명 : index파일 (메인페이지)에서만 호출하는 css
+            메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer 제외)
+            default.css (태그의 초기화 - 브라우저가 주는 기본 스타일 삭제)
+            common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본 스타일 
+            - 변수도 여기서 선언, 변수가 너무 많으면 var이라는 파일을 분리도 함)
+            layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
+**********************/
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual {
+    position: relative; /* paging, spin 정렬의 기준*/
+}
+.visual .swiper {
+    width: 100%;
+    height: 100dvh;
+}
+.visual .swiper-slide .photo {
+    position: absolute; /* swiper-slide를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .swiper-slide .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.visual .swiper-slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 5s;
+}
+.visual .swiper-slide.swiper-slide-active .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.visual .swiper-slide .txt {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.visual .swiper-slide .txt h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 10px 0;
+}
+.visual .swiper-slide .txt p {
+    color: var(--color-white80);
+}
+.visual .paging {
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+    z-index: 10;
+    width: calc(100% - var(--wrapper-margin) - var(--wrapper-margin));
+    max-width: 1260px;
+}
+.visual .paging ul {
+    display: flex;
+    gap: 0 10px;
+}
+.visual .paging ul li.swiper-pagination-bullet {
+    margin: 0;
+    width: 33.33%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    background: none;
+    opacity: 1;
+    color: var(--color-white60);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 5px solid var(--color-white60);
+    padding-bottom: 10px;
+    position: relative; /* after 정렬의 기준 */
+}
+.visual .paging ul li.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    color: #fff;
+    font-size: 17px;
+}
+.visual .paging ul li.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+    content: "";
+    position: absolute; 
+    left: 0;
+    bottom: -5px;
+    height: 5px;
+    background-color: #B72654;
+    width: 0%;
+    animation: paging 5s linear 1 forwards;
+    /* 애니메이션 이름, 몇초동안 실행, 애니메이션 가속도, 1번 실행, 끝나면 100% */
+}
+@keyframes paging {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+.visual .spin {
+    position: absolute;
+    right: 5%;
+    bottom: 20%;
+    z-index: 10;
+}
+.visual .spin .spin_txt {
+    animation: spin 10s linear infinite;
+    /* 애니메이션 이름, 애니메이션 지연, 가속도, 무한 반복 */
+}
+.visual .spin .center_txt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);}
+}
+@media screen and (max-width:768px){
+    .visual .swiper {
+        height: 700px;
+    }
+    .visual .swiper-slide .txt h3 {
+        font-size: 32px;
+        margin: 0;
+    }
+    .visual .swiper-slide .txt p {
+        display: none;
+    }
+    .visual .paging {
+        width: auto;
+        max-width: 100%;
+    }
+    .visual .paging ul {
+        gap: 0 5px;
+    }
+    .visual .paging ul li.swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background: var(--color-white80);
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .visual .paging ul li.swiper-pagination-bullet.swiper-pagination-bullet-active {
+        width: 40px;
+        background: #fff;
+    }
+    .visual .paging ul li.swiper-pagination-bullet span {
+        display: none;
+    }
+    .visual .paging ul li.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+        display: none;
+    }
+    .visual .spin {
+        display: none;
+    }
+}/*media*/
