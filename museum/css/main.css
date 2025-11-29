@@ -66,7 +66,7 @@
     margin: 0 0 10px 0;
 }
 .visual .swiper-slide .txt p {
-    color: var(--color-white80);
+    color: var(--color-white90);
 }
 .visual .paging {
     position: absolute; /* visual을 기준으로 정렬 */
@@ -142,10 +142,6 @@
     }
     .visual .swiper-slide .txt h3 {
         font-size: 32px;
-        margin: 0;
-    }
-    .visual .swiper-slide .txt p {
-        display: none;
     }
     .visual .paging {
         width: auto;
