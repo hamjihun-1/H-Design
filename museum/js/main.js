@@ -27,4 +27,52 @@ $(document).ready(function(){
 			},
 		},
 	});
+
+	const special_swiper = new Swiper('.special .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+		breakpoints: {
+			450: {    /* 640px 이상일때 적용 */
+				slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 16,
+			},
+			768: {    /* 640px 이상일때 적용 */
+				slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 24,
+			},
+			1024: {    /* 640px 이상일때 적용 */
+				slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 24,
+			},
+		},
+		scrollbar: {
+			el: ".special .ctrl_wrap .scrollbar",
+			hide: false,
+			draggable: true, // 스크롤바 드래그 가능
+			dragSize: 'auto', // 스크롤바 사이즈
+		},
+		//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+		autoplay: {  /* 팝업 자동 실행 */
+			delay: 2500,
+			disableOnInteraction: true,
+		},
+		navigation: {
+			nextEl: '.special .ctrl_wrap .ctrl_btn .ctrl_next',
+			prevEl: '.special .ctrl_wrap .ctrl_btn .ctrl_prev',
+		},
+	});
+	/*special 팝업슬라이드 정지, 플레이 버튼*/
+	$('.special .ctrl_wrap .ctrl_btn .ctrl_stop').on('click', function(){
+        special_swiper.autoplay.stop();  /* 일시정지 기능 */
+        $(this).hide()
+        $('.special .ctrl_wrap .ctrl_btn .ctrl_play').css('display', 'flex')
+    })
+    $('.special .ctrl_wrap .ctrl_btn .ctrl_play').on('click', function(){
+        special_swiper.autoplay.start();  /* 재생 기능 */
+        $(this).hide()
+        $('.special .ctrl_wrap .ctrl_btn .ctrl_stop').css('display', 'flex')
+        updateCurrent()
+    })
+	/*special 팝업슬라이드 정지, 플레이 버튼*/
+
 })//맨끝
