@@ -29,16 +29,16 @@ $(document).ready(function(){
 	});
 
 	const special_swiper = new Swiper('.special .swiper', { /* 팝업을 감싼는 요소의 class명 */
-	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
 	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
 		breakpoints: {
-			450: {    /* 640px 이상일때 적용 */
+			400: {    /* 640px 이상일때 적용 */
 				slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
 				spaceBetween: 16,
 			},
-			768: {    /* 640px 이상일때 적용 */
+			600: {    /* 640px 이상일때 적용 */
 				slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
-				spaceBetween: 24,
+				spaceBetween: 16,
 			},
 			1024: {    /* 640px 이상일때 적용 */
 				slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
@@ -74,5 +74,203 @@ $(document).ready(function(){
         updateCurrent()
     })
 	/*special 팝업슬라이드 정지, 플레이 버튼*/
+
+
+	/************exhibition menu tab::시작***********
+     * .exhibition .tab_list ul li를 클릭했을 때 1번째를 클릭하면 active 클래스를 주고 
+     * li에서 어떤 tab_item을 보이게 해야하는 지 단서를 줘야함
+     * .exhibition .tab_content .tab_item에서 1번째 요소에 active 클래스 줌
+     * 
+    */
+	let tab_name
+	$('.exhibition .tab_list ul li').on('click', function(){
+		// 클릭한 li에만 active 클래스 추가
+		$('.exhibition .tab_list ul li').removeClass('active')
+		$(this).addClass('active')
+
+		// 클릭한 li에만 button에다가 선택됨이라고 글자쓰기
+		$('.exhibition .tab_list ul li button span').text('')
+		$(this).find('button span').text('선택됨')
+		
+		//클릭한 li와 관련된 tab_content tab_item에 active 클래스 추가
+		tab_name = $(this).attr('data-tab')
+		$('.exhibition .tab_content .tab_item').removeClass('active')
+		//find로 찾을 때는 클래스명이면 .이 추가되어야함, 내가 가져온 이름은 .이 없음
+		$('.exhibition .tab_content').find('.' + tab_name).addClass('active')
+
+		//선택됨 tab_item의 title에만 '선택됨'이라고 써주기
+		$('.exhibition .tab_content .tab_item').attr('title', '')
+		$('.exhibition .tab_content').find('.' + tab_name).attr('title', '선택됨')
+	})
+	/************new menu tab::끝************/
+	/************exhibition 탭 누를 시 배경 변경::시작************/
+	const tabs = document.querySelectorAll('.tab_list li');
+	const exhibition = document.querySelector('.exhibition');
+
+	tabs.forEach(tab => {
+		tab.addEventListener('click', () => {
+			// active 초기화
+			tabs.forEach(t => t.classList.remove('active'));
+			tab.classList.add('active');
+
+			// 배경 변경
+			const target = tab.dataset.tab;
+			exhibition.className = `exhibition ${target}`;
+		});
+	});
+	/************exhibition 탭 누를 시 배경 변경::시작************/
+	
+	/************collection swiper::시작************/
+	const collection_swiper = new Swiper('.collection .swiper', { /* 팝업을 감싼는 요소의 class명 */
+		slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+		breakpoints: {
+			450: {    /* 640px 이상일때 적용 */
+				slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 16,
+			},
+			769: {    /* 640px 이상일때 적용 */
+				slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 24,
+			},
+			1025: {    /* 640px 이상일때 적용 */
+				slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 24,
+			},
+		},
+		autoplay: {  /* 팝업 자동 실행 */
+			delay: 2500,
+			disableOnInteraction: true,
+		},
+		navigation: {
+			nextEl: '.collection  .ctrl_btn .ctrl_next',
+			prevEl: '.collection  .ctrl_btn .ctrl_prev',
+		},
+	});
+	/*collection 팝업슬라이드 정지, 플레이 버튼*/
+	$('.collection  .ctrl_btn .ctrl_stop').on('click', function(){
+        collection_swiper.autoplay.stop();  /* 일시정지 기능 */
+        $(this).hide()
+        $('.collection  .ctrl_btn .ctrl_play').css('display', 'flex')
+    })
+    $('.collection  .ctrl_btn .ctrl_play').on('click', function(){
+        collection_swiper.autoplay.start();  /* 재생 기능 */
+        $(this).hide()
+        $('.collection  .ctrl_btn .ctrl_stop').css('display', 'flex')
+        updateCurrent()
+    })
+	/*collection 팝업슬라이드 정지, 플레이 버튼*/
+/************collection swiper::종료************/
+/************collection swiper::시작************/
+	const publication_swiper = new Swiper('.publication .swiper', { /* 팝업을 감싼는 요소의 class명 */
+		slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+		breakpoints: {
+			400: {    /* 640px 이상일때 적용 */
+				slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 16,
+			},
+			769: {    /* 640px 이상일때 적용 */
+				slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 24,
+			},
+			1025: {    /* 640px 이상일때 적용 */
+				slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+				spaceBetween: 24,
+			},
+		},
+		autoplay: {  /* 팝업 자동 실행 */
+			delay: 2500,
+			disableOnInteraction: true,
+		},
+		navigation: {
+			nextEl: '.publication  .ctrl_btn .ctrl_next',
+			prevEl: '.publication  .ctrl_btn .ctrl_prev',
+		},
+	});
+	/*publication 팝업슬라이드 정지, 플레이 버튼*/
+	$('.publication  .ctrl_btn .ctrl_stop').on('click', function(){
+        publication_swiper.autoplay.stop();  /* 일시정지 기능 */
+        $(this).hide()
+        $('.publication  .ctrl_btn .ctrl_play').css('display', 'flex')
+    })
+    $('.publication  .ctrl_btn .ctrl_play').on('click', function(){
+        publication_swiper.autoplay.start();  /* 재생 기능 */
+        $(this).hide()
+        $('.publication  .ctrl_btn .ctrl_stop').css('display', 'flex')
+        updateCurrent()
+    })
+	/*special 팝업슬라이드 정지, 플레이 버튼*/
+/************publication swiper::종료************/
+
+/************ education swiper :: 시작 ***********/
+const education_swiper = new Swiper('.group01 .education .swiper', {
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: true,
+    },
+    loop: true,
+    navigation: {
+        nextEl: '.group01 .education .pagination .ctrl_next',
+        prevEl: '.group01 .education .pagination .ctrl_prev',
+    },
+    on: {
+        init: function() {
+            // ▼ 이름 변경: updateEducationCurrent
+            updateEducationCurrent(this);
+        },
+        slideChange: function() {
+            // ▼ 이름 변경: updateEducationCurrent
+            updateEducationCurrent(this);
+        }
+    }
+});
+
+// 전체 슬라이드 개수
+const education_totalSlides = $('.group01 .education .swiper .swiper-wrapper .swiper-slide').not('.swiper-slide-duplicate').length;
+$('.group01 .education .pagination .paging .total').text(education_totalSlides);
+
+// ▼ 함수 이름 변경: updateEducationCurrent
+function updateEducationCurrent(swiper) {
+    const current = (swiper ? swiper.realIndex : education_swiper.realIndex) + 1;
+    $('.group01 .education .pagination .paging .current').text(current);
+}
+/************ education swiper :: 종료 ***********/
+
+
+/************ popup swiper :: 시작 ***********/
+const popup_swiper = new Swiper('.group01 .popup .swiper', { // .group01 추가 확인 필요하면 넣으세요
+    // autoplay: {
+    //  delay: 5000,
+    //  disableOnInteraction: true,
+    // },
+    loop: true,
+    navigation: {
+        nextEl: '.group01 .popup .pagination .ctrl_next',
+        prevEl: '.group01 .popup .pagination .ctrl_prev',
+    },
+    on: {
+        init: function() {
+            // ▼ 이름 변경: updatePopupCurrent
+            updatePopupCurrent(this);
+        },
+        slideChange: function() {
+            // ▼ 이름 변경: updatePopupCurrent
+            updatePopupCurrent(this);
+        }
+    }
+});
+
+// 전체 슬라이드 개수
+const popup_totalSlides = $('.group01 .popup .swiper .swiper-wrapper .swiper-slide').not('.swiper-slide-duplicate').length;
+$('.group01 .popup .pagination .paging .total').text(popup_totalSlides);
+
+// ▼ 함수 이름 변경: updatePopupCurrent
+function updatePopupCurrent(swiper) {
+    const current = (swiper ? swiper.realIndex : popup_swiper.realIndex) + 1;
+    $('.group01 .popup .pagination .paging .current').text(current);
+}
+/************ popup swiper :: 종료 ***********/
+
 
 })//맨끝
