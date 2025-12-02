@@ -82,7 +82,7 @@ $(document).ready(function(){
      * .exhibition .tab_content .tab_item에서 1번째 요소에 active 클래스 줌
      * 
     */
-	let tab_name
+	let exhibition_tab_name
 	$('.exhibition .tab_list ul li').on('click', function(){
 		// 클릭한 li에만 active 클래스 추가
 		$('.exhibition .tab_list ul li').removeClass('active')
@@ -93,14 +93,14 @@ $(document).ready(function(){
 		$(this).find('button span').text('선택됨')
 		
 		//클릭한 li와 관련된 tab_content tab_item에 active 클래스 추가
-		tab_name = $(this).attr('data-tab')
+		exhibition_tab_name = $(this).attr('data-tab')
 		$('.exhibition .tab_content .tab_item').removeClass('active')
 		//find로 찾을 때는 클래스명이면 .이 추가되어야함, 내가 가져온 이름은 .이 없음
-		$('.exhibition .tab_content').find('.' + tab_name).addClass('active')
+		$('.exhibition .tab_content').find('.' + exhibition_tab_name).addClass('active')
 
 		//선택됨 tab_item의 title에만 '선택됨'이라고 써주기
 		$('.exhibition .tab_content .tab_item').attr('title', '')
-		$('.exhibition .tab_content').find('.' + tab_name).attr('title', '선택됨')
+		$('.exhibition .tab_content').find('.' + exhibition_tab_name).attr('title', '선택됨')
 	})
 	/************new menu tab::끝************/
 	/************exhibition 탭 누를 시 배경 변경::시작************/
@@ -161,7 +161,7 @@ $(document).ready(function(){
     })
 	/*collection 팝업슬라이드 정지, 플레이 버튼*/
 /************collection swiper::종료************/
-/************collection swiper::시작************/
+/************publication swiper::시작************/
 	const publication_swiper = new Swiper('.publication .swiper', { /* 팝업을 감싼는 요소의 class명 */
 		slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
 		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
@@ -200,7 +200,7 @@ $(document).ready(function(){
         $('.publication  .ctrl_btn .ctrl_stop').css('display', 'flex')
         updateCurrent()
     })
-	/*special 팝업슬라이드 정지, 플레이 버튼*/
+	/*publication 팝업슬라이드 정지, 플레이 버튼*/
 /************publication swiper::종료************/
 
 /************ education swiper :: 시작 ***********/
@@ -272,5 +272,88 @@ function updatePopupCurrent(swiper) {
 }
 /************ popup swiper :: 종료 ***********/
 
+/************album swiper::시작************/
+const album_swiper = new Swiper('.album .swiper', { /* 팝업을 감싼는 요소의 class명 */
+slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+breakpoints: {
+	551: {    /* 640px 이상일때 적용 */
+		slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+		spaceBetween: 16,
+	},
+	769: {    /* 640px 이상일때 적용 */
+		slidesPerView: 1,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+		spaceBetween: 24,
+	},
+	1025: {    /* 640px 이상일때 적용 */
+		slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+		spaceBetween: 24,
+	},
+},
+autoplay: {  /* 팝업 자동 실행 */
+	delay: 2500,
+	disableOnInteraction: true,
+},
+navigation: {
+	nextEl: '.album  .ctrl_btn .ctrl_next',
+	prevEl: '.album  .ctrl_btn .ctrl_prev',
+},
+});
+/*album 팝업슬라이드 정지, 플레이 버튼*/
+$('.album  .ctrl_btn .ctrl_stop').on('click', function(){
+	album_swiper.autoplay.stop();  /* 일시정지 기능 */
+$(this).hide()
+$('.album  .ctrl_btn .ctrl_play').css('display', 'flex')
+})
+$('.album  .ctrl_btn .ctrl_play').on('click', function(){
+	album_swiper.autoplay.start();  /* 재생 기능 */
+$(this).hide()
+$('.album  .ctrl_btn .ctrl_stop').css('display', 'flex')
+updateCurrent()
+})
+/*album 팝업슬라이드 정지, 플레이 버튼*/
+/************album swiper::종료************/
+
+/************.group02 .news menu tab::시작***********
+     * ..group02 .news .tab_list ul li를 클릭했을 때 1번째를 클릭하면 active 클래스를 주고 
+     * li에서 어떤 tab_item을 보이게 해야하는 지 단서를 줘야함
+     * ..group02 .news .tab_content .tab_item에서 1번째 요소에 active 클래스 줌
+     * 
+    */
+let tab_name
+$('.group02 .news .tab_list ul li').on('click', function(){
+	// 클릭한 li에만 active 클래스 추가
+	$('.group02 .news .tab_list ul li').removeClass('active')
+	$(this).addClass('active')
+
+	// 클릭한 li에만 button에다가 선택됨이라고 글자쓰기
+	$('.group02 .news .tab_list ul li button span').text('')
+	$(this).find('button span').text('선택됨')
+	
+	//클릭한 li와 관련된 tab_content tab_item에 active 클래스 추가
+	tab_name = $(this).attr('data-tab')
+	$('.group02 .news .tab_content .tab_item').removeClass('active')
+	//find로 찾을 때는 클래스명이면 .이 추가되어야함, 내가 가져온 이름은 .이 없음
+	$('.group02 .news .tab_content').find('.' + tab_name).addClass('active')
+
+	//선택됨 tab_item의 title에만 '선택됨'이라고 써주기
+	$('.group02 .news .tab_content .tab_item').attr('title', '')
+	$('.group02 .news .tab_content').find('.' + tab_name).attr('title', '선택됨')
+})
+/************.group02 .news menu tab::끝************/
+
+
+
+$(window).on('scroll', function() {
+    if ($(this).scrollTop() > 200) {
+        $('aside.top').fadeIn();   // 나타남
+    } else {
+        $('aside.top').fadeOut();  // 사라짐
+    }
+});
+// top 버튼을 클릭하면 상단으로 이동
+$('aside.top .top_btn').on('click', function(){
+    $('html, body').animate({ scrollTop: 0 }, 500);
+});
 
 })//맨끝
