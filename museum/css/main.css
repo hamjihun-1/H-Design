@@ -67,6 +67,7 @@
 }
 .visual .swiper-slide .txt p {
     color: var(--color-white90);
+    padding: 0 var(--wrapper-margin);
 }
 .visual .paging {
     position: absolute; /* visual을 기준으로 정렬 */
