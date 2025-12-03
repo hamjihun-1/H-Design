@@ -1,7 +1,7 @@
 /**********************
 * 파일명 : main.css
 * 작성자 : 함지훈
-* 작성일 : 25-11-29
+* 작성일 : 25-11-28
 * 설  명 : index파일 (메인페이지)에서만 호출하는 css
             메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer 제외)
             default.css (태그의 초기화 - 브라우저가 주는 기본 스타일 삭제)
@@ -11,7 +11,7 @@
 **********************/
 @import url(default.css);
 @import url(fonts.css);
-@import url(common.css);
+@import url(common.css?v=20251203);
 @import url(layout.css);
 
 .visual {
