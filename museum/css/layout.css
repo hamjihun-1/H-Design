@@ -360,7 +360,7 @@ footer .f_bottom .inner .f_info {
     footer .f_bottom .wrapper {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
     footer .f_bottom .logo {
         margin-bottom: 30px;
