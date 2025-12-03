@@ -294,23 +294,26 @@ header .full_menu {
 }
 
 footer .f_top {
+    
     border-top: 1px solid #ccc;
 }
 footer .f_top ul {
-    padding: 0 var(--wrapper-margin);
+    overflow-x: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0 60px;
+    gap: 0 50px;
     height: 90px;
+}
+footer .f_top ul::-webkit-scrollbar {
+    display: none;
 }
 footer .f_top ul li a {
     display: block;
-    height: 35px;
 }
 footer .f_top ul li a img {
     width: 100%;
-    height: 100%;
+    height: 40px;
     object-fit: contain;
 }
 footer .f_bottom {
@@ -336,27 +339,22 @@ footer .f_bottom .inner .f_nav a {
 footer .f_bottom .inner .f_info {
     margin: 20px 0;
 }
-@media screen and (max-width:768px){
-    footer .f_top {
-        border-top: 1px solid #ccc;
-    }
+@media screen and (max-width:1024px){
     footer .f_top ul {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 16px;
-        height: 200px;
-    }
-    footer .f_top ul li {
-        /* 감싸고 있는 ul의 넓이에 몇개가 정렬 - 2 = 50%
-        한줄의 사이 여백의 합 8*2 = 16 / 2 (한줄의 li의 갯수) = 8
-        calc(50% - 8px) */
-        width: calc(50% - 8px);
-        max-width: 202px;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0 var(--wrapper-margin);
     }
     footer .f_top ul li a img {
-        width: 100%;
-        height: 100%;
+        width: 200px;
+        height: 40px;
+        object-fit: contain;
+    }
+}
+@media screen and (max-width:768px){
+    footer .f_top ul li a img {
+        width: 150px;
+        height: 30px;
         object-fit: contain;
     }
     footer .f_bottom .wrapper {

@@ -236,6 +236,7 @@
 /*관람 아이콘 종료*/
 .guide .info_wrap ul li {
     font-size: 15px;
+    display: flex;
 }
 .guide .info_wrap ul li + li {
     margin-top: 10px;
@@ -246,25 +247,15 @@
     margin-left: 20px;
     color: #111;
 }
-.guide .info_wrap ul li em {
+.guide .info_wrap ul li span em {
     display: block;
-    padding: 5px 0 0 67px;
     font-size: 13px;
-    color: #555;
     font-weight: 400;
+    color: #555;
+    margin: 5px 0 0 0;
 }
 .guide .info_wrap ul li span.holiday {
-    position: relative;
     color: #B72654;
-}
-.guide .info_wrap ul li span.holiday::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 100%;
-    height: 1px;
-    background-color: #B72654;
 }
 .guide .info_wrap .info_btn {
     display: flex;
@@ -333,8 +324,7 @@
     .guide .info_wrap ul li span {
         margin-left: 15px;
     }
-    .guide .info_wrap ul li em {
-        padding: 5px 0 0 60px;
+    .guide .info_wrap ul li span em {
         font-size: 12px;
     }
     .guide .info_wrap .info_btn .btn01,
@@ -411,25 +401,26 @@
 } /*media*/
 @media screen and (max-width:768px){
     .guide {
-        height: 400px;
+        height: 360px;
     }
     .guide .info_wrap {
         margin: 40px 0 0 0;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        height: 185px;
+        height: 120px;
     }
-    .guide .info_wrap .time,
-    .guide .info_wrap .money {
+    .guide .info_wrap .time {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 20px 0;
     }
+    .guide .info_wrap .money {
+        display: none;
+    }
     /*관람 아이콘 시작*/
-    .guide .info_wrap .time .time_icon,
-    .guide .info_wrap .money .money_icon {
+    .guide .info_wrap .time .time_icon {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -442,9 +433,6 @@
     }
     .guide .info_wrap h3::before {
         left: -27px;
-    }
-    .guide .info_wrap .money .money_icon h3::before {
-        left: -30px;
     }
     /*관람 아이콘 종료*/
     .guide .info_wrap {
@@ -485,7 +473,7 @@
     position: absolute;
     right: -44px;
     bottom: -20px;
-    width: 600px;
+    width: 100vw;
     height: 2px;
     background-color: #B72654;
 }
@@ -688,7 +676,7 @@
     position: absolute;
     right: -44px;
     bottom: -20px;
-    width: 600px;
+    width: 100vw;
     height: 2px;
     background-color: #fff;
 }
@@ -901,7 +889,7 @@
     position: absolute;
     right: -44px;
     bottom: -20px;
-    width: 600px;
+    width: 100vw;
     height: 2px;
     background-color: #B72654;
 }
@@ -962,6 +950,7 @@
     margin: 20px 0 0 0;
     font-size: 15px;
     display: flex;
+    flex-wrap: wrap;
     gap: 0 40px;
 }
 .collection .list .swiper .swiper-slide a .txt ul li strong {
@@ -1040,7 +1029,7 @@
         margin: 55px 0 0 0;
     }
     .collection .list .swiper .swiper-slide a .photo {
-        max-height: 400px;
+        height: 400px;
     }
     .collection .list .swiper .swiper-slide a .txt h3 {
         font-size: 18px;
@@ -1075,7 +1064,7 @@
     position: absolute;
     right: -44px;
     bottom: -20px;
-    width: 600px;
+    width: 100vw;
     height: 2px;
     background-color: #B72654;
 }
@@ -1133,6 +1122,7 @@
 .publication .list .swiper .swiper-slide a .txt ul li {
     margin: 20px 0 0 0;
     display: flex;
+    flex-wrap: wrap;
     gap: 0 40px;
     font-size: 15px;
 }
