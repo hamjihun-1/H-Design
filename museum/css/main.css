@@ -803,8 +803,18 @@
     .exhibition .tit h2 {
         font-size: 28px;
     }
+    .exhibition .tab_content .tab_item .txt p {
+        /* 4줄제한 */
+        overflow: hidden;
+        line-height: 1.8; /*행간*줄수 = 단위 em*/
+        height: 7.2em;
+        /* 글에 ...추가 */
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /*4번째 줄 넘어갈 시 ...으로 마무리*/
+        -webkit-box-orient: vertical;
+    }
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:900px){
     .exhibition {
         margin: 70px 0 0 0;
     }
@@ -854,7 +864,7 @@
         height: 5.4em;
         /* 글에 ...추가 */
         display: -webkit-box;
-        -webkit-line-clamp: 3; /*2번째 줄 넘어갈 시 ...으로 마무리*/
+        -webkit-line-clamp: 3; /*3번째 줄 넘어갈 시 ...으로 마무리*/
         -webkit-box-orient: vertical;
     }
     .exhibition .tab_content .tab_item .txt a {
