@@ -176,6 +176,7 @@ header .head_top .menu_close {
 @media screen and (max-width:1169px){
     /*open클래스가 추가 돼었을 때*/
     header.open {
+        position: fixed;
         background-color: #fff;
         width: 100%;
         height: var(--header-h);
@@ -211,7 +212,7 @@ header .head_top .menu_close {
     }
     header.open .full_menu .menu_list ul.depth1 > li > a {
         display: block;
-        padding: 22px 0 22px 16px;
+        padding: 22px 0 22px var(--wrapper-margin);
         font-size: 1.9rem;
         font-weight: 700;
         line-height: 1.3;
