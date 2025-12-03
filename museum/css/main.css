@@ -463,6 +463,9 @@
 .special {
     margin: 100px 0 0 0;
 }
+.special .wrapper {
+    position: relative;
+}
 .special .tit {
     display: flex;
     gap: 0 20px;
@@ -517,7 +520,7 @@
 .special .list .swiper .swiper-slide a .photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: 0.5s;
     vertical-align: top;
 }
@@ -628,9 +631,27 @@
         font-size: 18px;
     }
     .special .ctrl_wrap {
-        margin: 40px 0 0 0;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .special .ctrl_wrap .scrollbar {
+        display: none;
     }
 }/*@media*/
+@media screen and (max-width:450px){
+    .special .list .swiper .swiper-slide a .txt strong {
+        font-size: 13px;
+    }
+    .special .list .swiper .swiper-slide a .txt h3 {
+        font-size: 17px;
+        margin: 20px 0 20px 0;
+    }
+    .special .list .swiper .swiper-slide a .txt span {
+        font-size: 13px;
+    }
+}
 .exhibition {
     margin: 100px 0 0 0;
 }
