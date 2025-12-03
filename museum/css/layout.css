@@ -367,4 +367,7 @@ footer .f_bottom .inner .f_info {
     footer .f_bottom .logo {
         margin-bottom: 30px;
     }
+    footer .f_bottom .inner .f_info {
+        line-height: 1.8;
+    }
 }
