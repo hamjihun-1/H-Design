@@ -1,0 +1,41 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.visual {
+    position: relative;
+}
+.visual .swiper .swiper-slide {
+    height: 100dvh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.visual .swiper .swiper-slide.popup1 {
+    background-image: url(../images/visual_bg01.jpg);
+}
+.visual .swiper .swiper-slide.popup2 {
+    background-image: url(../images/visual_bg02.jpg);
+}
+.visual .swiper .swiper-slide.popup3 {
+    background-image: url(../images/visual_bg03.jpg);
+}
+.visual .swiper .swiper-slide h3 {
+    font-size: 60px;
+}
+.visual .swiper .swiper-slide p {
+    margin: 13px 0 0 0;
+}
+.visual .btn_wrap {
+    position: absolute;
+    left: calc(50% - 630px);
+    top: calc(70% + 40px);
+    display: flex;
+    z-index: 1;
+}
+.visual .btn_wrap button {
+    display: block;
+}
